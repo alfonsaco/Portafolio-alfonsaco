@@ -19,10 +19,10 @@ import { Search } from 'lucide-vue-next';
 
         <!-- Programas de la barra de tareas -->
         <div class="div-programas-taskbar">
-            <a href="https://www.github.com" target="_blank">
+            <a href="https://www.github.com" target="_blank" data-programa="Perfil de GitHub">
                 <img :src="iconoGitHub" alt="Icono GitHub" />
             </a>
-            <a href="https://www.linkedin.com" target="_blank">
+            <a href="https://www.linkedin.com" target="_blank" data-programa="Perfil de LinkedIn">
                 <img :src="iconoLinkedIn" alt="Icono inkedIn" />
             </a>
         </div>
@@ -44,6 +44,7 @@ import { Search } from 'lucide-vue-next';
         bottom: 0px;
         left: 0px;
         padding: 8px 20px;
+        user-select: none;
     }
 
     /* LOGO SO */
@@ -83,6 +84,7 @@ import { Search } from 'lucide-vue-next';
         gap: 6px;
     }
     .div-programas-taskbar a {
+        position: relative;
         display: flex;
     }
     .div-programas-taskbar a > img {
@@ -94,5 +96,28 @@ import { Search } from 'lucide-vue-next';
     .div-programas-taskbar a > img:hover {
         scale: 0.9;
         filter: drop-shadow(0px 0px 4px #FFFFFF50);
+    }
+
+    .div-programas-taskbar a::after {
+        content: attr(data-programa);
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+    }
+    .div-programas-taskbar a:hover::after {
+        opacity: 1;
+        transition-delay: .6s;
     }
 </style>
