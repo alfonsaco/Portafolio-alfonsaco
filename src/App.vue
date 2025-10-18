@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 import PC from './views/PC.vue';
 import Mobile from './views/Mobile.vue';
@@ -19,28 +19,31 @@ onUnmounted(() => {
   manejarCambioResolucion();
   window.removeEventListener('resize', manejarCambioResolucion);
 });
+
+const fondoPantalla = computed(() => (esMovil.value ? 'fondo-movil' : 'fondo-pc'));
 </script>
 
 <template>
-
   <!--Dimensiones PC y móvil-->
-  <component :is="esMovil ? Mobile : PC">
-
-  </component>
-
+  <div :class="fondoPantalla" class="contenedor">
+    <component :is="esMovil ? Mobile : PC"></component>
+  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+  .contenedor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .fondo-movil {
+    background-image: url('/movil_fondo.jpg');
+  }
+  .fondo-pc {
+    background-image: url('/pc_fondo.jpg');
+  }
 </style>

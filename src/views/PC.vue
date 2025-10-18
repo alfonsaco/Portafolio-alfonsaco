@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import TaskBar from '../components/pc/TaskBar.vue';
+
 
 </script>
 
 
 <template>
-    <div class="div-pc">VERSION PC</div>
+    <TaskBar></TaskBar>
 </template>
 
 
