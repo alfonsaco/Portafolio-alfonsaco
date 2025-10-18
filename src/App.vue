@@ -1,17 +1,33 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+import PC from './views/PC.vue';
+import Mobile from './views/Mobile.vue';
+
+// Dimensión para dispositivos móviles
+const esMovil = ref(window.innerWidth < 768) ;
+
+const manejarCambioResolucion = () => {
+  esMovil.value = window.innerWidth < 768;
+}
+
+onMounted(() => {
+  manejarCambioResolucion();
+  window.addEventListener('resize', manejarCambioResolucion);
+});
+onUnmounted(() => {
+  manejarCambioResolucion();
+  window.removeEventListener('resize', manejarCambioResolucion);
+});
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+
+  <!--Dimensiones PC y móvil-->
+  <component :is="esMovil ? Mobile : PC">
+
+  </component>
+
 </template>
 
 <style scoped>
