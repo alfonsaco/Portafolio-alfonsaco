@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TaskBar from '../components/pc/TaskBar.vue';
+import TaskBar from '../components/pc/TaskBar-PC.vue';
 
 
 </script>

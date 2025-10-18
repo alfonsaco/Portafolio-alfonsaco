@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import TaskBar from '../components/mobile/TaskBar-Mobile.vue';
 
 </script>
 
 
 <template>
-   
+    <TaskBar></TaskBar>
 </template>
 
 
