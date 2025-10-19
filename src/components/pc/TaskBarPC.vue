@@ -2,6 +2,8 @@
 import iconoGitHub from '../../assets/github.png'
 import iconoLinkedIn from '../../assets/linkedin.png'
 import iconoAlfonOS from '../../assets/alfonOS.png'
+import logoIA from '../../assets/ai.png'
+import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 
 import { Search } from 'lucide-vue-next';
 
@@ -10,6 +12,11 @@ import { Search } from 'lucide-vue-next';
 
 <template>
     <div class="barra-de-tareas">
+        <!-- IA -->
+        <div class="logo-ia-container">
+            <img :src="logoIA" alt="Logo IA" class="logo-ia" />
+        </div>
+        
         <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>
 
         <div class="div-buscador">
@@ -26,6 +33,8 @@ import { Search } from 'lucide-vue-next';
                 <img :src="iconoLinkedIn" alt="Icono inkedIn" />
             </a>
         </div>
+
+        <UtilidadesTaskBar></UtilidadesTaskBar>
     </div>
 </template>
 
@@ -43,6 +52,7 @@ import { Search } from 'lucide-vue-next';
         border-top: 1px solid #999;
         padding: 8px 20px;
         user-select: none;
+        position: relative;
     }
 
     /* LOGO SO */
@@ -113,8 +123,47 @@ import { Search } from 'lucide-vue-next';
         transform: translateX(-50%);
         opacity: 0;
         transition: opacity .3s ease .1s;
+        pointer-events: none;
     }
     .div-programas-taskbar a:hover::after {
+        opacity: 1;
+        transition-delay: .6s;
+    }
+
+     /* CONTENEDOR LOGO IA */
+    .logo-ia-container {
+        position: absolute;
+        left: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* LOGO IA */
+    .logo-ia {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .logo-ia-container::after {
+        content: 'AIfonOS';
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 50px;
+        left: 100%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+        pointer-events: none;
+    }
+    .logo-ia-container:hover::after {
         opacity: 1;
         transition-delay: .6s;
     }

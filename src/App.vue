@@ -39,6 +39,7 @@ const fondoPantalla = computed(() => (esMovil.value ? 'fondo-movil' : 'fondo-pc'
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
   .fondo-movil {
     background-image: url('/movil_fondo.jpg');
