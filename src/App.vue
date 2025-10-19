@@ -14,6 +14,11 @@ const manejarCambioResolucion = () => {
 onMounted(() => {
   manejarCambioResolucion();
   window.addEventListener('resize', manejarCambioResolucion);
+
+  // Cambiar menú de Click Derecho
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
 });
 onUnmounted(() => {
   manejarCambioResolucion();
@@ -21,6 +26,7 @@ onUnmounted(() => {
 });
 
 const fondoPantalla = computed(() => (esMovil.value ? 'fondo-movil' : 'fondo-pc'));
+
 </script>
 
 <template>

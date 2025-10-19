@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import AIWindow from './AIWindow.vue'
 import iconoGitHub from '../../assets/github.png'
 import iconoLinkedIn from '../../assets/linkedin.png'
 import iconoAlfonOS from '../../assets/alfonOS.png'
@@ -6,14 +7,22 @@ import logoIA from '../../assets/ai.png'
 import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 
 import { Search } from 'lucide-vue-next';
+import { ref } from 'vue';
 
+// Si está inactiva, se activa y viceversa
+const IAactiva = ref(false);
+const mostrarOcultarIA = () => {
+    IAactiva.value = !IAactiva.value;
+}
 </script>
 
 
 <template>
+    <AIWindow :activo="IAactiva"></AIWindow>
+
     <div class="barra-de-tareas">
         <!-- IA -->
-        <div class="logo-ia-container">
+        <div class="logo-ia-container" @click="mostrarOcultarIA">
             <img :src="logoIA" alt="Logo IA" class="logo-ia" />
         </div>
         

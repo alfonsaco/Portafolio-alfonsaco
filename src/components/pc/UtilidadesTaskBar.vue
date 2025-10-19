@@ -122,7 +122,7 @@ const textoBateria = computed(() => {
         background-color: #313131;
         border-radius: 5px;
         border: 1px solid #1a1a1a;
-        bottom: 53px;
+        bottom: 50px;
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
