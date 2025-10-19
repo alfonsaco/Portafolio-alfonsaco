@@ -38,11 +38,9 @@ import { Search } from 'lucide-vue-next';
         gap: 15px;
         justify-content: center;
         width: 100%;
+        height: 50px;
         background-color: #222222;
         border-top: 1px solid #999;
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
         padding: 8px 20px;
         user-select: none;
     }

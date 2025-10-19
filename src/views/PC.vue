@@ -1,26 +1,14 @@
 <script setup lang="ts">
-import TaskBar from '../components/pc/TaskBar-PC.vue';
-import Icono from '../components/pc/Icono.vue';
+import TaskBar from '../components/pc/TaskBarPC.vue';
+import Desktop from '../components/pc/Desktop.vue';
+
 
 </script>
 
 
 <template>
-    <div class="div-iconos">
-        <Icono texto="Proyecto"></Icono>
-        <Icono texto="Proyecto2"></Icono>
-        <Icono texto="Proyecto3"></Icono>
-        <Icono texto="Proyecto4"></Icono>
-        <Icono texto="Proyecto5"></Icono>
-        <Icono texto="Proyecto6"></Icono>
-        <Icono texto="Proyecto"></Icono>
-        <Icono texto="Proyecto2"></Icono>
-        <Icono texto="Proyecto3"></Icono>
-        <Icono texto="Proyecto4"></Icono>
-        <Icono texto="Proyecto5"></Icono>
-        <Icono texto="Proyecto6"></Icono>
-    </div>
 
+    <Desktop></Desktop>
     <TaskBar></TaskBar>
 </template>
 

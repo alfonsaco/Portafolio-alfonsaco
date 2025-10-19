@@ -19,9 +19,10 @@ const props = defineProps<{
 <style>
     .div-icono {
         cursor: pointer;
-        padding: 3px 12px;
+        height: 67px;
+        width: 70px;
         user-select: none;
-        border-radius: 5px;
+        border-radius: 4px;
     }
     .div-icono:hover {
         background-color: #FFFfff20;

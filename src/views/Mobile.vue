@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import TaskBar from '../components/mobile/TaskBar-Mobile.vue';
-
+import TaskBar from '../components/mobile/TaskBarMobile.vue';
+import AppSection from '../components/mobile/AppSection.vue';
 </script>
 
 
 <template>
+    <AppSection></AppSection>
     <TaskBar></TaskBar>
 </template>
 
 
 <style>
-    .div-movil {
-        height: 100px;
-        width: 100px;
-        background-color: red;
-        color: white;
-    }
+
 </style>

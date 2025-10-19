@@ -25,8 +25,6 @@ import iconoAlfonOS from '../../assets/alfonOS.png'
         display: flex;
         gap: 20px;
         justify-content: center;
-        position: absolute;
-        bottom: 0;
     }
     .div-taskbar img {
         height: 70px;
