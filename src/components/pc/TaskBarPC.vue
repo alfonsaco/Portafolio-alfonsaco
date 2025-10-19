@@ -75,15 +75,23 @@ import { Search } from 'lucide-vue-next';
         width: 200px;
         border-radius: 50px;
         color: black;
-        border: 1px solid #5e5e5e;
+        border: 0px solid #5e5e5e;
         padding-left: 30px;
+        transition: .2s ease;
     }
     .icono-buscar {
         color: rgb(51, 51, 51);
         position: absolute;
-        left: 5px;
-        width: 20px;
-        height: 20px;
+        left: 8px;
+        width: 17px;
+        height: 17px;
+        transition: .2s ease;
+    }
+    .div-buscador:hover .buscador {
+        background-color: rgb(226, 226, 226);
+    }
+    .div-buscador:hover .icono-buscar {
+        color: #2161c2;
     }
 
     /* PROGRAMAS */
@@ -102,8 +110,7 @@ import { Search } from 'lucide-vue-next';
         transition: .3s ease;
     }
     .div-programas-taskbar a > img:hover {
-        scale: 0.9;
-        filter: drop-shadow(0px 0px 4px #FFFFFF50);
+        scale: 0.85;
     }
 
     .div-programas-taskbar a::after {
@@ -143,6 +150,10 @@ import { Search } from 'lucide-vue-next';
         width: 30px;
         height: 30px;
         cursor: pointer;
+        transition: .3s ease;
+    }
+    .logo-ia:hover {
+        scale: 0.85;
     }
     .logo-ia-container::after {
         content: 'AIfonOS';

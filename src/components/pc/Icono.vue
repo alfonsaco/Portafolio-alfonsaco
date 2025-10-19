@@ -38,5 +38,14 @@ const props = defineProps<{
         font-size: .8em;
         position: relative;
         top: -8px;
+        text-align: center;
+        max-width: 70px;       
+        display: -webkit-box;         
+        -webkit-box-orient: vertical;  
+        -webkit-line-clamp: 2;    
+        line-clamp: 2;    
+        overflow: hidden;              
+        text-overflow: ellipsis;      
+        word-wrap: break-word; 
     }
 </style>

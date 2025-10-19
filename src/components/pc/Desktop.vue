@@ -3,19 +3,19 @@ import Icono from './Icono.vue';
 
 const iconos = [
     { texto: 'Proyecto' },
+    { texto: 'Proasdasdasdasdasdasdasdasdsadsadsayecto' },
+    { texto: 'Proydasdsa d sad sa das das das decto' },
+    { texto: 'Proyecto6' },
     { texto: 'Proyecto' },
+    { texto: 'Hola' },
+    { texto: 'Proyecto4' },
     { texto: 'Proyecto' },
+    { texto: 'Proydsae sadacto' },
     { texto: 'Proyecto' },
+    { texto: 'Proyecto2956654645' },
     { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto' },
+    { texto: 'Proyecto6' },
+    { texto: 'Proyfsdfsdfsdfsdfsdfsdfsddsfsdfdsecto' },
     { texto: 'Proyecto' }
 ]
 </script>

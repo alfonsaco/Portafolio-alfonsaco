@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import TaskBar from '../components/pc/TaskBarPC.vue';
 import Desktop from '../components/pc/Desktop.vue';
+import AIWindow from '../components/pc/AIWindow.vue';
 
 
 </script>
 
 
 <template>
-
+    <AIWindow></AIWindow>
     <Desktop></Desktop>
     <TaskBar></TaskBar>
 </template>
