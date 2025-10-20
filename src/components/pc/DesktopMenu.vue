@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { Table, ChevronRight, Wallpaper, RefreshCcw } from 'lucide-vue-next';
-import { defineProps } from 'vue';
+import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal } from 'lucide-vue-next';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps<{
     x: number
     y: number
 }>();
+
+// Cambiar tamaño de los iconos del escritorio
+const emit = defineEmits(['cambiarTamanoIcono']);
+
+const cambiarTamanoIcono = (tam: string) => {
+    emit('cambiarTamanoIcono', tam);
+}
 </script>
 
 <template>
@@ -17,16 +24,19 @@ const props = defineProps<{
 
             <!-- Sección del tamaño de los iconos -->
             <div class="menu-vista">
-                <div>Iconos pequeños</div>
-                <div>Iconos medianos</div>
-                <div>Iconos grandes</div>
+                <div @click="cambiarTamanoIcono('pequeno')">Iconos pequeños</div>
+                <div @click="cambiarTamanoIcono('mediano')">Iconos medianos</div>
+                <div @click="cambiarTamanoIcono('grande')">Iconos grandes</div>
             </div>
         </div>
         <div>
             <RefreshCcw class="iconos-menu"></RefreshCcw>
             Actualizar
         </div>
-        <div></div>
+        <div>
+            <Terminal class="iconos-menu"></Terminal>
+            Terminal inútil
+        </div>
         <div>
             <Wallpaper></Wallpaper>
             Personalizar

@@ -63,19 +63,26 @@ onUnmounted(() => {
   window.removeEventListener('click', ocultarMenu);
 });
 
+// Tamaño iconos
+const tamanoIcono = ref('mediano');
+
+const actualizarTamano  = (nuevoTamano: string) => {
+    tamanoIcono.value = nuevoTamano as 'pequeno' | 'mediano' | 'grande';
+}
+
 </script>
 
 
 <template>
-    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible"></DesktopMenu>
+    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano"></DesktopMenu>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
-            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" />
+            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" />
         </div>
 
         <div class="div-iconos-2" >
-            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" />
+            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" />
         </div>
     </div>
 </template>

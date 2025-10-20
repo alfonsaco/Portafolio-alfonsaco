@@ -8,7 +8,7 @@ import iconoAlfonOS from '../../assets/alfonOS.png'
 
 <template>
     <div class="div-taskbar">
-        <a href="https://www.github.com" target="_blank">
+        <a href="https://www.github.com/alfonsaco" target="_blank">
                 <img :src="iconoGitHub" alt="Icono GitHub" />
             </a>
         <a href="https://www.linkedin.com" target="_blank">

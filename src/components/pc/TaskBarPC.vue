@@ -35,7 +35,7 @@ const mostrarOcultarIA = () => {
 
         <!-- Programas de la barra de tareas -->
         <div class="div-programas-taskbar">
-            <a href="https://www.github.com" target="_blank" data-programa="Perfil de GitHub">
+            <a href="https://www.github.com/alfonsaco" target="_blank" data-programa="Perfil de GitHub">
                 <img :src="iconoGitHub" alt="Icono GitHub" />
             </a>
             <a href="https://www.linkedin.com" target="_blank" data-programa="Perfil de LinkedIn">

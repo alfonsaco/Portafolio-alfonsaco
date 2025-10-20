@@ -1,16 +1,23 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import ImagenIcono from '../../assets/carpeta.png'
 
 const props = defineProps<{
   texto: string
+  tamano: string
 }>();
 
+const estilo = computed(() => {
+    if(props.tamano === 'grande') return { width: '45px', height: '45px' };
+    if(props.tamano === 'pequeno') return { width: '30px', height: '30px'};
+    return { width: '37px', height: '37px' };
+})
 </script>
 
 
 <template>
     <div class="div-icono">
-        <img :src="ImagenIcono" alt="Icono" class="imagen-icono" />
+        <img :src="ImagenIcono" alt="Icono" class="imagen-icono" :style="estilo" />
         <p class="texto-icono">{{ props.texto }}</p>
     </div>
 </template>
@@ -28,9 +35,7 @@ const props = defineProps<{
         background-color: #FFFfff20;
     }
     .imagen-icono {
-        width: 45px;
-        height: 45px;
-
+    
     }
     .texto-icono {
         color: #FFF;
