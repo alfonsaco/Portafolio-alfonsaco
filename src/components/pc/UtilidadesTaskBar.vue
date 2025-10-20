@@ -68,10 +68,10 @@ const textoBateria = computed(() => {
         
         <!-- Seción WiFi y batería -->
         <div class="div-bateria-wifi">
-            <Wifi class="iconos" ></Wifi>
+            <Wifi class="iconos-utilidades" ></Wifi>
 
             <div class="div-bateria" :data-bateria="textoBateria">
-                <component :is="iconoBateria" class="iconos" />
+                <component :is="iconoBateria" class="iconos-utilidades" />
             </div>
         </div>
 
@@ -133,8 +133,9 @@ const textoBateria = computed(() => {
         opacity: 1;
         transition-delay: .6s;
     }
-    .iconos {
+    .iconos-utilidades {
         width: 20px;
         height: 20px;
+        color: #FFF;
     }
 </style>

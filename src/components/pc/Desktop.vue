@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Icono from './Icono.vue';
+import DesktopMenu from './DesktopMenu.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
+// Añadimos los iconos al escritorio
 const iconosIzquierda = [
     { texto: 'Proyecto' },
     { texto: 'Proasdasdasdasdasdasdasdasdsadsadsayecto' },
@@ -27,11 +30,46 @@ const iconosDerecha = [
     { texto: 'Proyecto' },
     { texto: 'Proyfsdfsdfsdfsdfsdfs' }
 ]
+
+// Designamos las coordenadas del menú del escritorio al hacer Click Dcho
+const menuX = ref(0);
+const menuY = ref(0);
+const menuVisible = ref(false);
+
+const mostrarMenu = (e: MouseEvent) => {
+    // Cambiamos dirección para que no salga de la pantalla
+    if(e.clientX > window.innerWidth - 230) {
+        menuX.value = e.clientX - 200;
+    } else {
+        menuX.value = e.clientX;
+    }
+
+    if(e.clientY < 305) {
+        menuY.value = e.clientY + 5;
+    } else {
+        menuY.value = e.clientY - 300;
+    }
+    
+    menuVisible.value = true;
+}
+
+const ocultarMenu = () => {
+    menuVisible.value = false;
+}
+onMounted(() => {
+  window.addEventListener('click', ocultarMenu);
+});
+onUnmounted(() => {
+  window.removeEventListener('click', ocultarMenu);
+});
+
 </script>
 
 
 <template>
-    <div class="escritorio">
+    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible"></DesktopMenu>
+
+    <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
             <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" />
         </div>

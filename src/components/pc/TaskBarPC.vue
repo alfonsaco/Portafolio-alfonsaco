@@ -81,7 +81,7 @@ const mostrarOcultarIA = () => {
     .buscador {
         background-color: white;
         height: 100%;
-        width: 200px;
+        width: 250px;
         border-radius: 50px;
         color: black;
         border: 0px solid #5e5e5e;
