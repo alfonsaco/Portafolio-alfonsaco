@@ -16,7 +16,7 @@ const cambiarTamanoIcono = (tam: string) => {
 </script>
 
 <template>
-    <div class="contenedor-menu" :style="{top: y + 'px', left: x + 'px'}" >
+    <div class="contenedor-menu" :style="{top: props.y + 'px', left: props.x + 'px'}" >
         <div class="div-ver">
             <Table class="iconos-menu"></Table>
             Ver

@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import ImagenIcono from '../../assets/carpeta.png'
+import { computed, defineEmits, defineProps } from 'vue';
 
 const props = defineProps<{
   texto: string
   tamano: string
+  imagen: string
 }>();
+
+// Función de Click
+const emit = defineEmits<{
+    (e: 'dblclick'): void
+}>();
+const manejarClick = () => {
+    emit('dblclick');
+}
 
 const estilo = computed(() => {
     if(props.tamano === 'grande') return { width: '45px', height: '45px' };
@@ -16,8 +24,8 @@ const estilo = computed(() => {
 
 
 <template>
-    <div class="div-icono">
-        <img :src="ImagenIcono" alt="Icono" class="imagen-icono" :style="estilo" />
+    <div class="div-icono" @dblclick="manejarClick">
+        <img :src="imagen" alt="Icono" class="imagen-icono" :style="estilo" />
         <p class="texto-icono">{{ props.texto }}</p>
     </div>
 </template>

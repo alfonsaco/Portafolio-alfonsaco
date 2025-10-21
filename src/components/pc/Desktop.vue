@@ -3,32 +3,33 @@ import Icono from './Icono.vue';
 import DesktopMenu from './DesktopMenu.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
+// Imágenes iconos
+import OversizeLogo from '../../assets/oversize.png'
+import Carpeta from '../../assets/carpeta.png'
+
 // Añadimos los iconos al escritorio
 const iconosIzquierda = [
-    { texto: 'Proyecto' },
-    { texto: 'Proasdasdasdasdasdasdasdasdsadsadsayecto' },
-    { texto: 'Proydasdsa d sad sa das das das decto' },
-    { texto: 'Proyecto6' },
-    { texto: 'Proyecto' },
-    { texto: 'Hola' },
-    { texto: 'Proyecto4' },
-    { texto: 'Proyecto' },
-    { texto: 'Proydsae sadacto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto2956654645' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto6' },
-    { texto: 'Proyfsdfsdfsdfsdfsdfsdfsddsfsdfdsecto' },
-    { texto: 'Proyecto' }
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Oversize', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
 ]
 
 const iconosDerecha = [
-    { texto: 'Proyecto' },
-    { texto: 'Proyecto6' },
-    { texto: 'Proyecto6' },
-    { texto: 'Proyfsdfsdfsdfsdfsdfsdfsddsfsdfdsecto' },
-    { texto: 'Proyecto' },
-    { texto: 'Proyfsdfsdfsdfsdfsdfs' }
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta },
 ]
 
 // Designamos las coordenadas del menú del escritorio al hacer Click Dcho
@@ -70,6 +71,15 @@ const actualizarTamano  = (nuevoTamano: string) => {
     tamanoIcono.value = nuevoTamano as 'pequeno' | 'mediano' | 'grande';
 }
 
+// Función para abrir un icono. Según lo que contenga, te llevará a un enlace o abrirá el proyecto
+const abrirIcono = (icono: {texto: string, imagen: string, url?: string }) => {
+    if(icono.url) {
+        window.open(icono.url, '_blank');
+
+    } else {
+
+    }
+}
 </script>
 
 
@@ -78,11 +88,11 @@ const actualizarTamano  = (nuevoTamano: string) => {
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
-            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" />
+            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)"/>
         </div>
 
         <div class="div-iconos-2" >
-            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" />
+            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" />
         </div>
     </div>
 </template>

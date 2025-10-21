@@ -1,15 +1,27 @@
 <script setup lang="ts">
 import App from './App.vue';
 
+// Iconos Apps
+import OversizeLogo from '../../assets/oversize.png';
+import Instagram from '../../assets/instagram.png';
+
 const apps = [
-    { texto: 'Instagram' },
-    { texto: 'Instagram 2'},
-    { texto: 'Instagram 25'},
-    { texto: 'Instagram 7'},
-    { texto: 'Instagram 6'},
-    { texto: 'Instagram 62'},
-    { texto: 'Instagram 2'}
+    { texto: 'Instagram', imagen: Instagram },
+    { texto: 'Instagram', imagen: Instagram },
+    { texto: 'Instagram', imagen: Instagram },
+    { texto: 'Instagram', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
+    { texto: 'Instagram', imagen: Instagram },
+    { texto: 'Instagram', imagen: Instagram },
+    { texto: 'Instagram', imagen: Instagram },
 ]
+
+const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
+    if(app.url) {
+        window.open(app.url, '_blank');
+    } else {
+
+    }
+}
 </script>
 
 
@@ -17,7 +29,7 @@ const apps = [
     <div class="contenedor">
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
-            <App v-for="(aplicacion, i) in apps" :key="i" :texto="aplicacion.texto"/>
+            <App v-for="(aplicacion, i) in apps" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
         </div>
     </div>
 </template>
