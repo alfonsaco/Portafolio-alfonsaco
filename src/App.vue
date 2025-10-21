@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed, provide } from 'vue'
 
 import PC from './views/PC.vue';
 import Mobile from './views/Mobile.vue';
@@ -15,23 +15,39 @@ onMounted(() => {
   manejarCambioResolucion();
   window.addEventListener('resize', manejarCambioResolucion);
 
-  // Cambiar menú de Click Derecho
+  // Cambiar menú de Click Derecho, evitamos el de por defecto
   document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
   });
 });
+
 onUnmounted(() => {
   manejarCambioResolucion();
   window.removeEventListener('resize', manejarCambioResolucion);
 });
 
-const fondoPantalla = computed(() => (esMovil.value ? 'fondo-movil' : 'fondo-pc'));
+// Fondo personalizado
+const fondoActual = ref('/pc_fondo.jpg');
+
+const cambiarFondo = (nuevoFondo: string) => {
+  fondoActual.value = nuevoFondo;
+}
+
+provide('cambiarFondo', cambiarFondo);
+
+const fondoPantalla = computed(() => {
+  if (esMovil.value) {
+    return { backgroundImage: 'url(/movil_fondo.jpg)' };
+  } else {
+    return { backgroundImage: `url(${fondoActual.value})` };
+  }
+});
 
 </script>
 
 <template>
   <!--Dimensiones PC y móvil-->
-  <div :class="fondoPantalla" class="contenedor">
+  <div class="contenedor" :style="fondoPantalla">
     <component :is="esMovil ? Mobile : PC"></component>
   </div>
 </template>
@@ -46,11 +62,5 @@ const fondoPantalla = computed(() => (esMovil.value ? 'fondo-movil' : 'fondo-pc'
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-  .fondo-movil {
-    background-image: url('/movil_fondo.jpg');
-  }
-  .fondo-pc {
-    background-image: url('/pc_fondo.jpg');
   }
 </style>

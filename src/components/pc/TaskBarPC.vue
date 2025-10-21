@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 import AIWindow from './AIWindow.vue'
+
 import iconoGitHub from '../../assets/github.png'
 import iconoLinkedIn from '../../assets/linkedin.png'
 import iconoAlfonOS from '../../assets/alfonOS.png'
 import logoIA from '../../assets/ai.png'
+import iconoCodepen from '../../assets/codepen.png'
+
 import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 
 import { Search } from 'lucide-vue-next';
@@ -43,6 +46,9 @@ const mostrarOcultarIA = () => {
                 </a>
                 <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank" data-programa="Perfil de LinkedIn">
                     <img :src="iconoLinkedIn" alt="Icono inkedIn" />
+                </a>
+                <a href="https://codepen.io/alfonsaco" target="_blank" data-programa="Perfil de CodePen">
+                    <img :src="iconoCodepen" alt="Icono CodePen" />
                 </a>
             </div>
         </div>
@@ -137,6 +143,9 @@ const mostrarOcultarIA = () => {
         border: 0px solid #5e5e5e;
         padding-left: 30px;
         transition: .2s ease;
+    }
+    .buscador:focus {
+        outline: 0px;
     }
     .icono-buscar {
         color: rgb(51, 51, 51);

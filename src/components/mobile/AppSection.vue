@@ -11,7 +11,7 @@ const apps = [
     { texto: 'Instagram', imagen: Instagram },
     { texto: 'Instagram', imagen: Instagram },
     { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
-    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://codepen.io/alfonsaco' },
+    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
     { texto: 'Instagram', imagen: Instagram },
     { texto: 'Instagram', imagen: Instagram },
 ]

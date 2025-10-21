@@ -1,8 +1,18 @@
 <script setup lang="ts">
+import { inject } from 'vue';
+
 const emit = defineEmits(['cerrar']);
+const cambiarFondo = inject('cambiarFondo') as (fondo: string) => void;
 
 const cerrar = () => {
     emit('cerrar');
+}
+
+const cambiarFondoPantalla = (ruta: string) => {
+    if (cambiarFondo) {
+        cambiarFondo(ruta);
+    }
+    cerrar();
 }
 </script>
 
@@ -12,9 +22,9 @@ const cerrar = () => {
         <div class="div-cambio-walpapper"  @click.stop >
             <h4>Cambia el fondo de pantalla</h4>
             <div class="div-walpapper-imagenes">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div @click="cambiarFondoPantalla('/pc_fondo.jpg')"></div>
+                <div @click="cambiarFondoPantalla('/got.jpg')"></div>
+                <div @click="cambiarFondoPantalla('/brba.jpg')"></div>
             </div>
 
         </div>
@@ -77,12 +87,12 @@ const cerrar = () => {
     
     /* IMÁGENES */
     .div-walpapper-imagenes > div:first-child {
-        background-image: url(../../../public/pc_fondo.jpg);
+        background-image: url(/public/pc_fondo.jpg);
     }
     .div-walpapper-imagenes > div:nth-child(2) {
-        background-image: url(../../../public/got.jpg);
+        background-image: url(/public/got.jpg);
     }
     .div-walpapper-imagenes > div:last-child {
-        background-image: url(../../../public/brba.jpg);
+        background-image: url(/public/brba.jpg);
     }
 </style>

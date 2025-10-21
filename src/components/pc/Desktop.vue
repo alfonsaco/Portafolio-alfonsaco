@@ -13,7 +13,7 @@ import WallpapperChange from './WallpapperChange.vue';
 const iconosIzquierda = [
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
-    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://codepen.io/alfonsaco' },
+    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
@@ -98,7 +98,7 @@ const cerrarWallpapper = () => {
 <template>
     <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano" @abrirWallpapper="abrirWallpapper"></DesktopMenu>
 
-    <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" ></WallpapperChange>
+    <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" @cambiarFondoPantalla="cambiarFondo" ></WallpapperChange>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
