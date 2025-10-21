@@ -1,0 +1,88 @@
+<script setup lang="ts">
+const emit = defineEmits(['cerrar']);
+
+const cerrar = () => {
+    emit('cerrar');
+}
+</script>
+
+
+<template>
+    <div class="capa-cerrar-wallpapper" @click="cerrar">
+        <div class="div-cambio-walpapper"  @click.stop >
+            <h4>Cambia el fondo de pantalla</h4>
+            <div class="div-walpapper-imagenes">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+
+<style>
+    .capa-cerrar-wallpapper {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        z-index: 149;
+    }
+    .div-cambio-walpapper {
+        background-color: #222222c4;
+        backdrop-filter: blur(10px);
+        width: 500px;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #999;
+        border-radius: 5px;
+        padding:20px;
+        z-index: 150;
+    }
+
+    /* TEXTO */
+    .div-cambio-walpapper > h4 {
+        margin: 0;
+        font-weight: lighter;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    /* IMÁGENES DE FONDO DE PANTALLA */
+    .div-walpapper-imagenes {
+        display: flex;
+        gap: 10px;
+    }
+    .div-walpapper-imagenes > div {
+        background-color: #ffffff5e;
+        width: 100%;
+        height: 110px;
+        border-radius: 5px;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid #222;
+        cursor: pointer;
+    }
+    .div-walpapper-imagenes > div:hover {
+        border: 1px solid #999;
+    }
+    
+    /* IMÁGENES */
+    .div-walpapper-imagenes > div:first-child {
+        background-image: url(../../../public/pc_fondo.jpg);
+    }
+    .div-walpapper-imagenes > div:nth-child(2) {
+        background-image: url(../../../public/got.jpg);
+    }
+    .div-walpapper-imagenes > div:last-child {
+        background-image: url(../../../public/brba.jpg);
+    }
+</style>

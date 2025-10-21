@@ -8,10 +8,14 @@ const props = defineProps<{
 }>();
 
 // Cambiar tamaño de los iconos del escritorio
-const emit = defineEmits(['cambiarTamanoIcono']);
+const emit = defineEmits(['cambiarTamanoIcono', 'abrirWallpapper']);
 
 const cambiarTamanoIcono = (tam: string) => {
     emit('cambiarTamanoIcono', tam);
+}
+
+const abrirWallpapper = () => {
+    emit('abrirWallpapper');
 }
 </script>
 
@@ -37,8 +41,8 @@ const cambiarTamanoIcono = (tam: string) => {
             <Terminal class="iconos-menu"></Terminal>
             Terminal inútil
         </div>
-        <div>
-            <Wallpaper class="iconos-menu"></Wallpaper>
+        <div @click="abrirWallpapper" >
+            <Wallpaper class="iconos-menu" ></Wallpaper>
             Personalizar
         </div>
     </div>

@@ -7,6 +7,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import OversizeLogo from '../../assets/oversize.png'
 import Carpeta from '../../assets/carpeta.png'
 import _100DayCSS from '../../assets/100DayCSS.png'
+import WallpapperChange from './WallpapperChange.vue';
 
 // Añadimos los iconos al escritorio
 const iconosIzquierda = [
@@ -81,11 +82,23 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string }) => {
 
     }
 }
+
+// Menú de Wallpapper
+const mostrarWallpapper = ref(false);
+
+const abrirWallpapper = () => {
+    mostrarWallpapper.value = true;
+}
+const cerrarWallpapper = () => {
+    mostrarWallpapper.value = false;
+}
 </script>
 
 
 <template>
-    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano"></DesktopMenu>
+    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano" @abrirWallpapper="abrirWallpapper"></DesktopMenu>
+
+    <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" ></WallpapperChange>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
