@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref, computed } from 'vue';
 import dayjs from 'dayjs';
+import 'dayjs/locale/es';
 
 // Obtener batería
 import { Battery, BatteryFull, BatteryCharging, BatteryLow, BatteryMedium, Wifi } from 'lucide-vue-next';
@@ -9,8 +10,12 @@ const nivelBateria = ref<number | null>(null);
 const cargando = ref(false);
 
 // Gestión de la fecha y hora
+dayjs.locale('es');
 const horaActual = ref(dayjs().format('HH:mm'));
 const fechaActual = ref(dayjs().format('DD/MM/YYYY'));
+
+const fechaTooltip = ref(dayjs().locale('es').format('DD [de] MMMM [de] YYYY'));
+
 
 const actualizarFechaHora = () => {
     horaActual.value = dayjs().format('HH:mm');
@@ -76,7 +81,7 @@ const textoBateria = computed(() => {
         </div>
 
         <!-- Fecha y hora -->
-        <div class="fecha-hora">
+        <div class="fecha-hora" :data-fecha="fechaTooltip" >
             <p>{{ horaActual }}</p>
             <p>{{ fechaActual }}</p>
         </div>
@@ -101,12 +106,35 @@ const textoBateria = computed(() => {
     .fecha-hora {
         text-align: right;
     }
-
+    .fecha-hora::after {
+        content: attr(data-fecha);
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 54px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+        pointer-events: none;
+    }
+    .fecha-hora:hover::after {
+        opacity: 1;
+        transition-delay: .6s;
+    }
+    
+    /* BATERÍA */
     .div-bateria-wifi {
         display: flex;
         gap: 10px;
     }
-    /* BATERÍA */
     .div-bateria {
         position: relative;
     }

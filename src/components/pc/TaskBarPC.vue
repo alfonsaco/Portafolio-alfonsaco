@@ -26,22 +26,27 @@ const mostrarOcultarIA = () => {
             <img :src="logoIA" alt="Logo IA" class="logo-ia" />
         </div>
         
-        <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>
+        <div class="div-central-taskbar">
+            <div class="div-logo-alfonOS">
+                <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>    
+            </div>
 
-        <div class="div-buscador">
-            <input type="text" class="buscador" placeholder="Búsqueda"></input>
-            <Search class="icono-buscar"/>
+            <div class="div-buscador">
+                <input type="text" class="buscador" placeholder="Búsqueda"></input>
+                <Search class="icono-buscar"/>
+            </div>
+
+            <!-- Programas de la barra de tareas -->
+            <div class="div-programas-taskbar">
+                <a href="https://www.github.com/alfonsaco" target="_blank" data-programa="Perfil de GitHub">
+                    <img :src="iconoGitHub" alt="Icono GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank" data-programa="Perfil de LinkedIn">
+                    <img :src="iconoLinkedIn" alt="Icono inkedIn" />
+                </a>
+            </div>
         </div>
 
-        <!-- Programas de la barra de tareas -->
-        <div class="div-programas-taskbar">
-            <a href="https://www.github.com/alfonsaco" target="_blank" data-programa="Perfil de GitHub">
-                <img :src="iconoGitHub" alt="Icono GitHub" />
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" data-programa="Perfil de LinkedIn">
-                <img :src="iconoLinkedIn" alt="Icono inkedIn" />
-            </a>
-        </div>
 
         <UtilidadesTaskBar></UtilidadesTaskBar>
     </div>
@@ -53,7 +58,6 @@ const mostrarOcultarIA = () => {
         box-sizing: border-box;
         display: flex;
         align-items: center;
-        gap: 15px;
         justify-content: center;
         width: 100%;
         height: 50px;
@@ -63,12 +67,44 @@ const mostrarOcultarIA = () => {
         user-select: none;
         position: relative;
     }
+    .div-central-taskbar {
+        display: flex;
+        gap: 10px;
+        position: relative;
+    }
 
     /* LOGO SO */
-    .logo-alfonOS{
+    .logo-alfonOS {
         width: 30px;
         height: 30px;
         cursor: pointer;
+    }
+    .div-logo-alfonOS {
+        display: flex;
+        position: absolute;
+        left: calc(-10px - 30px)    }
+    .div-logo-alfonOS::after {
+        content: 'Inicio';
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+        pointer-events: none;
+    }
+    .div-logo-alfonOS:hover::after {
+        opacity: 1;
+        transition-delay: .6s;
     }
 
     /* BUSCADOR */

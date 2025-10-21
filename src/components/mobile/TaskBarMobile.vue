@@ -11,7 +11,7 @@ import iconoAlfonOS from '../../assets/alfonOS.png'
         <a href="https://www.github.com/alfonsaco" target="_blank">
                 <img :src="iconoGitHub" alt="Icono GitHub" />
             </a>
-        <a href="https://www.linkedin.com" target="_blank">
+        <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank">
             <img :src="iconoLinkedIn" alt="Icono inkedIn" />
         </a>
     </div>
