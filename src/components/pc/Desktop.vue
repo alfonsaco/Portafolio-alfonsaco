@@ -6,12 +6,13 @@ import { ref, onMounted, onUnmounted } from 'vue';
 // Imágenes iconos
 import OversizeLogo from '../../assets/oversize.png'
 import Carpeta from '../../assets/carpeta.png'
+import _100DayCSS from '../../assets/100DayCSS.png'
 
 // Añadimos los iconos al escritorio
 const iconosIzquierda = [
     { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Oversize', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
-    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
+    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://codepen.io/alfonsaco' },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },

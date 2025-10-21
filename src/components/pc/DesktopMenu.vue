@@ -38,7 +38,7 @@ const cambiarTamanoIcono = (tam: string) => {
             Terminal inútil
         </div>
         <div>
-            <Wallpaper></Wallpaper>
+            <Wallpaper class="iconos-menu"></Wallpaper>
             Personalizar
         </div>
     </div>
@@ -48,9 +48,10 @@ const cambiarTamanoIcono = (tam: string) => {
     .contenedor-menu {
         width: 200px;
         height: 300px;
-        background-color: rgb(190, 190, 190);
+        background-color: #222222;
+        border: 1px solid #999;
         position: absolute;
-        border-radius: 3px;
+        border-radius: 5px;
         left: 400px;
         top: 200px;
         user-select: none;
@@ -59,9 +60,10 @@ const cambiarTamanoIcono = (tam: string) => {
     }
 
     .contenedor-menu > div {
-        background-color: #FFF;
-        border-bottom: 1px solid #292929;
-        color: #292929;
+        background-color: #222222;
+        border-bottom: 1px solid #999;
+        color: #ffffff;
+        font-size: .85em;
         width: 100%;
         height: 35px;
         cursor: pointer;
@@ -72,29 +74,23 @@ const cambiarTamanoIcono = (tam: string) => {
         position: relative;
     }
     .contenedor-menu > div:hover {
-        background-color: #aaaaaa;
-    }
-
-    /* ICONOS DEL MENÚ */
-    .iconos-menu {
-        color: #000;
-    }
-
-    .flechas-menu {
-        position: absolute;
-        right: 10px;
+        background-color: #474747;
     }
 
     /* MENÚ DE VISTA */
     .div-ver {
         position: relative;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .div-ver:hover {
+        border-top-right-radius: 0px;
     }
     .menu-vista {
         width: 160px;
         height: auto;
-        background-color: #FFF;
+        background-color: transparent;
+        border: 1px solid #999;
         position: absolute;
         right: -160px;
         top: 0;
@@ -104,18 +100,31 @@ const cambiarTamanoIcono = (tam: string) => {
         border-bottom-right-radius: 3px;
     }
     .menu-vista > div {
-        background-color: #FFF;
-        border-bottom: 1px solid #000;
+        background-color: #222222;
+        border-bottom: 1px solid #999;
         text-align: left;
         height: 35px;
         display: flex;
         align-items: center;
         padding-left: 10px;
     }
+    .menu-vista > div:last-child {
+        border-bottom: 0;
+    }
     .menu-vista > div:hover {
-        background-color: #dbdbdb;
+        background-color: #474747;
     }
     .div-ver:hover .menu-vista {
         opacity: 1;
+    }
+
+    /* ICONOS DEL MENÚ */
+    .iconos-menu {
+        color: #ffffff;
+        width: 17px;
+    }
+    .flechas-menu {
+        position: absolute;
+        right: 10px;
     }
 </style>
