@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import Icono from './Icono.vue';
+import Icono from './Icon.vue';
 import DesktopMenu from './DesktopMenu.vue';
+import WallpapperChange from './WallpapperChange.vue';
+import SelectArea from './SelectArea.vue';
+
 import { ref, onMounted, onUnmounted } from 'vue';
 
 // Imágenes iconos
 import OversizeLogo from '../../assets/oversize.png'
 import Carpeta from '../../assets/carpeta.png'
 import _100DayCSS from '../../assets/100DayCSS.png'
-import WallpapperChange from './WallpapperChange.vue';
+import { couldStartTrivia } from 'typescript';
+
 
 // Añadimos los iconos al escritorio
 const iconosIzquierda = [
@@ -92,6 +96,76 @@ const abrirWallpapper = () => {
 const cerrarWallpapper = () => {
     mostrarWallpapper.value = false;
 }
+
+// Area de selección
+const ratonApretado = ref(false)
+const ratonX = ref(0)
+const ratonY = ref(0)
+const anchura = ref(0)
+const altura = ref(0)
+const arrastrando = ref(false)
+const inicioX = ref(0)
+const inicioY = ref(0)
+
+const empezarSeleccion = (e: MouseEvent) => {
+    if(e.button !== 0 || menuVisible.value) return;
+
+    arrastrando.value = true;
+    ratonApretado.value = true;
+
+    inicioX.value = e.clientX;
+    inicioY.value = e.clientY;
+
+    ratonX.value = e.clientX;
+    ratonY.value = e.clientY;
+    altura.value = 0;
+    anchura.value = 0;
+}
+
+const duranteSeleccion = (e: MouseEvent) => {
+    if (!arrastrando.value) return;
+
+    anchura.value = e.clientX - inicioX.value;
+    altura.value = e.clientY - inicioY.value;
+
+    if(anchura.value < 0) {
+        ratonX.value = e.clientX;
+        anchura.value = Math.abs(anchura.value);
+
+    } else {
+        ratonX.value = inicioX.value;
+    }
+
+    if(altura.value < 0) {
+        ratonY.value = e.clientY;
+        altura.value = Math.abs(altura.value);
+
+    } else {
+        ratonY.value = inicioY.value;
+    }
+}
+
+const terminarSeccion = () => {
+    if (!arrastrando.value) return;
+
+    arrastrando.value = false;
+
+    // Lo ocultamos tras un poco
+    setTimeout(() => {
+        ratonApretado.value = false;
+    }, 100);
+}
+
+onMounted(() => {
+    document.addEventListener('mousedown', empezarSeleccion);
+    document.addEventListener('mousemove', duranteSeleccion);
+    document.addEventListener('mouseup', terminarSeccion);
+});
+onUnmounted(() => {
+    document.removeEventListener('mousedown', empezarSeleccion);
+    document.removeEventListener('mousemove', duranteSeleccion);
+    document.removeEventListener('mouseup', terminarSeccion);
+});
 </script>
 
 
@@ -99,6 +173,8 @@ const cerrarWallpapper = () => {
     <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano" @abrirWallpapper="abrirWallpapper"></DesktopMenu>
 
     <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" @cambiarFondoPantalla="cambiarFondo" ></WallpapperChange>
+
+    <SelectArea :x="ratonX" :y="ratonY" :width="anchura" :height="altura" :visible="ratonApretado"></SelectArea>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
@@ -115,6 +191,7 @@ const cerrarWallpapper = () => {
 <style> 
     .escritorio {
         height: calc(100% - 50px);
+        position: relative;
     }
 
     .div-iconos {
