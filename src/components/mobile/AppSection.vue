@@ -5,7 +5,6 @@ import App from './App.vue';
 import OversizeLogo from '../../assets/oversize.png';
 import Instagram from '../../assets/instagram.png';
 import _100DayCSS from '../../assets/100DayCSS.png'
-import { url } from 'inspector';
 
 const apps = [
     { texto: 'Instagram', imagen: Instagram },

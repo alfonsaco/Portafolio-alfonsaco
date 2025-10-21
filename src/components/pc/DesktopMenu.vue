@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal } from 'lucide-vue-next';
-import { defineProps, defineEmits } from 'vue';
+import { defineEmits } from 'vue';
 
 const props = defineProps<{
     x: number

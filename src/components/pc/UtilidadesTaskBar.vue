@@ -92,9 +92,9 @@ const textoBateria = computed(() => {
 <style>
     .div-utilidades {
         position: absolute;
-        right: 20px;
+        right: 10px;
         display: flex;
-        gap: 15px;
+        gap: 3px;
         align-items: center;
     }
     .div-utilidades p {
@@ -105,6 +105,14 @@ const textoBateria = computed(() => {
     /* FECHA Y HORA */
     .fecha-hora {
         text-align: right;
+        border-radius: 5px;
+        padding: 0px 8px;
+        border: 1px solid transparent;
+        transition: .1s ease;
+    }
+    .fecha-hora:hover {
+        background-color: #ffffff11;
+        border-color: #ffffff15;
     }
     .fecha-hora::after {
         content: attr(data-fecha);
@@ -127,16 +135,28 @@ const textoBateria = computed(() => {
     }
     .fecha-hora:hover::after {
         opacity: 1;
-        transition-delay: .6s;
+        transition-delay: .5s;
     }
     
     /* BATERÍA */
     .div-bateria-wifi {
         display: flex;
-        gap: 10px;
+        align-items: center;
+        gap: 9px;
+        border-radius: 5px;
+        width: 100%;
+        height: 38px;
+        padding: 0px 7px;
+        border: 1px solid transparent;
+        transition: .1s ease;
+    }
+    .div-bateria-wifi:hover {
+        background-color: #ffffff11;
+        border-color: #ffffff15;
     }
     .div-bateria {
         position: relative;
+        display: flex;
     }
     .div-bateria::after {
         content: attr(data-bateria);
@@ -150,7 +170,7 @@ const textoBateria = computed(() => {
         background-color: #313131;
         border-radius: 5px;
         border: 1px solid #1a1a1a;
-        bottom: 50px;
+        bottom: 45px;
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
@@ -159,7 +179,7 @@ const textoBateria = computed(() => {
     }
     .div-bateria:hover::after {
         opacity: 1;
-        transition-delay: .6s;
+        transition-delay: .5s;
     }
     .iconos-utilidades {
         width: 20px;

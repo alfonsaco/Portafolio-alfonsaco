@@ -63,26 +63,40 @@ const mostrarOcultarIA = () => {
         height: 50px;
         background-color: #222222;
         border-top: 1px solid #999;
-        padding: 8px 20px;
+        padding: 8px 10px;
         user-select: none;
         position: relative;
     }
     .div-central-taskbar {
         display: flex;
+        align-items: center;
         gap: 10px;
         position: relative;
     }
 
     /* LOGO SO */
-    .logo-alfonOS {
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
     .div-logo-alfonOS {
         display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        left: calc(-10px - 30px)    }
+        height: 38px;
+        width: 38px;
+        left: calc(-10px - 35px);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        transition: .1s ease;
+        cursor: pointer;
+    }
+    .logo-alfonOS {
+        width: 27px;
+        height: 27px;
+    }
+    .div-logo-alfonOS:hover {
+        background-color: #ffffff11;
+        border-color: #ffffff15;
+    }
     .div-logo-alfonOS::after {
         content: 'Inicio';
         color: #FFF;
@@ -155,7 +169,9 @@ const mostrarOcultarIA = () => {
         transition: .3s ease;
     }
     .div-programas-taskbar a > img:hover {
-        scale: 0.85;
+        scale: 1.3;
+        filter: drop-shadow(0px 4px 4px #000000d5);
+        transform: translateY(-7px);
     }
 
     .div-programas-taskbar a::after {
@@ -185,20 +201,27 @@ const mostrarOcultarIA = () => {
      /* CONTENEDOR LOGO IA */
     .logo-ia-container {
         position: absolute;
-        left: 20px;
+        left: 10px;
+        height: 38px;
+        width: 38px;
         display: flex;
         align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        transition: .1s ease;
+        cursor: pointer;
+    }
+    .logo-ia-container:hover {
+        background-color: #bb3ce211;
+        border-color: #ffffff15;
     }
 
     /* LOGO IA */
     .logo-ia {
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
+        width: 27px;
+        height: 27px;
         transition: .3s ease;
-    }
-    .logo-ia:hover {
-        scale: 0.85;
     }
     .logo-ia-container::after {
         content: 'AIfonOS';
@@ -213,7 +236,7 @@ const mostrarOcultarIA = () => {
         border-radius: 5px;
         border: 1px solid #1a1a1a;
         bottom: 50px;
-        left: 100%;
+        left: 83%;
         transform: translateX(-50%);
         opacity: 0;
         transition: opacity .3s ease .1s;
