@@ -235,11 +235,12 @@ onClickOutside(menuIndexRef, () => {
         justify-content: center;
         border-radius: 5px;
         border: 1px solid transparent;
-        transition: .1s ease;
+        transition: .15s ease;
         cursor: pointer;
     }
     .logo-ia-container:hover {
         background-color: #bb3ce211;
+        box-shadow: 0px 0px 8px #bb3ce256;
         border-color: #ffffff15;
     }
 
