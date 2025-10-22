@@ -12,17 +12,32 @@ import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 
 import { Search } from 'lucide-vue-next';
 import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core';
 
 // Si está inactiva, se activa y viceversa
 const IAactiva = ref(false);
 const mostrarOcultarIA = () => {
     IAactiva.value = !IAactiva.value;
 }
+
+// Menú de index
+const indexActivo = ref(false);
+const menuIndexRef = ref(null);
+
+const alternarVisibilidadIndex = () => {
+    indexActivo.value = !indexActivo.value;
+}
+
+onClickOutside(menuIndexRef, () => {
+    indexActivo.value = false;
+});
 </script>
 
 
 <template>
     <AIWindow :activo="IAactiva"></AIWindow>
+    <IndexMenu :visible="indexActivo" @cerrar-index="indexActivo = false"></IndexMenu>
+
 
     <div class="barra-de-tareas">
         <!-- IA -->
@@ -31,10 +46,8 @@ const mostrarOcultarIA = () => {
         </div>
         
         <div class="div-central-taskbar">
-            <div class="div-logo-alfonOS">
-                <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>    
-
-                <IndexMenu></IndexMenu>
+            <div class="div-logo-alfonOS" @click="alternarVisibilidadIndex" ref="menuIndexRef">
+                <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>       
             </div>
 
             <div class="div-buscador">
@@ -75,6 +88,7 @@ const mostrarOcultarIA = () => {
         padding: 8px 10px;
         user-select: none;
         position: relative;
+        z-index: 500;
     }
     .div-central-taskbar {
         display: flex;

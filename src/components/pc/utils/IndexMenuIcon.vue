@@ -3,6 +3,7 @@
 const props = defineProps<{
   texto: string
   imagen: string
+  activarAnimacion: boolean
 }>();
 
 const emit = defineEmits<{
@@ -14,7 +15,9 @@ const manejarClickIndex = () => {
 </script>
 
 <template>
-    <div class="div-icono-menu-index" @click="manejarClickIndex">
+    <div class="div-icono-menu-index" 
+    @click="manejarClickIndex" 
+    :class="{'activar-animacion-menu-index': activarAnimacion}">
         <img :src="props.imagen" alt="Imagen de menú del indice">
         <p>{{ props.texto }}</p>
     </div>
@@ -31,7 +34,7 @@ const manejarClickIndex = () => {
         cursor: pointer;
         border-bottom: 1px solid #999;
         background-color: #222;
-        animation: animacion .6s ease;
+        z-index: 10;
     }
     .div-icono-menu-index:hover {
         background-color: #474747;
@@ -47,9 +50,13 @@ const manejarClickIndex = () => {
         margin: 0;
     }
 
+    .activar-animacion-menu-index {
+        animation: animacion .6s ease;
+    }
+
     @keyframes animacion {
         from {
-            transform: translateY(100px);
+            transform: translateY(200px);
             scale: .5;
             border-color: transparent;
         }
