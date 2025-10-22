@@ -54,7 +54,7 @@ const mostrarMenu = (e: MouseEvent) => {
     if(e.clientY < 305) {
         menuY.value = e.clientY + 5;
     } else {
-        menuY.value = e.clientY - 300;
+        menuY.value = e.clientY - 212;
     }
     
     menuVisible.value = true;

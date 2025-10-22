@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal } from 'lucide-vue-next';
+import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal, User, Contact } from 'lucide-vue-next';
 import { defineEmits } from 'vue';
 
 const props = defineProps<{
@@ -17,6 +17,10 @@ const cambiarTamanoIcono = (tam: string) => {
 const abrirWallpapper = () => {
     emit('abrirWallpapper');
 }
+
+const actualizarWeb = ()  => {
+    window.location.reload();
+}
 </script>
 
 <template>
@@ -33,14 +37,27 @@ const abrirWallpapper = () => {
                 <div @click="cambiarTamanoIcono('grande')">Iconos grandes</div>
             </div>
         </div>
-        <div>
+        <!-- Actualizar web -->
+        <div @click="actualizarWeb">
             <RefreshCcw class="iconos-menu"></RefreshCcw>
             Actualizar
         </div>
+        <!-- Terminal -->
         <div>
             <Terminal class="iconos-menu"></Terminal>
             Terminal inútil
         </div>
+        <!-- Sobre mi -->
+        <div>
+            <User class="iconos-menu"></User>
+            Sobre mí
+        </div>
+        <!-- Contacto -->
+         <div>
+            <Contact class="iconos-menu"></Contact>
+            Contacto
+         </div>
+        <!-- Cambiar Wallpapper -->
         <div @click="abrirWallpapper" >
             <Wallpaper class="iconos-menu" ></Wallpaper>
             Personalizar
@@ -51,9 +68,7 @@ const abrirWallpapper = () => {
 <style>
     .contenedor-menu {
         width: 200px;
-        height: 300px;
-        background-color: #222222;
-        border: 1px solid #999;
+        background-color: transparent;
         position: absolute;
         border-radius: 5px;
         left: 400px;
@@ -61,10 +76,12 @@ const abrirWallpapper = () => {
         user-select: none;
         opacity: 1;
         z-index: 100;
+        border: 1px solid #999;
     }
 
     .contenedor-menu > div {
-        background-color: #222222;
+        background-color: #222222c5;
+        backdrop-filter: blur(8px);
         border-bottom: 1px solid #999;
         color: #ffffff;
         font-size: .85em;
@@ -77,8 +94,13 @@ const abrirWallpapper = () => {
         gap: 10px;
         position: relative;
     }
+    .contenedor-menu > div:last-child {
+        border-bottom: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
     .contenedor-menu > div:hover {
-        background-color: #474747;
+        background-color: #474747a1;
     }
 
     /* MENÚ DE VISTA */
@@ -97,14 +119,15 @@ const abrirWallpapper = () => {
         border: 1px solid #999;
         position: absolute;
         right: -160px;
-        top: 0;
-        opacity: 0;
+        top: -1px;
+        visibility: hidden;
         border-top-right-radius: 3px;
         overflow: hidden;
         border-bottom-right-radius: 3px;
     }
     .menu-vista > div {
-        background-color: #222222;
+        background-color: #222222c5;
+        backdrop-filter: blur(8px);
         border-bottom: 1px solid #999;
         text-align: left;
         height: 35px;
@@ -116,10 +139,10 @@ const abrirWallpapper = () => {
         border-bottom: 0;
     }
     .menu-vista > div:hover {
-        background-color: #474747;
+         background-color: #474747a1;
     }
     .div-ver:hover .menu-vista {
-        opacity: 1;
+        visibility: visible;
     }
 
     /* ICONOS DEL MENÚ */
