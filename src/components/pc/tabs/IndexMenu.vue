@@ -43,7 +43,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-    <div class="div-menu-index" :class="{'menu-visible': visible, 'menu-hidden': !visible}">
+    <div class="div-menu-index" :class="visible ? 'menu-visible' : 'menu-hidden'">
         <IndexMenuIcon v-for="(aplicacion, i) in aplicaciones" 
         :key="i" 
         :texto="aplicacion.texto" 
@@ -69,7 +69,7 @@ const emit = defineEmits<{
         overflow: hidden;
         transition: .7s ease;
         transform: translateY(110%); 
-        z-index: 10;
+        z-index: 100;
     }
 
     .menu-visible {

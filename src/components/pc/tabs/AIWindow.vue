@@ -1,8 +1,9 @@
 <script setup lang="ts">
+
 const props = defineProps<{
-    activo : Boolean
+    activo : boolean
 }>();
-const activo = props.activo;
+
 </script>
 
 
@@ -16,23 +17,23 @@ const activo = props.activo;
 <style>
     .div-ventana{  
         background-color: #222222;
-        width: 300px;
-        height: 350px;
+        width: 350px;
+        height: 400px;
         position: absolute;
         bottom: 60px;
-        left: -300px;
+        left: -350px;
         border: 1px solid #999999;
         border-radius: 7px;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
         border-left: 0px;
-        z-index: 100;
+        z-index: 90;
         transition: .7s ease;
     }
     .div-ventana-activa {
         left: 0px;
     }
     .div-ventana-inactiva {
-        left: -300px;
+        left: -350px;
     }
 </style>

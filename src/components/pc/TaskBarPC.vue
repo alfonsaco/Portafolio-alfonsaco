@@ -132,7 +132,7 @@ onClickOutside(menuIndexRef, () => {
         background-color: #313131;
         border-radius: 5px;
         border: 1px solid #1a1a1a;
-        bottom: 50px;
+        bottom: 52px;
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
@@ -261,7 +261,7 @@ onClickOutside(menuIndexRef, () => {
         background-color: #313131;
         border-radius: 5px;
         border: 1px solid #1a1a1a;
-        bottom: 50px;
+        bottom: 52px;
         left: 83%;
         transform: translateX(-50%);
         opacity: 0;
