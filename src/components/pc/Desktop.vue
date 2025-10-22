@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Icono from './Icon.vue';
-import DesktopMenu from './DesktopMenu.vue';
-import WallpapperChange from './WallpapperChange.vue';
-import SelectArea from './SelectArea.vue';
+import Icono from './utils/Icon.vue';
+import DesktopMenu from '../pc/tabs/DesktopMenu.vue';
+import WallpapperChange from './tabs/WallpapperChange.vue';
+import SelectArea from './utils/SelectArea.vue';
+import EmailView from './tabs/EmailView.vue';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -10,7 +11,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import OversizeLogo from '../../assets/oversize.png'
 import Carpeta from '../../assets/carpeta.png'
 import _100DayCSS from '../../assets/100DayCSS.png'
-import { couldStartTrivia } from 'typescript';
+import Contacto from '../../assets/contacto.png'
 
 
 // Añadimos los iconos al escritorio
@@ -31,7 +32,7 @@ const iconosIzquierda = [
 ]
 
 const iconosDerecha = [
-    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Contacto },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
@@ -175,6 +176,8 @@ onUnmounted(() => {
     <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" @cambiarFondoPantalla="cambiarFondo" ></WallpapperChange>
 
     <SelectArea :x="ratonX" :y="ratonY" :width="anchura" :height="altura" :visible="ratonApretado"></SelectArea>
+
+    <EmailView></EmailView>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">

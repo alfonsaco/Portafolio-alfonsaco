@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import AIWindow from './AIWindow.vue'
+import AIWindow from './tabs/AIWindow.vue'
+import IndexMenu from './tabs/IndexMenu.vue'
 
 import iconoGitHub from '../../assets/github.png'
 import iconoLinkedIn from '../../assets/linkedin.png'
@@ -32,6 +33,8 @@ const mostrarOcultarIA = () => {
         <div class="div-central-taskbar">
             <div class="div-logo-alfonOS">
                 <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>    
+
+                <IndexMenu></IndexMenu>
             </div>
 
             <div class="div-buscador">
@@ -53,7 +56,7 @@ const mostrarOcultarIA = () => {
             </div>
         </div>
 
-
+        <!-- Fecha, reloj, batería... -->
         <UtilidadesTaskBar></UtilidadesTaskBar>
     </div>
 </template>

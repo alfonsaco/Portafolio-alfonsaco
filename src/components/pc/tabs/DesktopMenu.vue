@@ -111,6 +111,7 @@ const actualizarWeb = ()  => {
     }
     .div-ver:hover {
         border-top-right-radius: 0px;
+        outline: 1px solid #999;
     }
     .menu-vista {
         width: 160px;
@@ -121,9 +122,9 @@ const actualizarWeb = ()  => {
         right: -160px;
         top: -1px;
         visibility: hidden;
-        border-top-right-radius: 3px;
+        border-top-right-radius: 5px;
         overflow: hidden;
-        border-bottom-right-radius: 3px;
+        border-bottom-right-radius: 5px;
     }
     .menu-vista > div {
         background-color: #222222c5;
@@ -139,7 +140,7 @@ const actualizarWeb = ()  => {
         border-bottom: 0;
     }
     .menu-vista > div:hover {
-         background-color: #474747a1;
+        background-color: #474747a1;
     }
     .div-ver:hover .menu-vista {
         visibility: visible;
