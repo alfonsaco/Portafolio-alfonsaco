@@ -1,15 +1,37 @@
 <script setup lang="ts">
 import LogoIA from '../../../assets/ai.png'
+import { usarGroq } from '../utils/groqAI'
+
+import { X } from 'lucide-vue-next';
+
 
 const props = defineProps<{
-    activo : boolean
-}>();
+    activo: boolean
+}>()
 
+// Cerrar ventana al pulsar la X
+const emit = defineEmits(['cerrar']);
+
+const {
+  estado, respuesta, cargando, error,
+  mensajeUsuario, modeloSeleccionado, modelosDisponibles,
+  formattedResponse, testGroq
+} = usarGroq()
+
+// Función para enviar con Enter
+const enviarConEnter = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' && !cargando.value) {
+    testGroq()
+  }
+}
 </script>
 
 
 <template>
     <div class="div-ventana-IA" :class="activo ? 'div-ventana-activa' : 'div-ventana-inactiva' ">
+        
+        <X class="icono-cerrar-IA" @click="emit('cerrar')"></X>
+
         <div class="div-respuestas-IA">
             <div class="div-ventana-ia-logo">
                 <img :src="LogoIA" alt="Logo IA">
@@ -17,13 +39,36 @@ const props = defineProps<{
             </div>
             
             <p>Hola, soy AI-fon, y estoy aquí para resolver tus problemas. No hago
-                nada en especial, mi dueño simplemente me agregó porque ahora todo lleva
-                IA y poner IAs da buena imagen.
+                nada en especial, pero como ahora a todo le metéis IA, 
+                pues le meto una IA.
             </p>
+
+            <!-- Estado y respuestas -->
+            <div class="estado-container">
+                <p class="estado">Estado: {{ estado }}</p>
+                <div v-if="error" class="error">{{ error }}</div>
+                
+                <div v-if="formattedResponse" class="response-container">
+                    <h3>Respuesta:</h3>
+                    <div class="respuesta-texto">{{ formattedResponse }}</div>
+                </div>
+            </div>
         </div>
 
-        <div class="div-IA-texto">
-            <input type="text" placeholder="Preguntame algo">
+        <!-- Input único para mensaje -->
+        <div class="div-IA-input">
+            <input 
+                v-model="mensajeUsuario" 
+                type="text" 
+                placeholder="Pregúntame algo"
+                :disabled="cargando"
+                @keypress="enviarConEnter" >
+            <button 
+                @click="testGroq" 
+                :disabled="cargando || !mensajeUsuario.trim()" 
+                class="btn-enviar-IA" >
+                {{ cargando ? '...' : '➤' }}
+            </button>
         </div>
     </div>
 </template>
@@ -32,11 +77,10 @@ const props = defineProps<{
 <style>
     .div-ventana-IA {  
         background-color: #222222;
-        width: 350px;
-        height: 400px;
+        width: 450px;
+        height: 500px;
         position: absolute;
         bottom: 60px;
-        left: -350px;
         border: 1px solid #999999;
         border-radius: 7px;
         border-top-left-radius: 0px;
@@ -44,15 +88,17 @@ const props = defineProps<{
         border-left: 0px;
         z-index: 90;
         transition: .7s ease;
-        padding: 9px 15px;
+        padding: 20px 15px 9px 15px;
+        left: -500px;
     }
+
 
     /* ANIMACIONES */
     .div-ventana-activa {
         left: 0px;
     }
     .div-ventana-inactiva {
-        left: -350px;
+        left: -500px;
     }
 
     .div-respuestas-IA {
@@ -60,39 +106,121 @@ const props = defineProps<{
         overflow: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        padding-bottom: 12px;
     }
+
 
     /* TEXTOS */
     .div-respuestas-IA > p {
         text-align: justify;
-        font-size: .9em;
+        font-size: .85em;
         color: #b3b3b3;
         line-height: 18px;
         margin: 0;
+        user-select: none;
     }
     .div-ventana-ia-logo h2 {
         margin: 0;
         margin-top: -15px;
+        user-select: none;
     }
     .div-ventana-ia-logo img {
         width: 25px;
         height: 25px;
+        user-select: none;
     }
 
+
     /* INPUT */
-    .div-IA-texto > input {
+    .div-IA-input {
+        position: relative;
+        margin-top: 10px;
+    }
+    .div-IA-input > input {
         width: 100%;
         background-color: #444;
-        height: 30PX;
+        height: 35px;
         border-radius: 50px;
         border: 1px solid #999;
-        padding-left: 15px;
         color: #f0f0f0;
+        padding: 0 45px 0 15px;
+        font-size: 0.9em;
     }
-    .div-IA-texto > input::placeholder {
+    .div-IA-input > input::placeholder {
         color: #888;
     }
-    .div-IA-texto > input:focus {
+    .div-IA-input > input:focus {
         outline: 0;
+    }
+    .btn-enviar-IA {
+        position: absolute;
+        width: 35px;
+        height: 27px;
+        right: 5px;
+        top: 51%;
+        transform: translateY(-50%);
+        border: 1px solid #222222;
+        background: #8743e0;
+        color: white;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: .8em;
+    }
+    .btn-enviar-IA:disabled {
+        background: #666;
+        cursor: not-allowed;
+    }
+    .btn-enviar-IA:hover:not(:disabled) {
+        background: #925fd4;
+    }
+
+
+    /* ESTADO Y RESPUESTAS */
+    .estado-container {
+        margin-top: 10px;
+    }
+    .estado {
+        font-size: 0.8em;
+        color: #888;
+        margin: 5px 0;
+    }
+    .error {
+        color: #ff6b6b;
+        font-size: 0.9em;
+        margin: 10px 0;
+        padding: 8px;
+        background: rgba(255, 107, 107, 0.1);
+        border-radius: 4px;
+    }
+    .response-container {
+        margin-top: 15px;
+    }
+    .response-container h3 {
+        color: #f0f0f0;
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+    .respuesta-texto {
+        background: #333;
+        padding: 12px;
+        border-radius: 8px;
+        color: #e0e0e0;
+        font-size: 0.9em;
+        line-height: 1.4;
+        border: 1px solid #444;
+        text-align: left;
+    }
+
+    .icono-cerrar-IA {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer;
+        color: #999;
+        width: 20px;
+        height: 20px;
     }
 </style>

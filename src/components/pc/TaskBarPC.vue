@@ -35,7 +35,7 @@ onClickOutside(menuIndexRef, () => {
 
 
 <template>
-    <AIWindow :activo="IAactiva"></AIWindow>
+    <AIWindow :activo="IAactiva" @cerrar="IAactiva = false"></AIWindow>
     <IndexMenu :visible="indexActivo" @cerrar-index="indexActivo = false"></IndexMenu>
 
 
