@@ -8,20 +8,28 @@ import GitHub from '../../../assets/github.png'
 import CodePen from '../../../assets/codepen.png'
 import LinkedIn from '../../../assets/linkedin.png'
 
-const aplicaciones = [
-    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
-    { texto: 'CodePen', imagen: CodePen, estilo: 'animation-delay: 20ms' },
-    { texto: 'GitHub', imagen: GitHub, estilo: 'animation-delay: 40ms' },
-    { texto: 'LinkedIn', imagen: LinkedIn, estilo: 'animation-delay: 60ms' },
-    { texto: 'Oversize Studio', imagen: Oversize, estilo: 'animation-delay: 80ms' },
-    { texto: 'Oversize Studio', imagen: Oversize, estilo: 'animation-delay: 100ms' },
-    { texto: 'GitHub', imagen: GitHub, estilo: 'animation-delay: 120ms' },
-    { texto: 'LinkedIn', imagen: LinkedIn, estilo: 'animation-delay: 140ms' },
-    { texto: 'Oversize Studio', imagen: Oversize, estilo: 'animation-delay: 160ms' },
-    { texto: 'GitHub', imagen: GitHub, estilo: 'animation-delay: 180ms' },
-    { texto: 'LinkedIn', imagen: LinkedIn, estilo: 'animation-delay: 200ms' },
-    { texto: 'Oversize Studio', imagen: Oversize, estilo: 'animation-delay: 220ms' },
+const datosBase = [
+  { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
+  { texto: 'CodePen', imagen: CodePen },
+  { texto: 'GitHub', imagen: GitHub },
+  { texto: 'LinkedIn', imagen: LinkedIn },
+  { texto: 'Oversize Studio', imagen: Oversize },
+  { texto: 'Oversize Studio', imagen: Oversize },
+  { texto: 'GitHub', imagen: GitHub },
+  { texto: 'LinkedIn', imagen: LinkedIn },
+  { texto: 'Oversize Studio', imagen: Oversize },
+  { texto: 'GitHub', imagen: GitHub },
+  { texto: 'LinkedIn', imagen: LinkedIn },
+  { texto: 'Oversize Studio', imagen: Oversize },
 ];
+// Para poner el delay a la animación
+const delayBase = 60;
+const delaySuma = 20;
+
+const aplicacionesDelay = datosBase.map((app, i) => ({
+    ...app,
+    estilo: `animation-delay: ${delayBase + i * delaySuma}ms`
+}));
 
 const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string }) => {
     if(aplicacion.url) {
@@ -44,7 +52,7 @@ const emit = defineEmits<{
 
 <template>
     <div class="div-menu-index" :class="visible ? 'menu-visible' : 'menu-hidden'">
-        <IndexMenuIcon v-for="(aplicacion, i) in aplicaciones" 
+        <IndexMenuIcon v-for="(aplicacion, i) in aplicacionesDelay" 
         :key="i" 
         :texto="aplicacion.texto" 
         :imagen="aplicacion.imagen" 

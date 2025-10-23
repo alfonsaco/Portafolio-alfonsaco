@@ -22,17 +22,11 @@ const iconosIzquierda = [
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Proyecto', imagen: Carpeta }
 ]
 
 const iconosDerecha = [
-    { texto: 'Proyecto', imagen: Contacto },
+    { texto: 'Contacto', imagen: Contacto },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
     { texto: 'Proyecto', imagen: Carpeta },
@@ -207,6 +201,7 @@ onUnmounted(() => {
         left: 30px;
         top: 30px;
         margin-bottom: 100px;
+        align-items: start;
     }
 
     .div-iconos-2 {
@@ -214,10 +209,11 @@ onUnmounted(() => {
         column-gap: 15px;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, minmax(50px, 1fr));
-        height: 100%;
+        height: 90vh;
         position: absolute;
         right: 30px;
         top: 30px;
         margin-bottom: 100px;
+        align-items: start;
     }
 </style>

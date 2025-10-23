@@ -34,23 +34,24 @@ const estilo = computed(() => {
 <style>
     .div-icono {
         cursor: pointer;
-        height: 67px;
-        width: 70px;
+        height: auto;
+        width: auto;
         user-select: none;
         border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 4px 2px;
     }
     .div-icono:hover {
         background-color: #FFFfff20;
-    }
-    .imagen-icono {
-    
     }
     .texto-icono {
         color: #FFF;
         margin: 0;
         font-size: .8em;
-        position: relative;
-        top: -8px;
         text-align: center;
         max-width: 70px;       
         display: -webkit-box;         

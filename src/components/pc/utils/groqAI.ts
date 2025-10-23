@@ -163,6 +163,9 @@ export function usarGroq() {
     } finally {
       cargando.value = false
     }
+
+    // Vacíamos input
+    mensajeUsuario.value = "";
   }
 
   const establecerInformacion = () => {

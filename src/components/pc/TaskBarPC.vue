@@ -160,6 +160,7 @@ onClickOutside(menuIndexRef, () => {
         border: 0px solid #5e5e5e;
         padding-left: 30px;
         transition: .2s ease;
+        padding-top: 2px;
     }
     .buscador:focus {
         outline: 0px;
@@ -174,6 +175,10 @@ onClickOutside(menuIndexRef, () => {
     }
     .div-buscador:hover .buscador {
         background-color: rgb(226, 226, 226);
+        filter: drop-shadow(0px 0px 4px #2161c2);
+    }
+    .div-buscador:hover {
+        border-color: #2161c2;
     }
     .div-buscador:hover .icono-buscar {
         color: #2161c2;
