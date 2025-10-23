@@ -13,7 +13,7 @@ const datosBase = [
   { texto: 'CodePen', imagen: CodePen },
   { texto: 'GitHub', imagen: GitHub },
   { texto: 'LinkedIn', imagen: LinkedIn },
-  { texto: 'Oversize Studio', imagen: Oversize },
+  { texto: 'Contacto', imagen: Oversize },
   { texto: 'Oversize Studio', imagen: Oversize },
   { texto: 'GitHub', imagen: GitHub },
   { texto: 'LinkedIn', imagen: LinkedIn },

@@ -12,6 +12,8 @@ import OversizeLogo from '../../assets/oversize.png'
 import Carpeta from '../../assets/carpeta.png'
 import _100DayCSS from '../../assets/100DayCSS.png'
 import Contacto from '../../assets/contacto.png'
+import SobreMi from '../../assets/about.png'
+import Certificados from '../../assets/certificados.png'
 
 
 // Añadimos los iconos al escritorio
@@ -27,10 +29,8 @@ const iconosIzquierda = [
 
 const iconosDerecha = [
     { texto: 'Contacto', imagen: Contacto },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'Sobre mí', imagen: SobreMi },
+    { texto: 'Certificaciones', imagen: Certificados },
 ]
 
 // Designamos las coordenadas del menú del escritorio al hacer Click Dcho
@@ -207,7 +207,7 @@ onUnmounted(() => {
     .div-iconos-2 {
         display: grid;
         column-gap: 15px;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(8, minmax(50px, 1fr));
         height: 90vh;
         position: absolute;
@@ -215,5 +215,6 @@ onUnmounted(() => {
         top: 30px;
         margin-bottom: 100px;
         align-items: start;
+        direction: rtl;
     }
 </style>

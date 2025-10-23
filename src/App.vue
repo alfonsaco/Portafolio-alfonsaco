@@ -62,5 +62,6 @@ const fondoPantalla = computed(() => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: url('./assets/flatwedge.cur'), auto;
   }
 </style>

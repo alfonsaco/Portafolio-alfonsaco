@@ -31,7 +31,7 @@ export function usarGroq() {
   })
 
   const systemPrompt = computed(() => {
-    return `Eres un asistente útil que responde preguntas. Hablarás a los usuarios con palabras como tete, hermano, compadre, primo, socio, diarera.
+    return `Eres un asistente útil que responde preguntas. Hablarás a los usuarios con palabras como hermano.
       
       INFORMACIÓN SOBRE EL CREADOR:
       - Nombre: ${datosCreador.value.nombre}
