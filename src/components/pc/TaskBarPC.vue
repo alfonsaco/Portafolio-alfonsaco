@@ -13,6 +13,7 @@ import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 import { Search } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
+import SearchWindow from './tabs/SearchWindow.vue'
 
 // Si está inactiva, se activa y viceversa
 const IAactiva = ref(false);
@@ -37,7 +38,7 @@ onClickOutside(menuIndexRef, () => {
 <template>
     <AIWindow :activo="IAactiva" @cerrar="IAactiva = false"></AIWindow>
     <IndexMenu :visible="indexActivo" @cerrar-index="indexActivo = false"></IndexMenu>
-
+    <SearchWindow></SearchWindow>
 
     <div class="barra-de-tareas">
         <!-- IA -->

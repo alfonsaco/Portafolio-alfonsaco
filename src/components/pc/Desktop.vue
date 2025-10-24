@@ -9,22 +9,22 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 // Imágenes iconos
 import OversizeLogo from '../../assets/oversize.png'
-import Carpeta from '../../assets/carpeta.png'
 import _100DayCSS from '../../assets/100DayCSS.png'
 import Contacto from '../../assets/contacto.png'
 import SobreMi from '../../assets/about.png'
 import Certificados from '../../assets/certificados.png'
+import FlappyParfums from '../../assets/flappy.png'
+import CodeZen from '../../assets/codezen.png'
+import CRM from '../../assets/logo_crm.png'
 
 
 // Añadimos los iconos al escritorio
 const iconosIzquierda = [
-    { texto: 'Proyecto', imagen: Carpeta },
+    { texto: 'CodeZen', imagen: CodeZen },
     { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
     { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta },
-    { texto: 'Proyecto', imagen: Carpeta }
+    { texto: 'Flappy Parfums', imagen: FlappyParfums },
+    { texto: 'CRM', imagen: CRM }
 ]
 
 const iconosDerecha = [
