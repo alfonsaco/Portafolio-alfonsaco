@@ -26,6 +26,7 @@
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         overflow: hidden;
+        visibility: hidden;
     }
 
     .div-ventana-buscador > div:first-child {

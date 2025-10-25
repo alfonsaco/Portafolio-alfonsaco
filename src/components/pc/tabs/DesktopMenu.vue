@@ -8,7 +8,7 @@ const props = defineProps<{
 }>();
 
 // Cambiar tamaño de los iconos del escritorio
-const emit = defineEmits(['cambiarTamanoIcono', 'abrirWallpapper']);
+const emit = defineEmits(['cambiarTamanoIcono', 'abrirWallpapper', 'mostrarEmail']);
 
 const cambiarTamanoIcono = (tam: string) => {
     emit('cambiarTamanoIcono', tam);
@@ -20,6 +20,10 @@ const abrirWallpapper = () => {
 
 const actualizarWeb = ()  => {
     window.location.reload();
+}
+
+const mostrarEmail = () => {
+    emit('mostrarEmail');
 }
 </script>
 
@@ -53,7 +57,7 @@ const actualizarWeb = ()  => {
             Sobre mí
         </div>
         <!-- Contacto -->
-         <div>
+         <div @click="mostrarEmail">
             <Contact class="iconos-menu"></Contact>
             Contacto
          </div>

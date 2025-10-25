@@ -107,6 +107,7 @@ const enviarConEnter = (event: KeyboardEvent) => {
         scrollbar-width: none;
         -ms-overflow-style: none;
         padding-bottom: 12px;
+        margin-top: 0px;
     }
 
 
@@ -216,8 +217,8 @@ const enviarConEnter = (event: KeyboardEvent) => {
 
     .icono-cerrar-IA {
         position: absolute;
-        right: 15px;
-        top: 15px;
+        right: 10px;
+        top: 10px;
         cursor: pointer;
         color: #999;
         width: 20px;

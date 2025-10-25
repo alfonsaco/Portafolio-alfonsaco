@@ -2,6 +2,7 @@
 import Icono from './utils/Icon.vue';
 import DesktopMenu from '../pc/tabs/DesktopMenu.vue';
 import WallpapperChange from './tabs/WallpapperChange.vue';
+import Widget from './tabs/Widget.vue';
 import SelectArea from './utils/SelectArea.vue';
 import EmailView from './tabs/EmailView.vue';
 
@@ -161,17 +162,33 @@ onUnmounted(() => {
     document.removeEventListener('mousemove', duranteSeleccion);
     document.removeEventListener('mouseup', terminarSeccion);
 });
+
+
+// Mostrar email al pulsar en la opción
+const mostrarEmail = ref(false);
+
+const manejarMostrarEmail = () => {
+    mostrarEmail.value = true;
+}
+
+const cerrarEmail = () => {
+    mostrarEmail.value = false;
+}
 </script>
 
 
 <template>
-    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" @cambiarTamanoIcono="actualizarTamano" @abrirWallpapper="abrirWallpapper"></DesktopMenu>
+    <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" 
+    @cambiarTamanoIcono="actualizarTamano" 
+    @abrirWallpapper="abrirWallpapper"
+    @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
+    <Widget></Widget>
 
     <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" @cambiarFondoPantalla="cambiarFondo" ></WallpapperChange>
 
     <SelectArea :x="ratonX" :y="ratonY" :width="anchura" :height="altura" :visible="ratonApretado"></SelectArea>
 
-    <EmailView></EmailView>
+    <EmailView v-if="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
