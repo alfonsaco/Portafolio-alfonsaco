@@ -1,0 +1,50 @@
+[
+    {
+        "texto": "CodeZen",
+        "imagen": "src/assets/codezen.png",
+        "action": "",
+        "escritorio": "izq"
+    },
+    {
+        "texto": "Oversize Studios",
+        "imagen": "src/assets/oversize.png",
+        "url": "https://alfonsaco.github.io/Oversize/index.html",
+        "escritorio": "izq"
+    },
+    {
+        "texto": "100DayCSS",
+        "imagen": "src/assets/100DayCSS.png",
+        "url": "https://100dayscss.com/progress/100DayCSS/",
+        "escritorio": "izq"
+    },
+    {
+        "texto": "Flappy Parfums",
+        "imagen": "src/assets/flappy.png",
+        "action": "",
+        "escritorio": "izq"
+    },
+    {
+        "texto": "CRM",
+        "imagen": "src/assets/logo_crm.png",
+        "action": "",
+        "escritorio": "izq"
+    },
+    {
+        "texto": "Contacto",
+        "imagen": "src/assets/contacto.png",
+        "action": "contacto",
+        "escritorio": "dcha"
+    },
+    {
+        "texto": "Sobre mí",
+        "imagen": "src/assets/about.png",
+        "action": "",
+        "escritorio": "dcha"
+    },
+    {
+        "texto": "Certificaciones",
+        "imagen": "src/assets/certificados.png",
+        "action": "",
+        "escritorio": "dcha"
+    }
+]
