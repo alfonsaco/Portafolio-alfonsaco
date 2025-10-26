@@ -16,11 +16,13 @@ const aplicacionesDelay = computed(() =>
         estilo: `animation-delay: ${delayBase + i * delaySuma}ms`
     }))
 );
-const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string }) => {
+const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string, action?: string }) => {
     if(aplicacion.url) {
         window.open(aplicacion.url, '_blank')
     } else {
-
+        if(aplicacion.action === 'contacto') {
+            emit('mostrar-email');
+        }
     }
 
     emit('cerrar-index');
@@ -32,6 +34,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
     (e: 'cerrar-index'): void
+    (e: 'mostrar-email'): void
 }>();
 </script>
 

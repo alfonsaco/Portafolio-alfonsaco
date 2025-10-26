@@ -46,5 +46,20 @@
         "imagen": "src/assets/certificados.png",
         "action": "",
         "escritorio": "dcha"
+    },
+    {
+        "texto": "GitHub",
+        "imagen": "src/assets/github.png",
+        "url": "https://www.github.com/alfonsaco"
+    },
+    {
+        "texto": "LinkedIn",
+        "imagen": "src/assets/linkedin.png",
+        "url": "https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/"
+    },
+    {
+        "texto": "CodePen",
+        "imagen": "src/assets/codepen.png",
+        "url": "https://codepen.io/alfonsaco"
     }
 ]

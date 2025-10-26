@@ -160,14 +160,19 @@ const cerrarEmail = () => {
 
 <template>
     <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" 
-    @cambiarTamanoIcono="actualizarTamano" 
-    @abrirWallpapper="abrirWallpapper"
-    @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
+        @cambiarTamanoIcono="actualizarTamano" 
+        @abrirWallpapper="abrirWallpapper"
+        @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
+
     <Widget></Widget>
 
-    <WallpapperChange v-if="mostrarWallpapper" @cerrar="cerrarWallpapper" @cambiarFondoPantalla="cambiarFondo" ></WallpapperChange>
+    <WallpapperChange v-if="mostrarWallpapper" 
+        @cerrar="cerrarWallpapper" 
+        @cambiarFondoPantalla="cambiarFondo"></WallpapperChange>
 
-    <SelectArea :x="ratonX" :y="ratonY" :width="anchura" :height="altura" :visible="ratonApretado"></SelectArea>
+    <SelectArea :x="ratonX" :y="ratonY" 
+        :width="anchura" :height="altura" 
+        :visible="ratonApretado"></SelectArea>
 
     <EmailView :mostrarEmail="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
 

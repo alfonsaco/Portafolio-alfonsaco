@@ -32,12 +32,26 @@ const alternarVisibilidadIndex = () => {
 onClickOutside(menuIndexRef, () => {
     indexActivo.value = false;
 });
+
+
+// Manejar el mostrar emial, conectamos con Desktop.vue y IndexMenu.vue
+const emit = defineEmits<{
+    (e: 'mostrar-email'): void
+}>();
+
+const manejarMostrarEmail = () => {
+    emit('mostrar-email');
+};
 </script>
 
 
 <template>
     <AIWindow :activo="IAactiva" @cerrar="IAactiva = false"></AIWindow>
-    <IndexMenu :visible="indexActivo" @cerrar-index="indexActivo = false"></IndexMenu>
+
+    <IndexMenu :visible="indexActivo" 
+        @cerrar-index="indexActivo = false" 
+        @mostrar-email="manejarMostrarEmail"></IndexMenu>
+
     <SearchWindow></SearchWindow>
 
     <div class="barra-de-tareas">
