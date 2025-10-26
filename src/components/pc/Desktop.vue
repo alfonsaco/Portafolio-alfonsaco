@@ -8,31 +8,10 @@ import EmailView from './tabs/EmailView.vue';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Imágenes iconos
-import OversizeLogo from '../../assets/oversize.png'
-import _100DayCSS from '../../assets/100DayCSS.png'
-import Contacto from '../../assets/contacto.png'
-import SobreMi from '../../assets/about.png'
-import Certificados from '../../assets/certificados.png'
-import FlappyParfums from '../../assets/flappy.png'
-import CodeZen from '../../assets/codezen.png'
-import CRM from '../../assets/logo_crm.png'
+// Obtenemos los iconos del JSON
+import { usarIconos } from '../../data/UseIcons'
+const { iconosDerecha, iconosIzquierda } = usarIconos();
 
-
-// Añadimos los iconos al escritorio
-const iconosIzquierda = [
-    { texto: 'CodeZen', imagen: CodeZen },
-    { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
-    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
-    { texto: 'Flappy Parfums', imagen: FlappyParfums },
-    { texto: 'CRM', imagen: CRM }
-]
-
-const iconosDerecha = [
-    { texto: 'Contacto', imagen: Contacto, action: 'contacto' },
-    { texto: 'Sobre mí', imagen: SobreMi },
-    { texto: 'Certificaciones', imagen: Certificados },
-]
 
 // Designamos las coordenadas del menú del escritorio al hacer Click Dcho
 const menuX = ref(0);

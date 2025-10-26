@@ -1,36 +1,21 @@
 <script setup lang="ts">
 import IndexMenuIcon from '../utils/IndexMenuIcon.vue';
 
-// Imágenes
-import Oversize from '../../../assets/oversize.png'
-import _100DayCSS from '../../../assets/100DayCSS.png'
-import GitHub from '../../../assets/github.png'
-import CodePen from '../../../assets/codepen.png'
-import LinkedIn from '../../../assets/linkedin.png'
+// Importamos los iconos desde el JSON
+import { usarIconos } from '../../../data/UseIcons';
+const { todosLosIconos } = usarIconos();
+import { computed } from 'vue';
 
-const datosBase = [
-  { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
-  { texto: 'CodePen', imagen: CodePen },
-  { texto: 'GitHub', imagen: GitHub },
-  { texto: 'LinkedIn', imagen: LinkedIn },
-  { texto: 'Contacto', imagen: Oversize },
-  { texto: 'Oversize Studio', imagen: Oversize },
-  { texto: 'GitHub', imagen: GitHub },
-  { texto: 'LinkedIn', imagen: LinkedIn },
-  { texto: 'Oversize Studio', imagen: Oversize },
-  { texto: 'GitHub', imagen: GitHub },
-  { texto: 'LinkedIn', imagen: LinkedIn },
-  { texto: 'Oversize Studio', imagen: Oversize },
-];
 // Para poner el delay a la animación
 const delayBase = 60;
 const delaySuma = 20;
 
-const aplicacionesDelay = datosBase.map((app, i) => ({
-    ...app,
-    estilo: `animation-delay: ${delayBase + i * delaySuma}ms`
-}));
-
+const aplicacionesDelay = computed(() => 
+    todosLosIconos.value.map((app, i) => ({
+        ...app,
+        estilo: `animation-delay: ${delayBase + i * delaySuma}ms`
+    }))
+);
 const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string }) => {
     if(aplicacion.url) {
         window.open(aplicacion.url, '_blank')
