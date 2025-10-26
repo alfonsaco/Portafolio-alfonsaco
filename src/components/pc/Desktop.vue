@@ -29,7 +29,7 @@ const iconosIzquierda = [
 ]
 
 const iconosDerecha = [
-    { texto: 'Contacto', imagen: Contacto },
+    { texto: 'Contacto', imagen: Contacto, action: 'contacto' },
     { texto: 'Sobre mí', imagen: SobreMi },
     { texto: 'Certificaciones', imagen: Certificados },
 ]
@@ -74,12 +74,14 @@ const actualizarTamano  = (nuevoTamano: string) => {
 }
 
 // Función para abrir un icono. Según lo que contenga, te llevará a un enlace o abrirá el proyecto
-const abrirIcono = (icono: {texto: string, imagen: string, url?: string }) => {
+const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?: string }) => {
     if(icono.url) {
         window.open(icono.url, '_blank');
 
     } else {
-
+        if(icono.action === 'contacto') {   
+            manejarMostrarEmail();
+        }
     }
 }
 
@@ -188,7 +190,7 @@ const cerrarEmail = () => {
 
     <SelectArea :x="ratonX" :y="ratonY" :width="anchura" :height="altura" :visible="ratonApretado"></SelectArea>
 
-    <EmailView v-if="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
+    <EmailView :mostrarEmail="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
 
     <div class="escritorio" @auxclick="mostrarMenu">
         <div class="div-iconos">
@@ -196,7 +198,7 @@ const cerrarEmail = () => {
         </div>
 
         <div class="div-iconos-2" >
-            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" />
+            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)" />
         </div>
     </div>
 </template>

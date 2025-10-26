@@ -88,12 +88,12 @@ const cambiarFondoPantalla = (ruta: string) => {
     
     /* IMÁGENES */
     .div-walpapper-imagenes > div:first-child {
-        background-image: url(/public/pc_fondo.jpg);
+        background-image: url(/pc_fondo.jpg);
     }
     .div-walpapper-imagenes > div:nth-child(2) {
-        background-image: url(/public/got.jpg);
+        background-image: url(/got.jpg);
     }
     .div-walpapper-imagenes > div:last-child {
-        background-image: url(/public/brba.jpg);
+        background-image: url(/brba.jpg);
     }
 </style>

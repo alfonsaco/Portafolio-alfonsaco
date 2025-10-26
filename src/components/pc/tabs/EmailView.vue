@@ -11,8 +11,13 @@ const cerrarEmail = () => {
 
 
 <template>
-    <!-- Fondo para dar enfoque al email -->
-    <div class="fondo-contacto-email" @click="cerrarEmail">
+    <!-- Fondo para dar enfoque al email. Pongo la transición aquí para que el visibility
+    no se cargue el efecto de transición del opacity -->
+    <div class="fondo-contacto-email" 
+    @click="cerrarEmail" 
+    :style="{ opacity: mostrarEmail ? 1 : 0, visibility: mostrarEmail ? 'visible' : 'hidden', 
+    transition: mostrarEmail ? 'opacity .5s ease, visibility 0s ease' : 'opacity .5s ease, visibility 0s ease .5s',
+    pointerEvents: mostrarEmail ? '' : 'none' }">
         <div class="div-email-contacto">
             <a href="mailto:alfonso.rincondev@gmail.com">
                 alfonso.rincondev@gmail.com
@@ -31,7 +36,6 @@ const cerrarEmail = () => {
         z-index: 1000;
         backdrop-filter: blur(5px);
         visibility: visible;
-        transition: 1s ease;
     }
     .div-email-contacto {
         color: #FFF;
@@ -51,8 +55,9 @@ const cerrarEmail = () => {
     .underline-email {
         width: 100%;
         height: 1px;
-        background-color: rgb(184, 184, 184);
+        background-color: rgb(206, 206, 206);
         border-radius: 100%;
         filter: drop-shadow(0px 0px 1px #ffffff) drop-shadow(0px 0px 3px #ffffff) drop-shadow(0px 0px 6px #ffffff) drop-shadow(0px 0px 10px #ffffff)drop-shadow(0px 0px 20px #ffffff);
     }
+
 </style>
