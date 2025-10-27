@@ -15,11 +15,13 @@ import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import SearchWindow from './tabs/SearchWindow.vue'
 
-// Si está inactiva, se activa y viceversa
+
+// Si está inactiva, se activa la IA y viceversa
 const IAactiva = ref(false);
 const mostrarOcultarIA = () => {
     IAactiva.value = !IAactiva.value;
 }
+
 
 // Menú de index
 const indexActivo = ref(false);
@@ -43,8 +45,10 @@ const manejarMostrarEmail = () => {
     emit('mostrar-email');
 };
 
+
 // Manejar el mostrar el buscador
 const buscadorVisible = ref(false);
+const buscarRef = ref(null);
 const textoBuscado = ref('');
 
 const activarBuscador = () => {
@@ -54,6 +58,11 @@ const activarBuscador = () => {
         buscadorVisible.value = true;
     }
 }
+
+onClickOutside(buscarRef, () => {
+    buscadorVisible.value = false;
+    textoBuscado.value = '';
+});
 </script>
 
 
@@ -77,7 +86,7 @@ const activarBuscador = () => {
                 <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>       
             </div>
 
-            <div class="div-buscador" @input="activarBuscador">
+            <div class="div-buscador" @input="activarBuscador" ref="buscarRef">
                 <input type="text" v-model="textoBuscado" class="buscador" placeholder="Búsqueda"></input>
                 <Search class="icono-buscar"/>
             </div>

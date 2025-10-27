@@ -64,6 +64,7 @@ const props = defineProps<{
     }
     .buscador-hidden {
         transform: translateX(calc(-50% - (3 * 20px))) translateY(110%);
+        transition: .4s ease;
     }
 
     /* SECCIÓN APLICACIONES BUSCADAS */
