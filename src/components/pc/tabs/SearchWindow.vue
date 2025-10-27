@@ -3,10 +3,14 @@ import { usarIconos } from '../../../data/UseIcons';
 import Icono from '../models/SearchIcon.vue'
 
 const { todosLosIconos } = usarIconos();
+
+const props = defineProps<{
+    buscadorVisible: boolean
+}>();
 </script>
 
 <template>
-    <div class="div-ventana-buscador">
+    <div class="div-ventana-buscador" :class="buscadorVisible ? 'buscador-visible' : 'buscador-hidden'">
         <div class="div-aplicaciones-buscador">
             <Icono v-for="(aplicacion, i) in todosLosIconos" 
             :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen"></Icono>
@@ -45,7 +49,7 @@ const { todosLosIconos } = usarIconos();
         background-color: #222;
         bottom: 49px;
         left: 50%;
-        transform: translateX(calc(-50% - (3 * 20px)));
+        transform: translateX(calc(-50% - (3 * 20px))) translateY(110%);
         border: 1px solid #999;
         border-radius: 5px;
         border-bottom-left-radius: 0px;
@@ -53,6 +57,13 @@ const { todosLosIconos } = usarIconos();
         overflow: hidden;
         visibility: visible;
         display: flex;
+        transition: .5s ease;
+    }
+    .buscador-visible {
+        transform: translateX(calc(-50% - (3 * 20px))) translateY(0%);
+    }
+    .buscador-hidden {
+        transform: translateX(calc(-50% - (3 * 20px))) translateY(110%);
     }
 
     /* SECCIÓN APLICACIONES BUSCADAS */

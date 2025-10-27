@@ -42,6 +42,18 @@ const emit = defineEmits<{
 const manejarMostrarEmail = () => {
     emit('mostrar-email');
 };
+
+// Manejar el mostrar el buscador
+const buscadorVisible = ref(false);
+const textoBuscado = ref('');
+
+const activarBuscador = () => {
+    if(textoBuscado.value == '') {
+        buscadorVisible.value = false;
+    } else {
+        buscadorVisible.value = true;
+    }
+}
 </script>
 
 
@@ -52,7 +64,7 @@ const manejarMostrarEmail = () => {
         @cerrar-index="indexActivo = false" 
         @mostrar-email="manejarMostrarEmail"></IndexMenu>
 
-    <SearchWindow></SearchWindow>
+    <SearchWindow :buscador-visible="buscadorVisible"></SearchWindow>
 
     <div class="barra-de-tareas">
         <!-- IA -->
@@ -65,8 +77,8 @@ const manejarMostrarEmail = () => {
                 <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>       
             </div>
 
-            <div class="div-buscador">
-                <input type="text" class="buscador" placeholder="Búsqueda"></input>
+            <div class="div-buscador" @input="activarBuscador">
+                <input type="text" v-model="textoBuscado" class="buscador" placeholder="Búsqueda"></input>
                 <Search class="icono-buscar"/>
             </div>
 
