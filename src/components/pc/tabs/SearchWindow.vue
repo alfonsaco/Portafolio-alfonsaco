@@ -11,7 +11,27 @@ const { todosLosIconos } = usarIconos();
             <Icono v-for="(aplicacion, i) in todosLosIconos" 
             :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen"></Icono>
         </div>
-        <div></div>
+        <div class="div-informacion-buscador">
+            <h3>Información del Sistema Operativo</h3>
+            <p>AlfonOS es un sistema operativo funcional, que une las principales funcionalidades
+                de un sistema operativo común, y muestra información sobre su creador "Alfonso Rincón".
+                A lo largo de su exploración podrás encontrar los misterios que este alberga.
+            </p>
+            <h5>Funcionalidades</h5>
+            <ul>
+                <li>Menú de escritorio</li>
+                <li>Área de selección en el escritorio</li>
+                <li>Información de contacto</li>
+                <li>Cambiar wallpapper</li>
+                <li>Terminal con comandos e Easter Eggs</li>
+                <li>Cambio del tamaño de los iconos del escritorio</li>
+                <li>Tooltips en iconos</li>
+                <li>Búsqueda de aplicaciones</li>
+                <li>Hora y fecha en tiempo real</li>
+                <li>Porcentaje y estado de la batería</li>
+                <li>IA funcional con información de la web</li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -32,6 +52,7 @@ const { todosLosIconos } = usarIconos();
         border-bottom-right-radius: 0px;
         overflow: hidden;
         visibility: visible;
+        display: flex;
     }
 
     /* SECCIÓN APLICACIONES BUSCADAS */
@@ -45,8 +66,45 @@ const { todosLosIconos } = usarIconos();
     }
 
 
-    .div-ventana-buscador > div:last-child {
+    /* SECCIÓN DE INFORMACIÓN DEL S.O */
+    .div-informacion-buscador {
         height: 100%;
         width: 60%;
+        padding: 20px;
+        overflow: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        user-select: none;
+    }
+    .div-informacion-buscador * {
+        margin: 0;
+        text-align: left;
+    }
+    .div-informacion-buscador h3 {
+        color: #cecece;
+        font-variant: small-caps;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    .div-informacion-buscador h5 {
+        color: #cecece;
+        font-variant: small-caps;
+        font-size: .95em;
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+    .div-informacion-buscador p {
+        color: #a8a8a8;
+        font-size: .8em;
+    }
+    .div-informacion-buscador ul {
+        color: #a8a8a8;
+        font-size: .8em;
+        padding-left: 20px;
+        list-style: '-';
+    }
+    .div-informacion-buscador ul li {
+        padding-left: 5px;
     }
 </style>

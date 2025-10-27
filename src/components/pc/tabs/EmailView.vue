@@ -55,7 +55,7 @@ const cerrarEmail = () => {
     .underline-email {
         width: 100%;
         height: 1px;
-        background-color: rgb(206, 206, 206);
+        background-color: rgb(231, 231, 231);
         border-radius: 100%;
         filter: drop-shadow(0px 0px 1px #ffffff) drop-shadow(0px 0px 3px #ffffff) drop-shadow(0px 0px 6px #ffffff) drop-shadow(0px 0px 10px #ffffff)drop-shadow(0px 0px 20px #ffffff);
     }
