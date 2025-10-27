@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icono from './utils/Icon.vue';
+import Icono from './models/Icon.vue';
 import DesktopMenu from '../pc/tabs/DesktopMenu.vue';
 import WallpapperChange from './tabs/WallpapperChange.vue';
 import Widget from './tabs/Widget.vue';

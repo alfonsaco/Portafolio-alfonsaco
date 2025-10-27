@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IndexMenuIcon from '../utils/IndexMenuIcon.vue';
+import IndexMenuIcon from '../models/IndexMenuIcon.vue';
 
 // Importamos los iconos desde el JSON
 import { usarIconos } from '../../../data/UseIcons';
@@ -41,12 +41,12 @@ const emit = defineEmits<{
 <template>
     <div class="div-menu-index" :class="visible ? 'menu-visible' : 'menu-hidden'">
         <IndexMenuIcon v-for="(aplicacion, i) in aplicacionesDelay" 
-        :key="i" 
-        :texto="aplicacion.texto" 
-        :imagen="aplicacion.imagen" 
-        :style="aplicacion.estilo" 
-        :activar-animacion="visible"
-        @click="abrirAplicacionIndex(aplicacion)"></IndexMenuIcon>
+            :key="i" 
+            :texto="aplicacion.texto" 
+            :imagen="aplicacion.imagen" 
+            :style="aplicacion.estilo" 
+            :activar-animacion="visible"
+            @click="abrirAplicacionIndex(aplicacion)"></IndexMenuIcon>
     </div>
 </template>
 
@@ -66,6 +66,7 @@ const emit = defineEmits<{
         transition: .7s ease;
         transform: translateY(110%); 
         z-index: 100;
+        user-select: none;
     }
 
     .menu-visible {
