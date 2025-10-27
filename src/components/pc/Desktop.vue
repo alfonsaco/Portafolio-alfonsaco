@@ -5,6 +5,7 @@ import WallpapperChange from './tabs/WallpapperChange.vue';
 import Widget from './tabs/Widget.vue';
 import SelectArea from './utils/SelectArea.vue';
 import EmailView from './tabs/EmailView.vue';
+import Window from '../pc/windows/Window.vue';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -165,6 +166,8 @@ const cerrarEmail = () => {
         @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
 
     <Widget></Widget>
+
+    <Window :texto="'Terminal'"></Window>
 
     <WallpapperChange v-if="mostrarWallpapper" 
         @cerrar="cerrarWallpapper" 
