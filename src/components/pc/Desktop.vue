@@ -98,6 +98,9 @@ const empezarSeleccion = (e: MouseEvent) => {
     ratonY.value = e.clientY;
     altura.value = 0;
     anchura.value = 0;
+
+    document.addEventListener('mousemove', duranteSeleccion);
+    document.addEventListener('mouseup', terminarSeccion);
 }
 
 const duranteSeleccion = (e: MouseEvent) => {
@@ -128,19 +131,26 @@ const terminarSeccion = () => {
 
     arrastrando.value = false;
 
+    document.removeEventListener('mousemove', duranteSeleccion);
+    document.removeEventListener('mouseup', terminarSeccion);
+
     // Lo ocultamos tras un poco
     setTimeout(() => {
         ratonApretado.value = false;
     }, 100);
 }
 
+const escritorioRef = ref<HTMLElement>();
+
 onMounted(() => {
-    document.addEventListener('mousedown', empezarSeleccion);
-    document.addEventListener('mousemove', duranteSeleccion);
-    document.addEventListener('mouseup', terminarSeccion);
+    if(escritorioRef.value) {
+        escritorioRef.value.addEventListener('mousedown', empezarSeleccion);
+    }
 });
 onUnmounted(() => {
-    document.removeEventListener('mousedown', empezarSeleccion);
+     if(escritorioRef.value) {
+        escritorioRef.value.removeEventListener('mousedown', empezarSeleccion);
+    }
     document.removeEventListener('mousemove', duranteSeleccion);
     document.removeEventListener('mouseup', terminarSeccion);
 });
@@ -177,7 +187,7 @@ const cerrarEmail = () => {
 
     <EmailView :mostrarEmail="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
 
-    <div class="escritorio" @auxclick="mostrarMenu">
+    <div class="escritorio" @auxclick="mostrarMenu" ref="escritorioRef">
         <div class="div-iconos">
             <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)"/>
         </div>
