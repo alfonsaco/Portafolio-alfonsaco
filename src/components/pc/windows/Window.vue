@@ -86,9 +86,7 @@ onUnmounted(() => {
             </div>
         </div>
 
-        <div class="div-ventana-contenido">
-            <component :is="props.componente" v-if="props.componente"></component>
-        </div>
+        <component :is="props.componente" v-if="props.componente"></component>
     </div>
 </template>
 
@@ -108,7 +106,8 @@ onUnmounted(() => {
 
     /* SECCIÓN DE CERRAR, MAXIMIZAR */
     .div-ventana-acciones {
-        position: relative;
+        position: absolute;
+        top: 0;
         width: 100%;
         background-color: #222;
         height: 37px;
@@ -165,12 +164,5 @@ onUnmounted(() => {
         left: 0 !important;
         top: 0 !important;
         transform: none !important;
-    }
-
-    /* SECCIÓN DEL CONTENIDO EXTERNO */
-    .div-ventana-contenido {
-        background-color: #616161;
-        height: 100%;
-        width: 100%;
     }
 </style>

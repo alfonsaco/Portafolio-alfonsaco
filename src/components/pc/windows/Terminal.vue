@@ -26,15 +26,18 @@ const nuevaOrden = (e: KeyboardEvent) => {
         // Imprimir texto
         } else if(textoFormateado.split(' ')[0]?.trim() === 'echo') {
             ordenes.value.push(textoFormateado.split(' ').slice(1).join(' '));
+            ordenes.value.push('_');
 
         // Comandos de ayuda
         } else if(textoFormateado == 'help') {
             ordenes.value.push('help | contact | about | echo | systeminfo | projects | exit');
+            ordenes.value.push('_');
 
         } else if(textoFormateado == 'contact' || textoFormateado == 'contacto') {
             ordenes.value.push('\t - Email: alfonso.rincondev@gmail.com');
             ordenes.value.push('\t - Github: alfonsaco');
             ordenes.value.push('\t - LinkedIn: alfonsaco');
+            ordenes.value.push('_');
 
         } else if(textoFormateado == 'about' || textoFormateado == 'sobremi') {
           
@@ -46,10 +49,10 @@ const nuevaOrden = (e: KeyboardEvent) => {
 
         } else {
             ordenes.value.push(`'${textoInput.value}' no se reconoce como un comando interno o externo. Escribe 'help' para ver todos los comandos disponibles.`);
+            ordenes.value.push('_');
         }
 
         // Espacio en blanco para dejar margen
-        ordenes.value.push('_');
         textoInput.value = '';
     }
 }
@@ -87,7 +90,6 @@ const nuevaOrden = (e: KeyboardEvent) => {
         scrollbar-width: none;
         -ms-overflow-style: none;
         user-select: none;
-        height: 463px;
     }
     .div-ventana-terminal * {
         margin: 0;
