@@ -102,6 +102,7 @@ onUnmounted(() => {
         overflow: hidden;
         border: 1px solid #999;
         user-select: none;
+        padding-top: 37px;
     }
 
     /* SECCIÓN DE CERRAR, MAXIMIZAR */
