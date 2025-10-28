@@ -2,10 +2,10 @@
 import Icono from './models/Icon.vue';
 import DesktopMenu from '../pc/tabs/DesktopMenu.vue';
 import WallpapperChange from './tabs/WallpapperChange.vue';
-import Widget from './tabs/Widget.vue';
 import SelectArea from './utils/SelectArea.vue';
 import EmailView from './tabs/EmailView.vue';
 import Window from '../pc/windows/Window.vue';
+import Terminal from './windows/Terminal.vue'
 
 import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -165,9 +165,7 @@ const cerrarEmail = () => {
         @abrirWallpapper="abrirWallpapper"
         @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
 
-    <Widget></Widget>
-
-    <Window :texto="'Terminal'"></Window>
+    <Window :texto="'Terminal'" :componente="Terminal"></Window>
 
     <WallpapperChange v-if="mostrarWallpapper" 
         @cerrar="cerrarWallpapper" 

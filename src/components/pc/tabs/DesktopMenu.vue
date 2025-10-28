@@ -49,7 +49,7 @@ const mostrarEmail = () => {
         <!-- Terminal -->
         <div>
             <Terminal class="iconos-menu"></Terminal>
-            Terminal inútil
+            Terminal
         </div>
         <!-- Sobre mi -->
         <div>

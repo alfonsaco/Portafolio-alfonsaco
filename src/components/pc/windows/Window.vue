@@ -4,6 +4,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps<{
     texto: string
+    componente?: any
 }>();
 
 // Manejar pantalla completa y normal
@@ -84,6 +85,10 @@ onUnmounted(() => {
             
             </div>
         </div>
+
+        <div class="div-ventana-contenido">
+            <component :is="props.componente" v-if="props.componente"></component>
+        </div>
     </div>
 </template>
 
@@ -126,13 +131,18 @@ onUnmounted(() => {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5px;
+        padding: 6px;
         border-radius: 100%;
         transition: .2s ease;
     }
     .div-ventana-icono {
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
+        color: #222;
+        transition: .1s ease;
+    }
+    .div-ventana-acciones > div > div:hover .div-ventana-icono {
+        color: #e6e6e6;
     }
     .div-ventana-acciones > div > div:first-child {
         background-color: rgb(87, 184, 87);
@@ -155,5 +165,12 @@ onUnmounted(() => {
         left: 0 !important;
         top: 0 !important;
         transform: none !important;
+    }
+
+    /* SECCIÓN DEL CONTENIDO EXTERNO */
+    .div-ventana-contenido {
+        background-color: #616161;
+        height: 100%;
+        width: 100%;
     }
 </style>
