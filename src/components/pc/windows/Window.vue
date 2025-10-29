@@ -78,7 +78,6 @@ const cerrarVentana = () => {
 
     emit('cerrarVentana');
 }
-
 </script>
 
 
@@ -122,7 +121,7 @@ const cerrarVentana = () => {
         user-select: none;
         padding-top: 37px;
         pointer-events: none;
-        transition: transform .3s ease;
+        transition: transform .2s ease;
         transform: scaleY(0);
     }
 

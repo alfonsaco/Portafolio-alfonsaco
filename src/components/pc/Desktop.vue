@@ -11,6 +11,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
+import About from './windows/About.vue';
 const { iconosDerecha, iconosIzquierda } = usarIconos();
 
 
@@ -199,7 +200,12 @@ const cerrarVentana = (id: string) => {
 const mostrarTerminal = () => {
     abrirVentana('Terminal', Terminal);
 }
-</script>
+
+// Sobre mi
+const mostrarSobreMi = () => {
+    abrirVentana('Sobre Mi', About);
+}
+</script> 
 
 
 <template>
@@ -207,7 +213,8 @@ const mostrarTerminal = () => {
         @cambiarTamanoIcono="actualizarTamano" 
         @abrirWallpapper="abrirWallpapper"
         @mostrarEmail="manejarMostrarEmail"
-        @mostrarTerminal="mostrarTerminal"></DesktopMenu>
+        @mostrarTerminal="mostrarTerminal"
+        @mostrarSobreMi="mostrarSobreMi"></DesktopMenu>
 
     <Window v-for="ventana in ventanasAbiertas" :key="ventana.id"
         :texto="ventana.titulo" 

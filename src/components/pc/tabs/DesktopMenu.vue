@@ -8,7 +8,7 @@ const props = defineProps<{
 }>();
 
 // Cambiar tamaño de los iconos del escritorio
-const emit = defineEmits(['cambiarTamanoIcono', 'abrirWallpapper', 'mostrarEmail', 'mostrarTerminal']);
+const emit = defineEmits(['cambiarTamanoIcono', 'abrirWallpapper', 'mostrarEmail', 'mostrarTerminal', 'mostrarSobreMi']);
 
 const cambiarTamanoIcono = (tam: string) => {
     emit('cambiarTamanoIcono', tam);
@@ -29,6 +29,11 @@ const mostrarEmail = () => {
 // Funciones para mostrar la terminal
 const mostrarTerminal = () => {
     emit('mostrarTerminal');
+}
+
+// Mostrar sobre mi
+const mostrarSobreMi = () => {
+    emit('mostrarSobreMi');
 }
 </script>
 
@@ -57,7 +62,7 @@ const mostrarTerminal = () => {
             Terminal
         </div>
         <!-- Sobre mi -->
-        <div>
+        <div @click="mostrarSobreMi">
             <User class="iconos-menu"></User>
             Sobre mí
         </div>
