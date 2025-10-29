@@ -8,6 +8,34 @@ import { ref } from 'vue';
 const textoInput = ref('');
 const ordenes = ref<string[]>([]);
 
+// Datos
+const info = [
+    { tag: "Nombre del host:", valor: "DESKTOP-6578" },
+    { tag: "Nombre del Sistema Operativo:", valor: "AlfonOS 1.4 Pro" },
+    { tag: "Versión del Sistema Operativo:", valor: "1.0.0" },
+    { tag: "Fabricante del Sistema Operativo: ", valor: "Alfonso Rincón" },
+    { tag: "Propiedad de:", valor: "Usuario" },
+    { tag: "Id del producto:", valor: "0110-0909-4567-A454" },
+    { tag: "Fecha de instalación::", valor: "20/10/2025, 19:01" },
+    { tag: "Fabricante del sistema:", valor: "Alfonsaco Inc." },
+    { tag: "Modelo de sistema:", valor: "M520M H" },
+    { tag: "Tipo de sistema:", valor: "x64-based PC" },
+    { tag: "Procesadores:", valor: "AlfonChip X8 3.6GHz (8 núcleos)" },
+    { tag: "Memoria física (RAM):", valor: "16,384 MB" },
+    { tag: "Memoria virtual total:", valor: "32,768 MB" },
+    { tag: "Dispositivo de arranque:", valor: "\\Device\\HarddiskVolume1" },
+    { tag: "Monitor principal:", valor: "AlfonDisplay 27''" },
+    { tag: "Versión de BIOS:", valor: "Alfonsaco v2.03, 01/09/2025" },
+    { tag: "Usuario actual: ", valor: "Usuario" },
+    { tag: "Tema actual:", valor: "Oscuro" },
+    { tag: "Modo de energía:", valor: "Alto rendimiento" },
+]
+const ancho = Math.max(...info.map(d => d.tag.length)) + 5;
+
+const proyectos = ['Oversize', '100DayCSS', 'CRM', 'CodeZen', 'Flappy Parfums', 'AlfonOS'];
+
+const emit = defineEmits(['cerrarVentana']);
+
 // Texto por defecto
 ordenes.value.push('AlfonOS [Version 1.0.0]');
 ordenes.value.push('©AlfonOS Corporation. Todos los derechos reservados.');
@@ -39,13 +67,23 @@ const nuevaOrden = (e: KeyboardEvent) => {
             ordenes.value.push('_');
 
         } else if(textoFormateado == 'about' || textoFormateado == 'sobremi') {
+            ordenes.value.push('Full Stack Developer | Multiplatform Developer');
+            ordenes.value.push('_');
           
         } else if(textoFormateado == 'systeminfo') {    
+            info.forEach(i => {
+                ordenes.value.push(i.tag.padEnd(ancho, ' ') + i.valor);
+            });
+            ordenes.value.push('_');
         
         } else if(textoFormateado == 'exit') {  
+            emit('cerrarVentana');
         
         } else if(textoFormateado == 'proyectos' || textoFormateado == 'projects') {  
-
+            for (let i = 0; i < proyectos.length; i++) {
+                ordenes.value.push(`\t - ${proyectos[i]}`);
+            }
+            ordenes.value.push('_');
         } else {
             ordenes.value.push(`'${textoInput.value}' no se reconoce como un comando interno o externo. Escribe 'help' para ver todos los comandos disponibles.`);
             ordenes.value.push('_');

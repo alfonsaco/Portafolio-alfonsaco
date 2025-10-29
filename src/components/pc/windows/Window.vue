@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { X, Maximize } from 'lucide-vue-next';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps<{
     texto: string
@@ -103,7 +103,8 @@ const cerrarVentana = () => {
             </div>
         </div>
 
-        <component :is="props.componente" v-if="props.componente"></component>
+        <component :is="props.componente" v-if="props.componente" 
+            @cerrarVentana="cerrarVentana"></component>
     </div>
 </template>
 
