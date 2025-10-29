@@ -166,6 +166,39 @@ const manejarMostrarEmail = () => {
 const cerrarEmail = () => {
     mostrarEmail.value = false;
 }
+
+
+// ---------------- Gestión de ventanas ----------------
+interface Ventana {
+    id: string;
+    titulo: string;
+    componente: any;
+    visible: boolean;
+}
+
+const ventanasAbiertas = ref<Ventana[]>([]);
+
+const abrirVentana = (titulo: string, componente: any) => {
+    const id = Date.now().toString();
+
+    // Agrego ventana al array
+    ventanasAbiertas.value.push({
+        id,
+        titulo,
+        componente,
+        visible: true
+    });
+}
+
+const cerrarVentana = (id: string) => {
+    const indice = ventanasAbiertas.value.findIndex(v => v.id === id);
+    ventanasAbiertas.value.splice(indice, 1);
+}
+
+// Terminal
+const mostrarTerminal = () => {
+    abrirVentana('Terminal', Terminal);
+}
 </script>
 
 
@@ -173,9 +206,14 @@ const cerrarEmail = () => {
     <DesktopMenu :x="menuX" :y="menuY" v-if="menuVisible" 
         @cambiarTamanoIcono="actualizarTamano" 
         @abrirWallpapper="abrirWallpapper"
-        @mostrarEmail="manejarMostrarEmail"></DesktopMenu>
+        @mostrarEmail="manejarMostrarEmail"
+        @mostrarTerminal="mostrarTerminal"></DesktopMenu>
 
-    <Window :texto="'Terminal'" :componente="Terminal"></Window>
+    <Window v-for="ventana in ventanasAbiertas" :key="ventana.id"
+        :texto="ventana.titulo" 
+        :componente="ventana.componente"
+        :visible="ventana.visible"
+        @cerrarVentana="cerrarVentana(ventana.id)"></Window>
 
     <WallpapperChange v-if="mostrarWallpapper" 
         @cerrar="cerrarWallpapper" 

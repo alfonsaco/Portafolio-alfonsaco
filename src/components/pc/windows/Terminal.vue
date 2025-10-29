@@ -36,7 +36,6 @@ const nuevaOrden = (e: KeyboardEvent) => {
         } else if(textoFormateado == 'contact' || textoFormateado == 'contacto') {
             ordenes.value.push('\t - Email: alfonso.rincondev@gmail.com');
             ordenes.value.push('\t - Github: alfonsaco');
-            ordenes.value.push('\t - LinkedIn: alfonsaco');
             ordenes.value.push('_');
 
         } else if(textoFormateado == 'about' || textoFormateado == 'sobremi') {

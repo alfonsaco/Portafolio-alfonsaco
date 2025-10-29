@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { X, Maximize } from 'lucide-vue-next';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps<{
     texto: string
     componente?: any
 }>();
+
+const ventanaAbierta = ref(false);
 
 // Manejar pantalla completa y normal
 const pantallaCompleta = ref(false);
@@ -25,6 +27,10 @@ onMounted(() => {
     // Posición inicial en el centro
     posicionX.value = (window.innerWidth - 700) / 2;
     posicionY.value = (window.innerHeight - 500) / 2;
+
+    setTimeout(() => {
+        ventanaAbierta.value = true;
+    }, 50);
 });
 
 const apretarRaton = (e: MouseEvent) => {
@@ -63,12 +69,23 @@ onUnmounted(() => {
     document.removeEventListener('mousemove', moverVentana);
     document.removeEventListener('mouseup', soltarRaton);
 });
+
+// Cerrar la ventana
+const emit = defineEmits(['cerrarVentana']);
+
+const cerrarVentana = () => {
+    ventanaAbierta.value = false;
+
+    emit('cerrarVentana');
+}
+
 </script>
 
 
 <template>
     <div class="div-ventana-principal" 
-    :class="pantallaCompleta ? 'ventana-pantalla-completa' : ''"
+    :class="{'ventana-pantalla-completa': pantallaCompleta,
+             'ventana-abierta': ventanaAbierta }"
     :style="pantallaCompleta ? {} : { left: posicionX + 'px', top: posicionY + 'px'}">
 
         <div class="div-ventana-acciones" 
@@ -79,7 +96,7 @@ onUnmounted(() => {
                 <div @click="cambairAPantallaCompleta">
                     <Maximize class="div-ventana-icono"></Maximize>
                 </div>
-                <div>
+                <div @click="cerrarVentana">
                     <X class="div-ventana-icono"></X>
                 </div>
             
@@ -103,6 +120,9 @@ onUnmounted(() => {
         border: 1px solid #999;
         user-select: none;
         padding-top: 37px;
+        pointer-events: none;
+        transition: transform .3s ease;
+        transform: scaleY(0);
     }
 
     /* SECCIÓN DE CERRAR, MAXIMIZAR */
@@ -165,5 +185,10 @@ onUnmounted(() => {
         left: 0 !important;
         top: 0 !important;
         transform: none !important;
+    }
+
+    .ventana-abierta {
+        transform: scaleY(1);
+        pointer-events: all;
     }
 </style>
