@@ -2,9 +2,9 @@
 import App from './App.vue';
 
 // Iconos Apps
-import OversizeLogo from '../../assets/oversize.png';
-import Instagram from '../../assets/instagram.png';
-import _100DayCSS from '../../assets/100DayCSS.png'
+import OversizeLogo from '/oversize.png';
+import Instagram from '/instagram.png';
+import _100DayCSS from '/100DayCSS.png'
 
 const apps = [
     { texto: 'Instagram', imagen: Instagram },
