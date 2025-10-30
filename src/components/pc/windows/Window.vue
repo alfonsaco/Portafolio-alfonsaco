@@ -121,8 +121,8 @@ const cerrarVentana = () => {
         user-select: none;
         padding-top: 37px;
         pointer-events: none;
-        transition: transform .2s ease;
-        transform: scaleY(0);
+        transition: scale .2s ease;
+        scale: 0;
     }
 
     /* SECCIÓN DE CERRAR, MAXIMIZAR */
@@ -188,7 +188,7 @@ const cerrarVentana = () => {
     }
 
     .ventana-abierta {
-        transform: scaleY(1);
+        scale: 1;
         pointer-events: all;
     }
 </style>

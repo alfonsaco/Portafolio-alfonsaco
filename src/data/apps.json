@@ -38,7 +38,7 @@
     {
         "texto": "Sobre mí",
         "imagen": "/about.png",
-        "action": "",
+        "action": "sobremi",
         "escritorio": "dcha"
     },
     {
@@ -61,5 +61,10 @@
         "texto": "CodePen",
         "imagen": "/codepen.png",
         "url": "https://codepen.io/alfonsaco"
+    },
+    {
+        "texto": "Terminal",
+        "imagen": "/terminal.png",
+        "action" : ""
     }
 ]

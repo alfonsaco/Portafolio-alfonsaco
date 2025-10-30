@@ -7,7 +7,7 @@ import EmailView from './tabs/EmailView.vue';
 import Window from '../pc/windows/Window.vue';
 import Terminal from './windows/Terminal.vue'
 
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
@@ -52,7 +52,12 @@ const tamanoIcono = ref('mediano');
 
 const actualizarTamano  = (nuevoTamano: string) => {
     tamanoIcono.value = nuevoTamano as 'pequeno' | 'mediano' | 'grande';
-}
+};
+const estilosGridIconos = computed(() => {
+    if(tamanoIcono.value === 'pequeno') return { columnGap: '15px', rowGap: '20px' };
+    if(tamanoIcono.value === 'mediano') return { columnGap: '25px', rowGap: '40px' };
+    return { columnGap: '35px', rowGap: '70px' };
+});
 
 // Función para abrir un icono. Según lo que contenga, te llevará a un enlace o abrirá el proyecto
 const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?: string }) => {
@@ -62,6 +67,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
     } else {
         if(icono.action === 'contacto') {   
             manejarMostrarEmail();
+        } else if(icono.action === 'sobremi') {
+            mostrarSobreMi();
         }
     }
 }
@@ -237,11 +244,11 @@ const cambiarFondo = () => {
     <EmailView :mostrarEmail="mostrarEmail" @cerrar="cerrarEmail"></EmailView>
 
     <div class="escritorio" @auxclick="mostrarMenu" ref="escritorioRef">
-        <div class="div-iconos">
+        <div class="div-iconos" :style="estilosGridIconos">
             <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)"/>
         </div>
 
-        <div class="div-iconos-2" >
+        <div class="div-iconos-2" :style="estilosGridIconos" >
             <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)" />
         </div>
     </div>

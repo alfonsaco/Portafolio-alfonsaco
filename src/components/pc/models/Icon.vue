@@ -16,9 +16,9 @@ const manejarClick = () => {
 }
 
 const estilo = computed(() => {
-    if(props.tamano === 'grande') return { width: '45px', height: '45px' };
-    if(props.tamano === 'pequeno') return { width: '30px', height: '30px'};
-    return { width: '37px', height: '37px' };
+    if(props.tamano === 'grande') return { width: '60px', height: '60px' };
+    if(props.tamano === 'pequeno') return { width: '40px', height: '40px'};
+    return { width: '50px', height: '50px' };
 })
 </script>
 
