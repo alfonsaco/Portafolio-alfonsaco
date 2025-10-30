@@ -41,7 +41,6 @@
 
     .ventana-sobre-mi {
         padding: 15px 20px;
-        font-family: 'Cascadia';
         width: 100%;
         height: 100%;
         background-color: #282C34;
@@ -55,6 +54,7 @@
     }
     .ventana-sobre-mi * {
         margin: 0;
+        font-family: 'Cascadia', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .ventana-sobre-mi *::selection {
         background-color: #9fb2bf7e;
