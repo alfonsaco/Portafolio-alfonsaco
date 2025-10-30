@@ -11,8 +11,6 @@ interface Mensaje {
 }
 
 export function usarGroq() {
-  const API_KEY = import.meta.env.GROQ_API_KEY
-
   const estado = ref('Esperando...')
   const respuesta = ref('')
   const cargando = ref(false)
@@ -86,11 +84,6 @@ export function usarGroq() {
     respuesta.value = ''
     
     try {
-      // Validaciones
-      if (!API_KEY || !API_KEY.startsWith('gsk_')) {
-        throw new Error('API Key inválida / no existente')
-      }
-
       if (!mensajeUsuario.value.trim()) {
         throw new Error('El mensaje no puede estar vacío')
       }
