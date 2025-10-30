@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal, User, Contact } from 'lucide-vue-next';
-import { defineEmits } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps<{
     x: number
@@ -35,61 +35,82 @@ const mostrarTerminal = () => {
 const mostrarSobreMi = () => {
     emit('mostrarSobreMi');
 }
+
+// Mostrar opciones pequeñas
+const mostrarOpciones = ref(false);
+
+const opcionesVisible = () => {
+    mostrarOpciones.value = true;
+}
+const opcionesInvisible = () => {
+    mostrarOpciones.value = false;
+}
 </script>
 
 <template>
-    <div class="contenedor-menu" :style="{top: props.y + 'px', left: props.x + 'px'}" >
-        <div class="div-ver">
-            <Table class="iconos-menu"></Table>
-            Ver
-            <ChevronRight class="iconos-menu flechas-menu"></ChevronRight>
-
-            <!-- Sección del tamaño de los iconos -->
-            <div class="menu-vista">
-                <div @click="cambiarTamanoIcono('pequeno')">Iconos pequeños</div>
-                <div @click="cambiarTamanoIcono('mediano')">Iconos medianos</div>
-                <div @click="cambiarTamanoIcono('grande')">Iconos grandes</div>
+    <div class="contenedor-general-menu" :style="{top: props.y + 'px', left: props.x + 'px'}">
+        <div class="contenedor-menu"  >
+            <div class="div-ver" 
+            @mouseenter="opcionesVisible" 
+            @mouseleave="opcionesInvisible"
+            :class="mostrarOpciones ? 'clase-opciones-borde-izquierdo' : ''">
+                <Table class="iconos-menu"></Table>
+                Ver
+                <ChevronRight class="iconos-menu flechas-menu"></ChevronRight>
+            </div>
+            <!-- Actualizar web -->
+            <div @click="actualizarWeb">
+                <RefreshCcw class="iconos-menu"></RefreshCcw>
+                Actualizar
+            </div>
+            <!-- Terminal -->
+            <div @click="mostrarTerminal">
+                <Terminal class="iconos-menu"></Terminal>
+                Terminal
+            </div>
+            <!-- Sobre mi -->
+            <div @click="mostrarSobreMi">
+                <User class="iconos-menu"></User>
+                Sobre mí
+            </div>
+            <!-- Contacto -->
+            <div @click="mostrarEmail">
+                <Contact class="iconos-menu"></Contact>
+                Contacto
+            </div>
+            <!-- Cambiar Wallpapper -->
+            <div @click="abrirWallpapper" >
+                <Wallpaper class="iconos-menu" ></Wallpaper>
+                Personalizar
             </div>
         </div>
-        <!-- Actualizar web -->
-        <div @click="actualizarWeb">
-            <RefreshCcw class="iconos-menu"></RefreshCcw>
-            Actualizar
-        </div>
-        <!-- Terminal -->
-        <div @click="mostrarTerminal">
-            <Terminal class="iconos-menu"></Terminal>
-            Terminal
-        </div>
-        <!-- Sobre mi -->
-        <div @click="mostrarSobreMi">
-            <User class="iconos-menu"></User>
-            Sobre mí
-        </div>
-        <!-- Contacto -->
-         <div @click="mostrarEmail">
-            <Contact class="iconos-menu"></Contact>
-            Contacto
-         </div>
-        <!-- Cambiar Wallpapper -->
-        <div @click="abrirWallpapper" >
-            <Wallpaper class="iconos-menu" ></Wallpaper>
-            Personalizar
+
+        <!-- Sección del tamaño de los iconos -->
+        <div class="menu-vista" 
+        :class="mostrarOpciones ? 'clase-mostrar-opciones-ver' : ''"
+        @mouseenter="opcionesVisible"
+        @mouseleave="opcionesInvisible"> 
+            <div @click="cambiarTamanoIcono('pequeno')">Iconos pequeños</div>
+            <div @click="cambiarTamanoIcono('mediano')">Iconos medianos</div>
+            <div @click="cambiarTamanoIcono('grande')">Iconos grandes</div>
         </div>
     </div>
 </template>
 
 <style>
+    .contenedor-general-menu {
+        position: absolute;
+        left: 400px;
+        top: 200px;
+        opacity: 1;
+        user-select: none;
+        z-index: 100;
+    }
     .contenedor-menu {
         width: 200px;
         background-color: transparent;
         position: absolute;
         border-radius: 5px;
-        left: 400px;
-        top: 200px;
-        user-select: none;
-        opacity: 1;
-        z-index: 100;
         border: 1px solid #999;
     }
 
@@ -123,18 +144,14 @@ const mostrarSobreMi = () => {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
     }
-    .div-ver:hover {
-        border-top-right-radius: 0px;
-        outline: 1px solid #999;
-    }
     .menu-vista {
         width: 160px;
         height: auto;
         background-color: transparent;
         border: 1px solid #999;
         position: absolute;
-        right: -160px;
-        top: -1px;
+        left: 199px;
+        top: 0px;
         visibility: hidden;
         border-top-right-radius: 5px;
         overflow: hidden;
@@ -149,6 +166,7 @@ const mostrarSobreMi = () => {
         display: flex;
         align-items: center;
         padding-left: 10px;
+        cursor: pointer;
     }
     .menu-vista > div:last-child {
         border-bottom: 0;
@@ -156,8 +174,14 @@ const mostrarSobreMi = () => {
     .menu-vista > div:hover {
         background-color: #474747a1;
     }
-    .div-ver:hover .menu-vista {
+
+    /* CLASES RARAR PARA QUE POR FIN SALGA EL BACKDROP FILTER EN EL .MENU-VISTA */
+    .clase-mostrar-opciones-ver {
         visibility: visible;
+    }
+    .clase-opciones-borde-izquierdo {
+        border-top-right-radius: 0px;
+        outline: 1px solid #999;
     }
 
     /* ICONOS DEL MENÚ */
