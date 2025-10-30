@@ -1,6 +1,6 @@
 <script setup>
-import iconoGitHub from '../../assets/github.png'
-import iconoLinkedIn from '../../assets/linkedin.png'
+import iconoGitHub from '/github.png'
+import iconoLinkedIn from '/linkedin.png'
 import iconoAlfonOS from '../../assets/alfonOS.png'
 
 </script>
