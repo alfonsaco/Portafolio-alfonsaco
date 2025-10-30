@@ -1,21 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const props = defineProps<{
+defineProps<{
     x: number
     y: number
     width: number
     height: number
     visible: boolean
 }>();
-
-const estiloArea = ref({
-    left: props.x + 'px',
-    top: props.y + 'px',
-    width: props.width + 'px',
-    height: props.height + 'px',
-    display: props.visible ? 'block' : 'none'
-})
 </script>
 
 <template>

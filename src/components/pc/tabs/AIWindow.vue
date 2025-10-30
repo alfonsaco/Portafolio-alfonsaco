@@ -4,17 +4,14 @@ import { usarGroq } from '../utils/groqAI'
 
 import { X } from 'lucide-vue-next';
 
-
-const props = defineProps<{
-    activo: boolean
-}>()
+defineProps<{activo: boolean}>()
 
 // Cerrar ventana al pulsar la X
 const emit = defineEmits(['cerrar']);
 
 const {
-  estado, respuesta, cargando, error,
-  mensajeUsuario, modeloSeleccionado, modelosDisponibles,
+  estado, cargando, error,
+  mensajeUsuario,
   formattedResponse, testGroq
 } = usarGroq()
 

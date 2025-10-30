@@ -28,9 +28,7 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
     emit('cerrar-index');
 }
 
-const props = defineProps<{
-    visible: boolean
-}>();
+defineProps<{visible: boolean}>();
 
 const emit = defineEmits<{
     (e: 'cerrar-index'): void

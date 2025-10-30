@@ -205,6 +205,10 @@ const mostrarTerminal = () => {
 const mostrarSobreMi = () => {
     abrirVentana('Sobre Mi', About);
 }
+
+const cambiarFondo = () => {
+    
+}
 </script> 
 
 

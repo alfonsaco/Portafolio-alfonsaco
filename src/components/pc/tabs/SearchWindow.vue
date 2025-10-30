@@ -4,9 +4,7 @@ import Icono from '../models/SearchIcon.vue'
 
 const { todosLosIconos } = usarIconos();
 
-const props = defineProps<{
-    buscadorVisible: boolean
-}>();
+defineProps<{buscadorVisible: boolean}>();
 </script>
 
 <template>

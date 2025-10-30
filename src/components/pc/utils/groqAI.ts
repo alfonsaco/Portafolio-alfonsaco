@@ -11,7 +11,7 @@ interface Mensaje {
 }
 
 export function usarGroq() {
-  const API_KEY = import.meta.env.VITE_GROQ_API_KEY
+  const API_KEY = import.meta.env.GROQ_API_KEY
 
   const estado = ref('Esperando...')
   const respuesta = ref('')
