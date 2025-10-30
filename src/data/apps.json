@@ -1,65 +1,65 @@
 [
     {
         "texto": "CodeZen",
-        "imagen": "src/assets/codezen.png",
+        "imagen": "/codezen.png",
         "action": "",
         "escritorio": "izq"
     },
     {
         "texto": "Oversize Studios",
-        "imagen": "src/assets/oversize.png",
+        "imagen": "/oversize.png",
         "url": "https://alfonsaco.github.io/Oversize/index.html",
         "escritorio": "izq"
     },
     {
         "texto": "100DayCSS",
-        "imagen": "src/assets/100DayCSS.png",
+        "imagen": "/100DayCSS.png",
         "url": "https://100dayscss.com/progress/100DayCSS/",
         "escritorio": "izq"
     },
     {
         "texto": "Flappy Parfums",
-        "imagen": "src/assets/flappy.png",
+        "imagen": "/flappy.png",
         "action": "",
         "escritorio": "izq"
     },
     {
         "texto": "CRM",
-        "imagen": "src/assets/logo_crm.png",
+        "imagen": "/logo_crm.png",
         "action": "",
         "escritorio": "izq"
     },
     {
         "texto": "Contacto",
-        "imagen": "src/assets/contacto.png",
+        "imagen": "/contacto.png",
         "action": "contacto",
         "escritorio": "dcha"
     },
     {
         "texto": "Sobre mí",
-        "imagen": "src/assets/about.png",
+        "imagen": "/about.png",
         "action": "",
         "escritorio": "dcha"
     },
     {
         "texto": "Certificaciones",
-        "imagen": "src/assets/certificados.png",
+        "imagen": "/certificados.png",
         "action": "",
         "escritorio": "dcha"
     },
     {
         "texto": "GitHub",
-        "imagen": "src/assets/github.png",
+        "imagen": "/github.png",
         "url": "https://www.github.com/alfonsaco"
     },
     {
         "texto": "LinkedIn",
-        "imagen": "src/assets/linkedin.png",
+        "imagen": "/linkedin.png",
         "url": "https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/"
     },
     {
         "texto": "CodePen",
-        "imagen": "src/assets/codepen.png",
+        "imagen": "/codepen.png",
         "url": "https://codepen.io/alfonsaco"
     }
 ]
