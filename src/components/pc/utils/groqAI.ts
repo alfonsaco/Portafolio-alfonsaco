@@ -114,12 +114,9 @@ export function usarGroq() {
         hasSystemPrompt: true 
       })
       
-      const fetchResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const fetchResponse = await fetch('api/groq', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody)
       })
       
