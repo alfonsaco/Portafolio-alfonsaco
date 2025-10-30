@@ -37,14 +37,7 @@ onClickOutside(menuIndexRef, () => {
 
 
 // Manejar el mostrar emial, conectamos con Desktop.vue y IndexMenu.vue
-const emit = defineEmits<{
-    (e: 'mostrar-email'): void
-}>();
-
-const manejarMostrarEmail = () => {
-    emit('mostrar-email');
-};
-
+const emit = defineEmits(['mostrar-email', 'mostrar-sobre-mi', 'mostrar-terminal']);
 
 // Manejar el mostrar el buscador
 const buscadorVisible = ref(false);
@@ -71,9 +64,14 @@ onClickOutside(buscarRef, () => {
 
     <IndexMenu :visible="indexActivo" 
         @cerrar-index="indexActivo = false" 
-        @mostrar-email="manejarMostrarEmail"></IndexMenu>
+        @mostrar-email="$emit('mostrar-email')"
+        @mostrar-sobre-mi="$emit('mostrar-sobre-mi')"
+        @mostrar-terminal="$emit('mostrar-terminal')"></IndexMenu>
 
-    <SearchWindow :buscador-visible="buscadorVisible"></SearchWindow>
+    <SearchWindow :buscador-visible="buscadorVisible"
+        @mostrar-email="$emit('mostrar-email')"
+        @mostrar-sobre-mi="$emit('mostrar-sobre-mi')"
+        @mostrar-terminal="$emit('mostrar-terminal')"></SearchWindow>
 
     <div class="barra-de-tareas">
         <!-- IA -->

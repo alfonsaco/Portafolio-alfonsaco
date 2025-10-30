@@ -109,6 +109,7 @@ const textoBateria = computed(() => {
         padding: 0px 8px;
         border: 1px solid transparent;
         transition: .1s ease;
+        color: #FFF;
     }
     .fecha-hora:hover {
         background-color: #ffffff11;
@@ -182,8 +183,8 @@ const textoBateria = computed(() => {
         transition-delay: .5s;
     }
     .iconos-utilidades {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         color: #FFF;
     }
 </style>

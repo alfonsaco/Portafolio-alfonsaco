@@ -6,12 +6,12 @@ import SelectArea from './utils/SelectArea.vue';
 import EmailView from './tabs/EmailView.vue';
 import Window from '../pc/windows/Window.vue';
 import Terminal from './windows/Terminal.vue'
+import About from './windows/About.vue';
 
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
-import About from './windows/About.vue';
 const { iconosDerecha, iconosIzquierda } = usarIconos();
 
 
@@ -213,9 +213,14 @@ const mostrarSobreMi = () => {
     abrirVentana('Sobre Mi', About);
 }
 
-const cambiarFondo = () => {
-    
-}
+const cambiarFondo = () => { }
+
+// Para usar los métodos en TaskBar
+defineExpose({
+    manejarMostrarEmail,
+    mostrarSobreMi,
+    mostrarTerminal
+});
 </script> 
 
 

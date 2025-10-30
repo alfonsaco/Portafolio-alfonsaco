@@ -156,6 +156,7 @@ const opcionesInvisible = () => {
         border-top-right-radius: 5px;
         overflow: hidden;
         border-bottom-right-radius: 5px;
+        font-size: .85em;
     }
     .menu-vista > div {
         background-color: #222222c5;

@@ -5,13 +5,41 @@ import Icono from '../models/SearchIcon.vue'
 const { todosLosIconos } = usarIconos();
 
 defineProps<{buscadorVisible: boolean}>();
+
+// Abrir las aplicaciones
+const emit = defineEmits<{
+    (e: 'cerrar-index'): void
+    (e: 'mostrar-email'): void
+    (e: 'mostrar-sobre-mi'): void
+    (e: 'mostrar-terminal'): void
+}>();
+
+const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string, action?: string }) => {
+    if(aplicacion.url) {
+        window.open(aplicacion.url, '_blank')
+    } else {
+        if(aplicacion.action === 'contacto') {
+            emit('mostrar-email');
+        } else if(aplicacion.action === 'sobremi') {
+            emit('mostrar-sobre-mi');
+        } else if(aplicacion.action === 'terminal') {
+            emit('mostrar-terminal');
+        }
+    }
+
+    emit('cerrar-index');
+}
+
 </script>
 
 <template>
     <div class="div-ventana-buscador" :class="buscadorVisible ? 'buscador-visible' : 'buscador-hidden'">
         <div class="div-aplicaciones-buscador">
             <Icono v-for="(aplicacion, i) in todosLosIconos" 
-            :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen"></Icono>
+                :key="i" 
+                :texto="aplicacion.texto" 
+                :imagen="aplicacion.imagen"
+                @click="abrirAplicacionIndex(aplicacion)"></Icono>
         </div>
         <div class="div-informacion-buscador">
             <h3>Información del Sistema Operativo</h3>

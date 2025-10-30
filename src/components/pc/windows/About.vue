@@ -11,6 +11,8 @@
 
         <h4>TECNOLOGÍAS</h4>
         <p>HTML | CSS | JavaScript</p>
+        <H4>IDIOMAS</H4>
+        <p>Español (Nativo) - Inglés (B1)</p>
         <hr>
 
         <h4>PROYECTOS</h4>

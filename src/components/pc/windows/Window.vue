@@ -137,6 +137,7 @@ const cerrarVentana = () => {
         align-items: center;
         padding-left: 10px;
         font-size: .9em;
+        color: #FFF;
     }
     .div-ventana-acciones > div {
         display: flex;

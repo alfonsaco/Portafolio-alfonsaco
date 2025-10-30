@@ -22,6 +22,10 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
     } else {
         if(aplicacion.action === 'contacto') {
             emit('mostrar-email');
+        } else if(aplicacion.action === 'sobremi') {
+            emit('mostrar-sobre-mi');
+        } else if(aplicacion.action === 'terminal') {
+            emit('mostrar-terminal');
         }
     }
 
@@ -33,6 +37,8 @@ defineProps<{visible: boolean}>();
 const emit = defineEmits<{
     (e: 'cerrar-index'): void
     (e: 'mostrar-email'): void
+    (e: 'mostrar-sobre-mi'): void
+    (e: 'mostrar-terminal'): void
 }>();
 </script>
 

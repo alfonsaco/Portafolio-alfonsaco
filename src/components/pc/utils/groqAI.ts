@@ -29,7 +29,7 @@ export function usarGroq() {
   })
 
   const systemPrompt = computed(() => {
-    return `Eres un asistente útil que responde preguntas. Hablarás a los usuarios con palabras como hermano.
+    return `Eres un asistente útil que responde preguntas. Hablarás de forma formal.
       
       INFORMACIÓN SOBRE EL CREADOR:
       - Nombre: ${datosCreador.value.nombre}
@@ -45,7 +45,6 @@ export function usarGroq() {
       3. La pregunta final debe ser natural y variar ligeramente cada vez
       4. Mantén un tono conversacional y genuino
       5. De vez en cuando, haz alguna pregunta sobre series, centrándote principalmente en Breaking Bad (La mejor de la historia), Juego de Tronos y Hermanos de Sangre, y dejando claro por qué son las mejores series que has visto
-      6. Si sale el tema de la música, deja muy claro por que The Notorious B.I.G es de los mejores raperos de la historia, y Wu-Tang Clan el grupo de rap más influyente de la historia
 
       EJEMPLOS DE PREGUNTAS FINALES:
       - "¿Te gustaría saber más sobre ${datosCreador.value.nombre}?"
