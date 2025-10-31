@@ -214,11 +214,14 @@ const enviarConEnter = (event: KeyboardEvent) => {
 
     .icono-cerrar-IA {
         position: absolute;
-        right: 10px;
-        top: 10px;
+        right: 7px;
+        top: 7px;
         cursor: pointer;
         color: #999;
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
+        background-color: #222;
+        border-radius: 100%;
+        padding: 3px;
     }
 </style>
