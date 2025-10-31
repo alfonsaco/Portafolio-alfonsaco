@@ -105,7 +105,7 @@ const nuevaOrden = (e: KeyboardEvent) => {
 
         <div class="div-linea-input">
             <p>C:\Usuarios\Usuario&gt;</p>
-            <input type="text" class="terminal-input" v-model="textoInput" @keydown="nuevaOrden"></input>
+            <input type="text" spellcheck="false" class="terminal-input" v-model="textoInput" @keydown="nuevaOrden"></input>
         </div>
     </div>
 </template>

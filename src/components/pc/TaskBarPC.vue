@@ -85,7 +85,8 @@ onClickOutside(buscarRef, () => {
             </div>
 
             <div class="div-buscador" @input="activarBuscador" ref="buscarRef">
-                <input type="text" v-model="textoBuscado" class="buscador" placeholder="Búsqueda"></input>
+                <input type="text" v-model="textoBuscado" spellcheck="false"
+                class="buscador" placeholder="Búsqueda"></input>
                 <Search class="icono-buscar"/>
             </div>
 
