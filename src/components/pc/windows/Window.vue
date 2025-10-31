@@ -114,7 +114,7 @@ const cerrarVentana = () => {
         height: 500px;
         background-color: rgb(0, 0, 0);
         position: absolute;
-        z-index: 400;
+        z-index: 300;
         border-radius: 5px;
         overflow: hidden;
         border: 1px solid #999;

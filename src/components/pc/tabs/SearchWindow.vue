@@ -84,6 +84,7 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
         visibility: visible;
         display: flex;
         transition: .5s ease;
+        z-index: 350;
     }
     .buscador-visible {
         transform: translateX(calc(-50% - (3 * 20px))) translateY(0%);

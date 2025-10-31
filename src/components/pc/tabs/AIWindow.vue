@@ -83,7 +83,7 @@ const enviarConEnter = (event: KeyboardEvent) => {
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
         border-left: 0px;
-        z-index: 90;
+        z-index: 300;
         transition: .7s ease;
         padding: 20px 15px 9px 15px;
         left: -500px;

@@ -69,7 +69,7 @@ const emit = defineEmits<{
         overflow: hidden;
         transition: .7s ease;
         transform: translateY(110%); 
-        z-index: 100;
+        z-index: 350;
         user-select: none;
     }
 

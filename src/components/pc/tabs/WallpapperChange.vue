@@ -40,7 +40,7 @@ const cambiarFondoPantalla = (ruta: string) => {
         top: 0;
         left: 0;
         background-color: transparent;
-        z-index: 149;
+        z-index: 490;
     }
     .div-cambio-walpapper {
         background-color: #222222c4;
@@ -54,7 +54,7 @@ const cambiarFondoPantalla = (ruta: string) => {
         border: 1px solid #999;
         border-radius: 5px;
         padding:20px;
-        z-index: 150;
+        z-index: 500;
         box-shadow: 0px 7px 15px #000000b6;
     }
 

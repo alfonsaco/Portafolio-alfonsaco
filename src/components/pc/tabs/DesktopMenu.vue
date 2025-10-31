@@ -104,7 +104,7 @@ const opcionesInvisible = () => {
         top: 200px;
         opacity: 1;
         user-select: none;
-        z-index: 100;
+        z-index: 400;
     }
     .contenedor-menu {
         width: 200px;
