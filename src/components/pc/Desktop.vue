@@ -54,9 +54,9 @@ const actualizarTamano  = (nuevoTamano: string) => {
     tamanoIcono.value = nuevoTamano as 'pequeno' | 'mediano' | 'grande';
 };
 const estilosGridIconos = computed(() => {
-    if(tamanoIcono.value === 'pequeno') return { columnGap: '15px', rowGap: '20px' };
-    if(tamanoIcono.value === 'mediano') return { columnGap: '25px', rowGap: '40px' };
-    return { columnGap: '35px', rowGap: '70px' };
+    if(tamanoIcono.value === 'pequeno') return { columnGap: '15px', rowGap: '5px' };
+    if(tamanoIcono.value === 'mediano') return { columnGap: '25px', rowGap: '10px' };
+    return { columnGap: '35px', rowGap: '15px' };
 });
 
 // Función para abrir un icono. Según lo que contenga, te llevará a un enlace o abrirá el proyecto
@@ -270,12 +270,11 @@ defineExpose({
         display: grid;
         column-gap: 15px;
         grid-template-columns: repeat(2, minmax(50px, 1fr));
-        grid-template-rows: repeat(8, minmax(50px, 1fr));
-        height: 90vh;
+        grid-template-rows: repeat(3, minmax(50px, 1fr));
+        height: auto;
         position: absolute;
         left: 30px;
         top: 30px;
-        margin-bottom: 100px;
         align-items: start;
     }
 
@@ -283,12 +282,11 @@ defineExpose({
         display: grid;
         column-gap: 15px;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(8, minmax(50px, 1fr));
-        height: 90vh;
+        grid-template-rows: repeat(3, minmax(50px, 1fr));
+        height: auto;
         position: absolute;
         right: 30px;
         top: 30px;
-        margin-bottom: 100px;
         align-items: start;
         direction: rtl;
     }

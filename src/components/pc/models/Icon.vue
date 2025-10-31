@@ -17,7 +17,7 @@ const manejarClick = () => {
 
 const estilo = computed(() => {
     if(props.tamano === 'grande') return { width: '60px', height: '60px' };
-    if(props.tamano === 'pequeno') return { width: '40px', height: '40px'};
+    if(props.tamano === 'pequeno') return { width: '40px', height: '40px' };
     return { width: '50px', height: '50px' };
 })
 </script>
@@ -43,7 +43,7 @@ const estilo = computed(() => {
         align-items: center;
         justify-content: center;
         gap: 3px;
-        padding: 4px 2px;
+        padding: 6px 4px;
     }
     .div-icono:hover {
         background-color: #FFFfff20;
