@@ -24,9 +24,9 @@ const posicionX = ref(0);
 const posicionY = ref(0);
 
 onMounted(() => {
-    // Posición inicial en el centro
+    // Posición inicial en el centro (El -50 es por el tamaño del TaskBar)
     posicionX.value = (window.innerWidth - 700) / 2;
-    posicionY.value = (window.innerHeight - 500) / 2;
+    posicionY.value = (window.innerHeight - 500 - 50) / 2;
 
     setTimeout(() => {
         ventanaAbierta.value = true;
