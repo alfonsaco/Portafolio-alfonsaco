@@ -7,6 +7,7 @@ import EmailView from './tabs/EmailView.vue';
 import Window from '../pc/windows/Window.vue';
 import Terminal from './windows/Terminal.vue'
 import About from './windows/About.vue';
+import Flappy from './windows/ProjectFlappy.vue';
 
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 
@@ -69,6 +70,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             manejarMostrarEmail();
         } else if(icono.action === 'sobremi') {
             mostrarSobreMi();
+        } else if(icono.action === 'flappy') {
+            mostrarFlappy();
         }
     }
 }
@@ -211,6 +214,11 @@ const mostrarTerminal = () => {
 // Sobre mi
 const mostrarSobreMi = () => {
     abrirVentana('Sobre Mi', About);
+}
+
+// Proyecto flappy
+const mostrarFlappy = () => {
+    abrirVentana('Flappy Parfums', Flappy);
 }
 
 const cambiarFondo = () => { }

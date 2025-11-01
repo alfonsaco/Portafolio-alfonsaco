@@ -20,7 +20,7 @@
     {
         "texto": "Flappy Parfums",
         "imagen": "/flappy.png",
-        "action": "",
+        "action": "flappy",
         "escritorio": "izq"
     },
     {
