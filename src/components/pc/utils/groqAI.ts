@@ -25,7 +25,7 @@ export function usarGroq() {
     intereses: ['programación', 'gimnasio', 'programar aplicaciones', 'ver series'],
     habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL'],
     proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%'],
-    datos: ['Empecé a programar a los 15 años', 'Inglés nivel B1']
+    datos: ['Inglés nivel B1']
   })
 
   const systemPrompt = computed(() => {
@@ -164,7 +164,7 @@ export function usarGroq() {
       intereses: ['programación', 'gimnasio', 'programar aplicaciones'],
       habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL'],
       proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%'],
-      datos: ['Empecé a programar a los 15 años', 'Inglés nivel B1']
+      datos: ['Inglés nivel B1']
     })
   }
 

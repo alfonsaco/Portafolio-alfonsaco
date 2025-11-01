@@ -159,17 +159,15 @@ const cerrarVentana = () => {
     .div-ventana-icono {
         width: 13px;
         height: 13px;
-        color: #222;
+        color: #ffffff;
         transition: .1s ease;
-    }
-    .div-ventana-acciones > div > div:hover .div-ventana-icono {
-        color: #e6e6e6;
+        filter: drop-shadow(0px 1px 0px #000);
     }
     .div-ventana-acciones > div > div:first-child {
-        background-color: rgb(87, 184, 87);
+        background-color: rgb(87, 126, 184);
     }
     .div-ventana-acciones > div > div:first-child:hover {
-        background-color: rgb(36, 158, 36);
+        background-color: rgb(52, 90, 148);
     }
     .div-ventana-acciones > div > div:last-child {
         background-color: rgb(177, 62, 62);
