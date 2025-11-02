@@ -30,6 +30,14 @@ const comunicarDesktopTerminal = () => {
         console.log('ERROR al mostrar Terminal')
     }
 }
+
+const comunicarDesktopFlappy = () => {
+    if (desktopRef.value) {
+        desktopRef.value.mostrarFlappy();
+    } else {
+        console.log('ERROR al mostrar Flappy')
+    }
+}
 </script>
 
 
@@ -40,6 +48,7 @@ const comunicarDesktopTerminal = () => {
         @mostrar-email="comunicacionDesktopEmail"
         @mostrar-sobre-mi="comunicacionDesktopSobreMi"
         @mostrar-terminal="comunicarDesktopTerminal"
+        @mostrar-flappy="comunicarDesktopFlappy"
         ></TaskBar>
 </template>
 

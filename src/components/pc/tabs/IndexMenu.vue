@@ -26,6 +26,8 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
             emit('mostrar-sobre-mi');
         } else if(aplicacion.action === 'terminal') {
             emit('mostrar-terminal');
+        } else if(aplicacion.action === 'flappy') {
+            emit('mostrar-flappy');
         }
     }
 
@@ -39,6 +41,7 @@ const emit = defineEmits<{
     (e: 'mostrar-email'): void
     (e: 'mostrar-sobre-mi'): void
     (e: 'mostrar-terminal'): void
+    (e: 'mostrar-flappy'): void
 }>();
 </script>
 

@@ -117,7 +117,7 @@ import Mano from '../../../assets/images/mano.png'
         padding: 15px;
     }
     .flappy-juego p, .flappy-juego p strong {
-        color: #383838;
+        color: #494949;
         text-align: left;
         font-family: Arial, Helvetica, sans-serif;
         margin-bottom: 8px;
@@ -125,9 +125,6 @@ import Mano from '../../../assets/images/mano.png'
     }
 
     /* DIV DE SKINS */  
-    .flappy-div-colonias {
-
-    }
     .flappy-div-colonias img {
         width: 100px;
         animation: volar .7s ease-in-out infinite alternate-reverse;

@@ -9,7 +9,7 @@ import Terminal from './windows/Terminal.vue'
 import About from './windows/About.vue';
 import Flappy from './windows/ProjectFlappy.vue';
 
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, computed, markRaw } from 'vue';
 
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
@@ -196,7 +196,7 @@ const abrirVentana = (titulo: string, componente: any) => {
     ventanasAbiertas.value.push({
         id,
         titulo,
-        componente,
+        componente: markRaw(componente),
         visible: true
     });
 }
@@ -227,7 +227,8 @@ const cambiarFondo = () => { }
 defineExpose({
     manejarMostrarEmail,
     mostrarSobreMi,
-    mostrarTerminal
+    mostrarTerminal,
+    mostrarFlappy
 });
 </script> 
 
