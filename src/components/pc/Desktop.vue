@@ -8,6 +8,7 @@ import Window from '../pc/windows/Window.vue';
 import Terminal from './windows/Terminal.vue'
 import About from './windows/About.vue';
 import Flappy from './windows/ProjectFlappy.vue';
+import CRM from './windows/ProjectCRM.vue';
 
 import { ref, onMounted, onUnmounted, computed, markRaw } from 'vue';
 
@@ -72,6 +73,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             mostrarSobreMi();
         } else if(icono.action === 'flappy') {
             mostrarFlappy();
+        } else if(icono.action === 'crm') {
+            mostrarCRM();
         }
     }
 }
@@ -219,6 +222,11 @@ const mostrarSobreMi = () => {
 // Proyecto flappy
 const mostrarFlappy = () => {
     abrirVentana('Flappy Parfums', Flappy);
+}
+
+// Proyecto CRM
+const mostrarCRM = () => {
+    abrirVentana('CRM', CRM);
 }
 
 const cambiarFondo = () => { }

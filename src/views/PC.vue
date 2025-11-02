@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TaskBar from '../components/pc/TaskBarPC.vue';
 import Desktop from '../components/pc/Desktop.vue';
+import LoadingScreen from '../components/pc/PCLoadingScreen.vue';
 
 import { ref } from 'vue';
 
@@ -42,6 +43,8 @@ const comunicarDesktopFlappy = () => {
 
 
 <template>
+    <LoadingScreen></LoadingScreen>
+
     <Desktop ref="desktopRef"></Desktop>
 
     <TaskBar 
