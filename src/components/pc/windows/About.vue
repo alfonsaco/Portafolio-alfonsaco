@@ -5,20 +5,28 @@
 
 <template>
     <div class="ventana-sobre-mi">
-        <h1>SOBRE MI</h1>
-        <p>Desarrollador FullTsack y de aplicaciones Multiplataforma</p>
+        <h1>SOBRE MÍ</h1>
+        <p>Desarrollador Full-Stack y de aplicaciones Multiplataforma</p>
         <hr>
 
-        <h4>TECNOLOGÍAS</h4>
-        <p>HTML | CSS | JavaScript</p>
-        <H4>IDIOMAS</H4>
-        <p>Español (Nativo) - Inglés (B1)</p>
+        <h4>CONOCIMIENTOS Y HABILIDADES</h4>
+        <h5>LENGUAJES</h5>
+        <p>Java • HTML • CSS • JavaScript • TypeScript • SQL • NoSQL</p>
+        <h5>FRAMEWORKS</h5>
+        <p>Vue • React Native • JavaFX • NodeJS</p>
+        <h5>ENTORNOS Y HERRAMIENTAS</h5>
+        <p>Visual Studio • Android Studio • IntelliJ IDEA • GitHub • Firebase</p>
+
+        <h4>IDIOMAS</h4>
+        <p>Español <span>(Nativo)</span> — Inglés <span>(B1)</span></p>
+
         <hr>
 
         <h4>PROYECTOS</h4>
-        <p>Todos los proyectos los puedes encontrar en las carpetas izquierdas del escritorio</p>
+        <p>Todos los proyectos los podrás encontrar dentro de la carpeta situada en la parte izquierda del escritorio.</p>
         <h4>EXPERIENCIA</h4>
         <p class="ventana-p-borrador">&gt;&gt; Creación de CRM completo con JavaFX durante 3 meses</p>
+
         <hr>
 
         <h4>CONTACTO</h4>
@@ -62,7 +70,7 @@
     }
 
     .ventana-sobre-mi hr {
-        margin: 20px 15px;
+        margin: 30px 15px 20px 15px;
         border-color: #f0db554f;
     }
 
@@ -74,7 +82,15 @@
     }
     .ventana-sobre-mi h4 {
         color: #D18D4E;
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+    .ventana-sobre-mi h5 {
+        color: #f0cc55;
+        margin-top: 8px;
+        font-size: .95em;
+    }
+    .ventana-sobre-mi span {
+        color: #69bbab;
     }
     .ventana-sobre-mi p {
 

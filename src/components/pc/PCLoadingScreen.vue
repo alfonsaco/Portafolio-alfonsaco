@@ -21,7 +21,8 @@ setTimeout(() => {
         <div>
             <img :src="Logo" alt="Logo AlfonOS">
             <h2>AlfonOS</h2>
-            <p>Bienvenido al portafolio de Alfonso Rincón</p>
+            <p>Bienvenido al portafolio de Alfonso Rincón. Pulsa F11 para una mejor experiencia<br>
+                con pantalla completa.</p>
             <div class="barra-de-carga"></div>
         </div>
     </div>
@@ -68,8 +69,8 @@ setTimeout(() => {
 
     .barra-de-carga {
         border: 5px solid #FFF;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         margin-top: 20px;
         border-radius: 100%;
         border-top-color: transparent;
