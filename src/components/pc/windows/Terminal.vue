@@ -114,7 +114,9 @@ const nuevaOrden = (e: KeyboardEvent) => {
 <style>
     @font-face {
         font-family: 'Terminal';
-        src: url('../../../assets/fonts/terminal.ttf');
+        src: url('../../../assets/fonts/terminal.woff2') format('woff2'),
+             url('../../../assets/fonts/terminal.woff') format('woff');
+        font-display: swap;
     }
    
     .div-ventana-terminal {

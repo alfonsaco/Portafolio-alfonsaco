@@ -60,7 +60,9 @@ import Mano from '../../../assets/images/mano.png'
 <style>
     @font-face {
         font-family: 'Flappy';
-        src: url('../../../assets/fonts/flappy.ttf');
+        src: url('../../../assets/fonts/flappy.woff2') format('woff2'),
+             url('../../../assets/fonts/flappy.woff') format('woff');
+        font-display: swap;
     }
 
     /* CONTENEDOR GENERAL */

@@ -44,7 +44,9 @@
 <style>
     @font-face {
         font-family: 'Cascadia';
-        src: url('../../../assets/fonts/cascadia.ttf');
+        src: url('../../../assets/fonts/cascadia.woff2') format('woff2'),
+             url('../../../assets/fonts/cascadia.woff') format('woff');
+        font-display: swap;
     }
 
     .ventana-sobre-mi {
