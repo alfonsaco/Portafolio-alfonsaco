@@ -75,6 +75,7 @@ const textoBateria = computed(() => {
         width: 100%;
         height: 30px;
         background-color: rgba(255, 255, 255, 0.055);
+        backdrop-filter: blur(3px);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -87,18 +88,17 @@ const textoBateria = computed(() => {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
     }
     .toolbar-div-bateria > div {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1px;
+        gap: 3px;
         font-size: .85em;
     }
     .toolbar-div-bateria p {
         margin: 0;
-        transform: translateY(-1px);
     }
     .icono-toolbar {
         width: 20px;

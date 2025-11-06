@@ -26,6 +26,9 @@ const abrirAplicacion = () => {
 <style>
     .div-aplicacion-movil {
         user-select: none;
+        font-size: .8em;
+        text-align: center;
+        cursor: pointer;
     }
     .icono-app {
         width: 55px;

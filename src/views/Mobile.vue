@@ -25,7 +25,7 @@ const cerrar = () => {
 
 <style>
     .mantenimiento {
-        width: 400px;
+        width: 350px;
         height: auto;
         background-color: #e0e0e0;
         border: 1px solid #222;

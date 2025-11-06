@@ -26,7 +26,7 @@ import iconoCodepen from '/codepen.webp'
         width: 100%;
         padding: 15px 0px;
         display: flex;
-        gap: 30px;
+        gap: 22px;
         justify-content: center;
         position: absolute;
         bottom: 0;
