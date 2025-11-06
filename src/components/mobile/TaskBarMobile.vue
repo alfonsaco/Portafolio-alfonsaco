@@ -1,7 +1,7 @@
 <script setup>
 import iconoGitHub from '/github.webp'
 import iconoLinkedIn from '/linkedin.webp'
-import iconoAlfonOS from '../../assets/alfonOS.webp'
+import iconoCodepen from '/codepen.webp'
 
 </script>
 
@@ -9,10 +9,13 @@ import iconoAlfonOS from '../../assets/alfonOS.webp'
 <template>
     <div class="div-taskbar">
         <a href="https://www.github.com/alfonsaco" target="_blank">
-                <img :src="iconoGitHub" alt="Icono GitHub" />
-            </a>
+            <img :src="iconoGitHub" alt="Icono GitHub" />
+        </a>
         <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank">
             <img :src="iconoLinkedIn" alt="Icono inkedIn" />
+        </a>
+        <a href="https://codepen.io/alfonsaco" target="_blank">
+            <img :src="iconoCodepen" alt="Icono CodePen" />
         </a>
     </div>
 </template>
@@ -23,12 +26,12 @@ import iconoAlfonOS from '../../assets/alfonOS.webp'
         width: 100%;
         padding: 10px 0px;
         display: flex;
-        gap: 20px;
+        gap: 30px;
         justify-content: center;
     }
     .div-taskbar img {
-        height: 70px;
-        width: 70px;
+        height: 55px;
+        width: 55px;
         border-radius: 20px;
     }
 </style>

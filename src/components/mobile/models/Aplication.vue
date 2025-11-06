@@ -28,8 +28,8 @@ const abrirAplicacion = () => {
         user-select: none;
     }
     .icono-app {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
     .texto-app {
         margin: 0;

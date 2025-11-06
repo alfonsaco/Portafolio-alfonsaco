@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import App from './App.vue';
+import App from './models/Aplication.vue';
 
 // Iconos Apps
 import OversizeLogo from '/oversize.webp';

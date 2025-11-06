@@ -3,7 +3,7 @@
  https://github.com/svofski/glasstty  
 */
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 
 const textoInput = ref('');
 const ordenes = ref<string[]>([]);
@@ -11,7 +11,8 @@ const ordenes = ref<string[]>([]);
 // Para que el input esté seleccionado por defecto
 const inputRef = ref<HTMLInputElement | null>(null);
 
-onMounted(() => {
+onMounted(async () => {
+    await nextTick();
     inputRef.value?.focus();
 });
 
