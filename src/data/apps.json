@@ -66,5 +66,11 @@
         "texto": "Terminal",
         "imagen": "/terminal.png",
         "action" : "terminal"
+    },
+    {
+        "texto": "Proyectos",
+        "imagen": "/carpeta.png",
+        "action" : "carpeta",
+        "escritorio": "izq"
     }
 ]
