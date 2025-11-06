@@ -11,16 +11,36 @@ const props = defineProps<{
 const iconos = usarIconos();
 
 const archivos = computed(() => {
-  console.log('Tipo de archivo recibido:', props.tipoArchivo); // Para debug
+    if (props.tipoArchivo === 'proyectos') {
+        return iconos.iconosProyectos.value;
+    }
   
-  if (props.tipoArchivo === 'proyectos') {
-    console.log('Iconos proyectos:', iconos.iconosProyectos.value); // Para debug
-    return iconos.iconosProyectos.value;
-  }
-  
-  // Puedes agregar más casos aquí según necesites
-  return [];
+    return [];
 });
+
+// Función para abrir un icono. Según lo que contenga, te llevará a un enlace o abrirá el proyecto
+const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?: string }) => {
+    if(icono.url) {
+        window.open(icono.url, '_blank');
+
+    } else {
+        /*
+        if(icono.action === 'contacto') {   
+            manejarMostrarEmail();
+        } else if(icono.action === 'sobremi') {
+            mostrarSobreMi();
+        } else if(icono.action === 'flappy') {
+            mostrarFlappy();
+        } else if(icono.action === 'crm') {
+            mostrarCRM();
+        } else if(icono.action === 'proyectos') {
+            mostrarCarpeta('proyectos');
+        } else if(icono.action === 'certificaciones') {
+            mostrarCarpeta('certificaciones');
+        }
+            */
+    }
+}
 </script>
 
 
@@ -74,7 +94,8 @@ const archivos = computed(() => {
                 <div class="carpeta-grid">
                     <Archivo v-for="(archivo, i) in archivos" :key="i" 
                     :imagen="archivo.imagen" 
-                    :texto="archivo.texto"/>
+                    :texto="archivo.texto"
+                    @dblclick="abrirIcono(archivo)"/>
                 </div>
             </div>
         </div>

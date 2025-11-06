@@ -78,6 +78,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             mostrarCRM();
         } else if(icono.action === 'proyectos') {
             mostrarCarpeta('proyectos');
+        } else if(icono.action === 'certificaciones') {
+            mostrarCarpeta('certificaciones');
         }
     }
 }
@@ -278,11 +280,19 @@ defineExpose({
 
     <div class="escritorio" @auxclick="mostrarMenu" ref="escritorioRef">
         <div class="div-iconos" :style="estilosGridIconos">
-            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)"/>
+            <Icono v-for="(icono, i) in iconosIzquierda" :key="i" :texto="icono.texto" 
+            :tamano="tamanoIcono" 
+            :imagen="icono.imagen" 
+            @dblclick="abrirIcono(icono)"
+            @touchstart="abrirIcono(icono)" />
         </div>
 
         <div class="div-iconos-2" :style="estilosGridIconos" >
-            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" :tamano="tamanoIcono" :imagen="icono.imagen" @dblclick="abrirIcono(icono)" />
+            <Icono v-for="(icono, i) in iconosDerecha" :key="i" :texto="icono.texto" 
+            :tamano="tamanoIcono" 
+            :imagen="icono.imagen" 
+            @dblclick="abrirIcono(icono)"
+            @touchstart="abrirIcono(icono)" />
         </div>
     </div>
 </template>
