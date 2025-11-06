@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { usarIconos } from '../../../data/UseIcons';
 import Icono from '../models/SearchIcon.vue'
+import { computed, ref } from 'vue';
 
 const { todosLosIconos } = usarIconos();
 
-defineProps<{buscadorVisible: boolean}>();
+const props = defineProps<{
+    buscadorVisible: boolean, textoBuscado: string
+}>();
 
 // Abrir las aplicaciones
 const emit = defineEmits<{
@@ -33,12 +36,29 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
     emit('cerrar-index');
 }
 
+// Mostrar la búsqueda
+const iconosFiltrados = computed(() => {
+  const texto = props.textoBuscado.trim().toLowerCase();
+  if (!texto) return todosLosIconos.value;
+
+  return [...todosLosIconos.value]
+    .filter((app: any) => app.texto.toLowerCase().includes(texto))
+    .sort((a: any, b: any) => {
+      const aEmpieza = a.texto.toLowerCase().startsWith(texto);
+      const bEmpieza = b.texto.toLowerCase().startsWith(texto);
+      
+      if (aEmpieza && !bEmpieza) return -1;
+      if (!aEmpieza && bEmpieza) return 1;
+      return 0;
+    });
+});
+
 </script>
 
 <template>
-    <div class="div-ventana-buscador" :class="buscadorVisible ? 'buscador-visible' : 'buscador-hidden'">
+    <div class="div-ventana-buscador" :class="props.buscadorVisible ? 'buscador-visible' : 'buscador-hidden'">
         <div class="div-aplicaciones-buscador">
-            <Icono v-for="(aplicacion, i) in todosLosIconos" 
+            <Icono v-for="(aplicacion, i) in iconosFiltrados" 
                 :key="i" 
                 :texto="aplicacion.texto" 
                 :imagen="aplicacion.imagen"

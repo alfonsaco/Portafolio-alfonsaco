@@ -70,6 +70,7 @@ onClickOutside(buscarRef, () => {
         @mostrar-terminal="$emit('mostrar-terminal')"></IndexMenu>
 
     <SearchWindow :buscador-visible="buscadorVisible"
+        :texto-buscado="textoBuscado"
         @mostrar-email="$emit('mostrar-email')"
         @mostrar-sobre-mi="$emit('mostrar-sobre-mi')"
         @mostrar-flappy="$emit('mostrar-flappy')"

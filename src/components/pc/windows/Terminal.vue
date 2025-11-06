@@ -3,10 +3,17 @@
  https://github.com/svofski/glasstty  
 */
 
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const textoInput = ref('');
 const ordenes = ref<string[]>([]);
+
+// Para que el input esté seleccionado por defecto
+const inputRef = ref<HTMLInputElement | null>(null);
+
+onMounted(() => {
+    inputRef.value?.focus();
+});
 
 // Datos
 const info = [
@@ -105,7 +112,9 @@ const nuevaOrden = (e: KeyboardEvent) => {
 
         <div class="div-linea-input">
             <p>C:\Usuarios\Usuario&gt;</p>
-            <input type="text" spellcheck="false" class="terminal-input" v-model="textoInput" @keydown="nuevaOrden"></input>
+            <input type="text" spellcheck="false" class="terminal-input" 
+            v-model="textoInput" @keydown="nuevaOrden"
+            ref="inputRef"></input>
         </div>
     </div>
 </template>
