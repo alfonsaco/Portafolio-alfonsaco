@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usarIconos } from '../../../data/UseIcons';
 import Icono from '../models/SearchIcon.vue'
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 
 const { todosLosIconos } = usarIconos();
 
