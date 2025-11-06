@@ -11,6 +11,13 @@ setTimeout(() => {
 setTimeout(() => {
     displayNone.value = true;
 }, 4000);
+
+
+// Rotación y delay para la animacion
+const divs = Array.from({ length: 12 }, (_, i) => ({
+  transform: `rotate(${i * 30}deg) translateY(25px)`,
+  animationDelay: `${i * (-60)}ms`
+}));
 </script>
 
 
@@ -23,7 +30,12 @@ setTimeout(() => {
             <h2>AlfonOS</h2>
             <p>Bienvenido al portafolio de Alfonso Rincón. Pulsa F11 para una mejor experiencia<br>
                 con pantalla completa.</p>
-            <div class="barra-de-carga"></div>
+
+            <div class="animacion-carga">
+                <div v-for="(div, i) in divs" :key="i"
+                :style="div" 
+                class="bolas-animacion"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -67,26 +79,6 @@ setTimeout(() => {
     }
 
 
-    .barra-de-carga {
-        border: 5px solid #FFF;
-        width: 50px;
-        height: 50px;
-        margin-top: 20px;
-        border-radius: 100%;
-        border-top-color: transparent;
-        border-left-color: transparent;
-        border-bottom-color: transparent;
-        animation: barraCarga 1s infinite ease;
-    }
-    @keyframes barraCarga {
-        from {
-            rotate: 0deg;
-        }
-        to {
-            rotate: 360deg;
-        }
-    }
-
     /* CLASES PARA OCULTAR EL LOADING */
     .ocultar-loading {
         opacity: 0;
@@ -95,5 +87,29 @@ setTimeout(() => {
     }
     .display-loading {
         display: none;
+    }
+    
+    /* ANIMACIÓN DE CARGA */
+    .animacion-carga {
+        position: relative;
+        margin-top: 40px;
+        transform: scaleX(-1);
+    }
+    .bolas-animacion {
+        width: 7px;
+        height: 7px;
+        background-color: #fff;
+        border-radius: 100%;
+        position: absolute;
+        transform: translateY(25px);
+        animation: animacionOpacidad .8s ease infinite;
+    }
+    @keyframes animacionOpacidad {
+        from {
+            opacity: 1;
+        }
+        70%, to {
+            opacity: 0;
+        }
     }
 </style>

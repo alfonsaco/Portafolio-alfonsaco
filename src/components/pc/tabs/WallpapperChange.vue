@@ -66,6 +66,7 @@ const cambiarFondoPantalla = (ruta: string) => {
         margin-bottom: 10px;
         font-size: 1.1em;
         color: #d1d1d1;
+        user-select: none;
     }
 
     /* IMÁGENES DE FONDO DE PANTALLA */
