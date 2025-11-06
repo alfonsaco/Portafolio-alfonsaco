@@ -76,8 +76,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             mostrarFlappy();
         } else if(icono.action === 'crm') {
             mostrarCRM();
-        } else if(icono.action === 'carpeta') {
-            mostrarCarpeta();
+        } else if(icono.action === 'proyectos') {
+            mostrarCarpeta('proyectos');
         }
     }
 }
@@ -191,11 +191,12 @@ interface Ventana {
     titulo: string;
     componente: any;
     visible: boolean;
+    props?: Record<string, any>
 }
 
 const ventanasAbiertas = ref<Ventana[]>([]);
 
-const abrirVentana = (titulo: string, componente: any) => {
+const abrirVentana = (titulo: string, componente: any, propsVentana: Record<string, any> = {}) => {
     const id = Date.now().toString();
 
     // Agrego ventana al array
@@ -203,7 +204,8 @@ const abrirVentana = (titulo: string, componente: any) => {
         id,
         titulo,
         componente: markRaw(componente),
-        visible: true
+        visible: true,
+        props: propsVentana
     });
 }
 
@@ -233,8 +235,8 @@ const mostrarCRM = () => {
 }
 
 // Carpetas
-const mostrarCarpeta = () => {
-    abrirVentana('Carpeta', Carpeta);
+const mostrarCarpeta = (tipo: string = 'proyectos') => {
+    abrirVentana('Carpeta', Carpeta, { tipoArchivo: tipo });
 }
 
 const cambiarFondo = () => { }
@@ -261,7 +263,8 @@ defineExpose({
         :texto="ventana.titulo" 
         :componente="ventana.componente"
         :visible="ventana.visible"
-        @cerrarVentana="cerrarVentana(ventana.id)"></Window>
+        @cerrarVentana="cerrarVentana(ventana.id)"
+        :props="ventana.props"></Window>
 
     <WallpapperChange v-if="mostrarWallpapper" 
         @cerrar="cerrarWallpapper" 

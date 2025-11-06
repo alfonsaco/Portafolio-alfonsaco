@@ -10,11 +10,16 @@ export function usarIconos() {
 
     const iconosIzquierda = computed(() => 
         todosLosIconos.value.filter(icono => icono.escritorio === 'izq')
-    )
+    );
+
+    const iconosProyectos = computed(() => 
+        todosLosIconos.value.filter(icono => icono.escritorio === 'proyectos')
+    );
 
     return {
         todosLosIconos,
         iconosDerecha,
-        iconosIzquierda
+        iconosIzquierda,
+        iconosProyectos
     };
 }

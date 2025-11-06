@@ -3,31 +3,31 @@
         "texto": "CodeZen",
         "imagen": "/codezen.png",
         "action": "",
-        "escritorio": "izq"
+        "escritorio": "proyectos"
     },
     {
         "texto": "Oversize Studios",
         "imagen": "/oversize.png",
         "url": "https://alfonsaco.github.io/Oversize/index.html",
-        "escritorio": "izq"
+        "escritorio": "proyectos"
     },
     {
         "texto": "100DayCSS",
         "imagen": "/100DayCSS.png",
         "url": "https://100dayscss.com/progress/alfonsaco/",
-        "escritorio": "izq"
+        "escritorio": "proyectos"
     },
     {
         "texto": "Flappy Parfums",
         "imagen": "/flappy.png",
         "action": "flappy",
-        "escritorio": "izq"
+        "escritorio": "proyectos"
     },
     {
         "texto": "CRM",
         "imagen": "/logo_crm.png",
         "action": "crm",
-        "escritorio": "izq"
+        "escritorio": "proyectos"
     },
     {
         "texto": "Contacto",
@@ -70,7 +70,7 @@
     {
         "texto": "Proyectos",
         "imagen": "/carpeta.png",
-        "action" : "carpeta",
+        "action" : "proyectos",
         "escritorio": "izq"
     }
 ]

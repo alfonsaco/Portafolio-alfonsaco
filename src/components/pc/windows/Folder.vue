@@ -1,9 +1,26 @@
 <script setup lang="ts">
 import { List, Grid2X2, Home, Download, Images, File, Monitor, Music, Film, Folder } from 'lucide-vue-next';
+import { usarIconos } from '../../../data/UseIcons';
+import { computed } from 'vue';
+import Archivo from '../../pc/models/FolderFile1.vue';
 
 const props = defineProps<{
-    cantidad : string
+    tipoArchivo: string
 }>();
+
+const iconos = usarIconos();
+
+const archivos = computed(() => {
+  console.log('Tipo de archivo recibido:', props.tipoArchivo); // Para debug
+  
+  if (props.tipoArchivo === 'proyectos') {
+    console.log('Iconos proyectos:', iconos.iconosProyectos.value); // Para debug
+    return iconos.iconosProyectos.value;
+  }
+  
+  // Puedes agregar más casos aquí según necesites
+  return [];
+});
 </script>
 
 
@@ -11,10 +28,10 @@ const props = defineProps<{
     <div class="div-carpeta">
         <div class="ventana-carpeta-header">
             <div>
-                <List class="carpeta-iconos"></List>
+                <List class="disposicion-iconos"></List>
             </div>
             <div>
-                <Grid2X2 class="carpeta-iconos"></Grid2X2>
+                <Grid2X2 class="disposicion-iconos"></Grid2X2>
             </div>
         </div>
         <div class="ventana-carpeta-contenido">
@@ -53,9 +70,15 @@ const props = defineProps<{
                     <p>Proyectos</p>
                 </div>
             </div>
-            <div></div>
+            <div>
+                <div class="carpeta-grid">
+                    <Archivo v-for="(archivo, i) in archivos" :key="i" 
+                    :imagen="archivo.imagen" 
+                    :texto="archivo.texto"/>
+                </div>
+            </div>
         </div>
-        <div class="carpeta-elementos">{{ props.cantidad }} elementos</div>
+        <div class="ventana-carpeta-elementos">{{ archivos.length }} elementos</div>
     </div>
 </template>
 
@@ -70,15 +93,36 @@ const props = defineProps<{
     /* PARTE SUPERIOR DE LA CARPETA */
     .ventana-carpeta-header {
         background-color: #FFF;
+        width: 100%;
         display: flex;
+        gap: 3px;
         border-bottom: 1px solid #999;
+        justify-content: right;
+        padding: 4px;
+        padding-right: 8px;
     }
-        .carpeta-iconos {
-        color: #222;
+    .ventana-carpeta-header > div {
+        background-color: transparent;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+    .ventana-carpeta-header > div:hover {
+        background-color: #9ab2ff41;
+        border-color: #9ab2ff5e;
+    }
+    .disposicion-iconos {
+        color: #5f5f5f;
+        width: 20px;
+        height: 20px;
     }
 
 
-    /* SECCIÓN PROYECTOS Y VISUAL */
+    /* SECCIÓN PROYECTOS Y CONTENIDO */
     .ventana-carpeta-contenido {
         width: 100%;
         height: calc(100% - 50px);
@@ -129,18 +173,28 @@ const props = defineProps<{
     .ventana-carpeta-contenido > div:last-child {
         width: 100%;
         height: 100%;
+        padding: 10px;
+    }
+    .carpeta-grid {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(6, 90px);
+        align-items: start;
+        justify-content: start;
     }
 
 
     /* PARTE BAJA DE LA VENTANA */
-    .carpeta-elementos {
+    .ventana-carpeta-elementos {
         width: 100%;
         background-color: #FFF;
         border-top: 1px solid #999;
-        color: #222;
+        color: #444;
         text-align: left;
+        position: absolute;
+        bottom: 0px;
+        padding: 2px;
+        padding-left: 8px;
+        font-size: .9em;
     }
-
-
-
 </style>

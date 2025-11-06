@@ -5,6 +5,8 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const props = defineProps<{
     texto: string
     componente?: any
+    props?: Record<string, any>
+    id?: string  // ← Añade esto si necesitas el ID
 }>();
 
 const ventanaAbierta = ref(false);
@@ -12,7 +14,7 @@ const ventanaAbierta = ref(false);
 // Manejar pantalla completa y normal
 const pantallaCompleta = ref(false);
 
-const cambairAPantallaCompleta = () => {
+const cambiarAPantallaCompleta = () => {  // ← Corregí el nombre aquí también
     pantallaCompleta.value = !pantallaCompleta.value;
 }
 
@@ -75,11 +77,9 @@ const emit = defineEmits(['cerrarVentana']);
 
 const cerrarVentana = () => {
     ventanaAbierta.value = false;
-
-    emit('cerrarVentana');
+    emit('cerrarVentana', props.id);  
 }
 </script>
-
 
 <template>
     <div class="div-ventana-principal" 
@@ -92,21 +92,24 @@ const cerrarVentana = () => {
             <!-- Nombre de la ventana -->
             {{ props.texto }}
             <div>
-                <div @click="cambairAPantallaCompleta">
+                <div @click="cambiarAPantallaCompleta"> 
                     <Maximize class="div-ventana-icono"></Maximize>
                 </div>
                 <div @click="cerrarVentana">
                     <X class="div-ventana-icono"></X>
                 </div>
-            
             </div>
         </div>
 
-        <component :is="props.componente" v-if="props.componente" 
-            @cerrarVentana="cerrarVentana"></component>
+        <!-- COMPONENTE CORREGIDO - SIN EL CARÁCTER EXTRAÑO -->
+        <component 
+            :is="props.componente" 
+            v-if="props.componente" 
+            @cerrarVentana="cerrarVentana"
+            v-bind="props.props || {}">
+        </component>
     </div>
 </template>
-
 
 <style>
     .div-ventana-principal {
