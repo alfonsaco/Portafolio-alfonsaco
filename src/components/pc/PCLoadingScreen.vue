@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from '../../assets/alfonOS.png';
+import Logo from '../../assets/alfonOS.webp';
 import { ref } from 'vue';
 
 const ocultarPantalla = ref(false);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LogoIA from '../../../assets/ai.png'
+import LogoIA from '../../../assets/ai.webp'
 import { usarGroq } from '../utils/groqAI'
 
 import { X } from 'lucide-vue-next';

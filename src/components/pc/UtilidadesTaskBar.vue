@@ -60,7 +60,7 @@ const iconoBateria = computed(() => {
 // Establecer texto batería
 const textoBateria = computed(() => {
     if(cargando.value) return "Cargando, "+nivelBateria.value+'%';
-    else return nivelBateria+'%';
+    else return nivelBateria.value+'%';
 });
 
 </script>

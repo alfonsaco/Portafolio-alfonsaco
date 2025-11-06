@@ -9,6 +9,7 @@ import Terminal from './windows/Terminal.vue'
 import About from './windows/About.vue';
 import Flappy from './windows/ProjectFlappy.vue';
 import CRM from './windows/ProjectCRM.vue';
+import CodeZen from './windows/ProjectCodezen.vue';
 import Carpeta from './windows/Folder.vue';
 
 import { ref, onMounted, onUnmounted, computed, markRaw } from 'vue';
@@ -80,6 +81,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             mostrarCarpeta('proyectos');
         } else if(icono.action === 'certificaciones') {
             mostrarCarpeta('certificaciones');
+        } else if(icono.action === 'codezen') {
+            mostrarCodezen();
         }
     }
 }
@@ -236,9 +239,19 @@ const mostrarCRM = () => {
     abrirVentana('CRM', CRM);
 }
 
+// Proyecto CodeZen
+const mostrarCodezen = () => {
+    abrirVentana('CodeZen', CodeZen);
+}
+
 // Carpetas
 const mostrarCarpeta = (tipo: string = 'proyectos') => {
-    abrirVentana('Carpeta', Carpeta, { tipoArchivo: tipo });
+    abrirVentana('Carpeta', Carpeta, { 
+        tipoArchivo: tipo ,
+        onMostrarFlappy: mostrarFlappy,
+        onMostrarCRM: mostrarCRM,
+        onMostrarCodezen: mostrarCodezen
+    });
 }
 
 const cambiarFondo = () => { }

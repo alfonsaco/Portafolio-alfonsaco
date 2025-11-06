@@ -4,8 +4,8 @@ import IndexMenu from './tabs/IndexMenu.vue'
 
 import iconoGitHub from '/github.webp'
 import iconoLinkedIn from '/linkedin.webp'
-import iconoAlfonOS from '../../assets/alfonOS.png'
-import logoIA from '../../assets/ai.png'
+import iconoAlfonOS from '../../assets/alfonOS.webp'
+import logoIA from '../../assets/ai.webp'
 import iconoCodepen from '/codepen.webp'
 
 import UtilidadesTaskBar from './UtilidadesTaskBar.vue';

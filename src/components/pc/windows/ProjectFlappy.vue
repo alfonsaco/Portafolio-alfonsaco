@@ -18,7 +18,7 @@ import Mano from '../../../assets/images/mano.png'
             <div class="flappy-juego">
                 <img :src="GIFJuego" alt="Gameplay de Flappy Parfums">
                 <div>
-                    <p><strong>Flappy Parfums</strong> es un juego móvil inspirado en el clásico Flappy Bird, 
+                    <p><strong>Flappy Parfums</strong> es un juego para Android inspirado en el clásico Flappy Bird, 
                     donde los personajes tradicionales son reemplazados por perfumes icónicos. 
                     Fue desarrollado en equipo utilizando <strong>Android Studio</strong> con <strong>Java</strong>.</p>
 

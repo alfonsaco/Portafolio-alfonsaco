@@ -6,6 +6,9 @@ import Archivo from '../../pc/models/FolderFile1.vue';
 
 const props = defineProps<{
     tipoArchivo: string
+    onMostrarFlappy?: () => void
+    onMostrarCRM?: () => void
+    onMostrarCodezen?: () => void
 }>();
 
 const iconos = usarIconos();
@@ -24,21 +27,13 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
         window.open(icono.url, '_blank');
 
     } else {
-        /*
-        if(icono.action === 'contacto') {   
-            manejarMostrarEmail();
-        } else if(icono.action === 'sobremi') {
-            mostrarSobreMi();
-        } else if(icono.action === 'flappy') {
-            mostrarFlappy();
-        } else if(icono.action === 'crm') {
-            mostrarCRM();
-        } else if(icono.action === 'proyectos') {
-            mostrarCarpeta('proyectos');
-        } else if(icono.action === 'certificaciones') {
-            mostrarCarpeta('certificaciones');
+        if(icono.action === 'flappy' && props.onMostrarFlappy) {
+            props.onMostrarFlappy();
+        } else if(icono.action === 'crm' && props.onMostrarCRM) {
+            props.onMostrarCRM();
+        } else if(icono.action === 'codezen' && props.onMostrarCodezen) {
+            props.onMostrarCodezen();
         }
-            */
     }
 }
 </script>
