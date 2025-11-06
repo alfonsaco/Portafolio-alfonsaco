@@ -47,7 +47,7 @@ import Mano from '../../../assets/images/mano.png'
                 <img :src="Mano" alt="Imagen de mano" class="flappy-mano">
                 <a href="https://github.com/alfonsaco/Flappy-Parfums" target="_blank">
                     <div>
-                        <img src="/github.png" alt="Logo GitHub">
+                        <img src="/github.webp" alt="Logo GitHub">
                         Portafolio en GitHub
                     </div>
                 </a>

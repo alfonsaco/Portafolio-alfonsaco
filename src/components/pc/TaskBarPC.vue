@@ -2,11 +2,11 @@
 import AIWindow from './tabs/AIWindow.vue'
 import IndexMenu from './tabs/IndexMenu.vue'
 
-import iconoGitHub from '/github.png'
-import iconoLinkedIn from '/linkedin.png'
+import iconoGitHub from '/github.webp'
+import iconoLinkedIn from '/linkedin.webp'
 import iconoAlfonOS from '../../assets/alfonOS.png'
 import logoIA from '../../assets/ai.png'
-import iconoCodepen from '/codepen.png'
+import iconoCodepen from '/codepen.webp'
 
 import UtilidadesTaskBar from './UtilidadesTaskBar.vue';
 

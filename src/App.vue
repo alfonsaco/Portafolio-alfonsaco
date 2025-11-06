@@ -27,7 +27,7 @@ onUnmounted(() => {
 });
 
 // Fondo personalizado
-const fondoActual = ref('/pc_fondo.jpg');
+const fondoActual = ref('/pc_fondo.webp');
 
 const cambiarFondo = (nuevoFondo: string) => {
   fondoActual.value = nuevoFondo;
@@ -37,7 +37,7 @@ provide('cambiarFondo', cambiarFondo);
 
 const fondoPantalla = computed(() => {
   if (esMovil.value) {
-    return { backgroundImage: 'url(/movil_fondo.jpg)' };
+    return { backgroundImage: 'url(/movil_fondo.webp)' };
   } else {
     return { backgroundImage: `url(${fondoActual.value})` };
   }

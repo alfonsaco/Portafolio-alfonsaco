@@ -22,9 +22,9 @@ const cambiarFondoPantalla = (ruta: string) => {
         <div class="div-cambio-walpapper"  @click.stop >
             <h4>Cambia el fondo de pantalla</h4>
             <div class="div-walpapper-imagenes">
-                <div @click="cambiarFondoPantalla('/pc_fondo.jpg')"></div>
-                <div @click="cambiarFondoPantalla('/got.jpg')"></div>
-                <div @click="cambiarFondoPantalla('/brba.jpg')"></div>
+                <div @click="cambiarFondoPantalla('/pc_fondo.webp')"></div>
+                <div @click="cambiarFondoPantalla('/got.webp')"></div>
+                <div @click="cambiarFondoPantalla('/brba.webp')"></div>
             </div>
 
         </div>
@@ -90,12 +90,12 @@ const cambiarFondoPantalla = (ruta: string) => {
     
     /* IMÁGENES */
     .div-walpapper-imagenes > div:first-child {
-        background-image: url(/pc_fondo.jpg);
+        background-image: url(/pc_fondo.webp);
     }
     .div-walpapper-imagenes > div:nth-child(2) {
-        background-image: url(/got.jpg);
+        background-image: url(/got.webp);
     }
     .div-walpapper-imagenes > div:last-child {
-        background-image: url(/brba.jpg);
+        background-image: url(/brba.webp);
     }
 </style>

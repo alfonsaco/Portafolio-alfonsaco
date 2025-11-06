@@ -1,75 +1,75 @@
 [
     {
         "texto": "CodeZen",
-        "imagen": "/codezen.png",
+        "imagen": "/codezen.webp",
         "action": "",
         "escritorio": "proyectos"
     },
     {
         "texto": "Oversize Studios",
-        "imagen": "/oversize.png",
+        "imagen": "/oversize.webp",
         "url": "https://alfonsaco.github.io/Oversize/index.html",
         "escritorio": "proyectos"
     },
     {
         "texto": "100DayCSS",
-        "imagen": "/100DayCSS.png",
+        "imagen": "/100DayCSS.webp",
         "url": "https://100dayscss.com/progress/alfonsaco/",
         "escritorio": "proyectos"
     },
     {
         "texto": "Flappy Parfums",
-        "imagen": "/flappy.png",
+        "imagen": "/flappy.webp",
         "action": "flappy",
         "escritorio": "proyectos"
     },
     {
         "texto": "CRM",
-        "imagen": "/logo_crm.png",
+        "imagen": "/logo_crm.webp",
         "action": "crm",
         "escritorio": "proyectos"
     },
     {
         "texto": "Contacto",
-        "imagen": "/contacto.png",
+        "imagen": "/contacto.webp",
         "action": "contacto",
         "escritorio": "dcha"
     },
     {
         "texto": "Sobre mí",
-        "imagen": "/about.png",
+        "imagen": "/about.webp",
         "action": "sobremi",
         "escritorio": "dcha"
     },
     {
         "texto": "Certificaciones",
-        "imagen": "/certificados.png",
+        "imagen": "/certificados.webp",
         "action": "certificaciones",
         "escritorio": "dcha"
     },
     {
         "texto": "GitHub",
-        "imagen": "/github.png",
+        "imagen": "/github.webp",
         "url": "https://www.github.com/alfonsaco"
     },
     {
         "texto": "LinkedIn",
-        "imagen": "/linkedin.png",
+        "imagen": "/linkedin.webp",
         "url": "https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/"
     },
     {
         "texto": "CodePen",
-        "imagen": "/codepen.png",
+        "imagen": "/codepen.webp",
         "url": "https://codepen.io/alfonsaco"
     },
     {
         "texto": "Terminal",
-        "imagen": "/terminal.png",
+        "imagen": "/terminal.webp",
         "action" : "terminal"
     },
     {
         "texto": "Proyectos",
-        "imagen": "/carpeta.png",
+        "imagen": "/carpeta.webp",
         "action" : "proyectos",
         "escritorio": "izq"
     }
