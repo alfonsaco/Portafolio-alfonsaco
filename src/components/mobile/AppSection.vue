@@ -1,20 +1,8 @@
 <script setup lang="ts">
 import App from './models/Aplication.vue';
 
-// Iconos Apps
-import OversizeLogo from '/oversize.webp';
-import Instagram from '/instagram.webp';
-import _100DayCSS from '/100DayCSS.webp'
-
-const apps = [
-    { texto: 'Instagram', imagen: Instagram },
-    { texto: 'Instagram', imagen: Instagram },
-    { texto: 'Instagram', imagen: Instagram },
-    { texto: 'Oversize Studios', imagen: OversizeLogo, url: 'https://alfonsaco.github.io/Oversize/index.html' },
-    { texto: '100DayCSS', imagen: _100DayCSS, url: 'https://100dayscss.com/progress/alfonsaco/' },
-    { texto: 'Instagram', imagen: Instagram },
-    { texto: 'Instagram', imagen: Instagram },
-]
+import { usarIconos } from '../../data/UseIcons';
+const { iconosDerecha } = usarIconos();
 
 const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
     if(app.url) {
@@ -30,7 +18,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
     <div class="contenedor">
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
-            <App v-for="(aplicacion, i) in apps" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
+            <App v-for="(aplicacion, i) in iconosDerecha" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
         </div>
     </div>
 </template>
@@ -39,7 +27,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
 <style>
     .contenedor {
         width: 100%;
-        height: calc(100% - 105px);
+        height: calc(100vh - 60px);
     }
 
     /* LISTA DE APLICACIONES */ 

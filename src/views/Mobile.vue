@@ -2,6 +2,7 @@
 import TaskBar from '../components/mobile/TaskBarMobile.vue';
 import AppSection from '../components/mobile/AppSection.vue';
 import { ref } from 'vue';
+import ToolBarMobile from '../components/mobile/ToolBarMobile.vue';
 
 const mantenimientoActivo = ref(true);
 const cerrar = () => {
@@ -16,6 +17,7 @@ const cerrar = () => {
         <div class="cerrar-mantenimiento" @click="cerrar">CERRAR</div>
     </div>
 
+    <ToolBarMobile></ToolBarMobile>
     <AppSection></AppSection>
     <TaskBar></TaskBar>
 </template>

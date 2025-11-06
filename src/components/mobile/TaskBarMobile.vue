@@ -24,10 +24,12 @@ import iconoCodepen from '/codepen.webp'
 <style>
     .div-taskbar {
         width: 100%;
-        padding: 10px 0px;
+        padding: 15px 0px;
         display: flex;
         gap: 30px;
         justify-content: center;
+        position: absolute;
+        bottom: 0;
     }
     .div-taskbar img {
         height: 55px;
