@@ -1,13 +1,26 @@
 <script setup lang="ts">
+import Links from './items/ProjectLinks.vue';
+import Fondo from '../../../assets/images/auth_fondo.webp';
+import Logo from '../../../assets/images/codezen-logo.webp';
 
+const descarga = "https://github.com/alfonsaco/CodeZen/releases/tag/1.0.1";
+const github = "https://github.com/alfonsaco/CodeZen";
 </script>
 
 
 <template>
     <div class="proyecto-codezen-contenedor">
         <div class="div-codezen">
+            <img :src="Fondo" alt="Imagen fondo" class="codezen-fondo">
+            <img :src="Logo" alt="Logo CodeZen" class="codezen-logo">
 
-            <h4>tecnologías utilizadas</h4>
+            <h4>DESCRIPCIÓN</h4>
+            <p><em>CodeZen</em> es una aplicación móvil diseñada para programadores que busca mejorar su 
+            productividad, bienestar y hábitos diarios. Integra herramientas de seguimiento
+            de hábitos, gestión de proyectos, meditación y un sistema de logros que motiva 
+            el crecimiento personal y profesional de los desarrolladores.</p>
+
+            <h4>TECNOLOGÍAS UTILIZADAS</h4>
             <div class="codezen-div-tecnologias">
                 <div>
                     <p class="codezen-tecnologia-p">Android Studio</p>
@@ -23,6 +36,9 @@
                     <p class="codezen-tecnologia-p">JSON</p>
                 </div>
             </div>
+
+            <h4>ENLACES</h4>
+            <Links :url-descarga="descarga" :url-github="github"/>
         </div>
     </div>
 </template>
@@ -36,26 +52,39 @@
         display: flex;
         justify-content: center;
     }
-    .proyecto-codezen-contenedor * {
-        margin: 0;
-    }
-
-    /* ESTILOS GENERALES */
-    .proyecto-codezen-contenedor h4 {
-        color: #C5562F;
-        margin: 40px 0px 10px 0px;
-    }
-
     .div-codezen {
         height: 100%;
         width: 700px;
         background-color: #eeeeee;
-        padding: 25px 10px 55px 10px;
+        padding: 25px 30px 55px 30px;
         overflow: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
+    
 
+    /* ESTILOS GENERALES */
+    .proyecto-codezen-contenedor * {
+        margin: 0;
+        font-family: 'Poppins';
+        color: #005b63;
+    }
+    .proyecto-codezen-contenedor p {
+        text-align: justify;
+        color: #2b9ea8;
+    }
+    .proyecto-codezen-contenedor em {
+        font-family: 'Poppins Bold';
+    }
+    .proyecto-codezen-contenedor h4 {
+        margin: 40px 0px 10px 0px;
+        font-family: 'Poppins Bold';
+        font-size: 1.2em;
+    }
+
+
+    /* PARTE SUPERIOR */
+    
 
      /* DIV DE TECNOLOGÍAS */
     .codezen-div-tecnologias {
@@ -72,11 +101,17 @@
         gap: 12px;
     }
     .codezen-tecnologia-p {
-        color: #ffffff;
+        color: #ffffff !important;
         padding: 4px 18px;
         font-weight: 500;
         border-radius: 50px;
         background-color: #005b6381;
         border: 1px solid #005A63;
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: .2s ease;
+    }
+    .codezen-tecnologia-p:hover {
+        background-color: #063a3fa2;
     }
 </style>

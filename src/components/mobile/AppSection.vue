@@ -11,7 +11,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
     if(app.url) {
         window.open(app.url, '_blank');
     } else if(app.email) {
-        window.open(app.email);
+        window.location.href = app.email;
     }
 }
 </script>

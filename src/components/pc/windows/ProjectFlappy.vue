@@ -4,7 +4,10 @@ import GIFJuego from '../../../assets/images/gif juego.gif'
 import Strong from '../../../assets/images/gif_strong.gif'
 import Azzaro from '../../../assets/images/git_azzaro.gif'
 import Phatnom from '../../../assets/images/gif_phantom.gif'
-import Mano from '../../../assets/images/mano.png'
+import Links from './items/ProjectLinks.vue';
+
+const github = "https://github.com/alfonsaco/Flappy-Parfums";
+const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0";
 </script>
 
 
@@ -47,15 +50,7 @@ import Mano from '../../../assets/images/mano.png'
             </div>
 
             <h4>enlaces</h4>
-            <div class="flappy-div-link-github">                
-                <img :src="Mano" alt="Imagen de mano" class="flappy-mano">
-                <a href="https://github.com/alfonsaco/Flappy-Parfums" target="_blank">
-                    <div>
-                        <img src="/github.webp" alt="Logo GitHub">
-                        Portafolio en GitHub
-                    </div>
-                </a>
-            </div>
+            <Links :url-descarga="descarga" :url-github="github"/>
         </div>
     </div>
 </template>
@@ -174,6 +169,11 @@ import Mano from '../../../assets/images/mano.png'
         border-radius: 50px;
         background-color: #c5572f69;
         border: 1px solid #C5562F;
+        transition: .2s ease;
+        cursor: pointer;
+    }
+    .flappy-tecnologia-p:hover {
+        background-color: #bd3e1073;
     }
 
     /* SECCIÓN DE LINK GITHUB */

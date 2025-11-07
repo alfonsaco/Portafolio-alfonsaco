@@ -25,6 +25,7 @@
         <h4>PROYECTOS</h4>
         <p>Todos los proyectos los podrás encontrar dentro de la carpeta situada en la parte izquierda del escritorio.</p>
         <h4>EXPERIENCIA</h4>
+        <p>Marzo 2025 - Junio 2025</p>
         <p class="ventana-p-borrador">&gt;&gt; Creación de CRM completo con JavaFX durante 3 meses</p>
 
         <hr>
@@ -81,6 +82,7 @@
         text-align: center;
         color: #9FB2BF;
         font-size: 2.4em;
+        margin-bottom: 6px;
     }
     .ventana-sobre-mi h4 {
         color: #D18D4E;
