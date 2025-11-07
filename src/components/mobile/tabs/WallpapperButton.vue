@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Image } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 import Fondo1 from '/fondo_movil.webp';
@@ -24,6 +24,15 @@ onClickOutside(ventanaRef ,() => {
 }, {
     ignore: [botonRef],
 });
+
+// Funcion para cambiar la imagen
+const cambiarFondo = inject('cambiarFondo') as (fondo: string) => void;
+
+const cambiarFondoPantalla = (ruta: string) => {
+    if (cambiarFondo) {
+        cambiarFondo(ruta);
+    }
+}
 </script>
 
 
@@ -37,10 +46,10 @@ onClickOutside(ventanaRef ,() => {
     :class="ventanaVisible ? 'ventana-visible-wallpaper' : ''"
     ref="ventanaRef">
         <div>
-            <img :src="Fondo1" alt="">
-            <img :src="Fondo2" alt="">
-            <img :src="Fondo3" alt="">
-            <img :src="Fondo4" alt="">
+            <img :src="Fondo1" alt="Fondo predeterminado" @click="cambiarFondoPantalla('/fondo_movil.webp')">
+            <img :src="Fondo2" alt="Fondo Better Call Saul" @click="cambiarFondoPantalla('/saul.webp')">
+            <img :src="Fondo3" alt="Fondo Twin Peaks" @click="cambiarFondoPantalla('/twin.webp')">
+            <img :src="Fondo4" alt="Fondo Band of Brothers" @click="cambiarFondoPantalla('/band.webp')">
         </div>
     </div>
 </template>
