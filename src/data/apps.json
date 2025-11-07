@@ -33,7 +33,8 @@
         "texto": "Contacto",
         "imagen": "/contacto.webp",
         "action": "contacto",
-        "escritorio": "dcha"
+        "escritorio": "dcha",
+        "email": "mailto:alfonso.rincondev@gmail.com"
     },
     {
         "texto": "Sobre mí",

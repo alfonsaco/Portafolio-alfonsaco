@@ -7,11 +7,11 @@ import WallpapperButton from './tabs/WallpapperButton.vue';
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
 
-const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
+const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: string }) => {
     if(app.url) {
         window.open(app.url, '_blank');
-    } else {
-
+    } else if(app.email) {
+        window.open(app.email);
     }
 }
 </script>
@@ -25,7 +25,11 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
 
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
-            <App v-for="(aplicacion, i) in iconosDerecha" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
+            <App v-for="(aplicacion, i) in iconosDerecha" :key="i" 
+            :texto="aplicacion.texto" 
+            :imagen="aplicacion.imagen" 
+            @click="abrirApp(aplicacion)" />
+
             <Carpeta></Carpeta>
         </div>
     </div>

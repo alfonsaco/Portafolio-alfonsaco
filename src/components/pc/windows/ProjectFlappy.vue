@@ -4,9 +4,6 @@ import GIFJuego from '../../../assets/images/gif juego.gif'
 import Strong from '../../../assets/images/gif_strong.gif'
 import Azzaro from '../../../assets/images/git_azzaro.gif'
 import Phatnom from '../../../assets/images/gif_phantom.gif'
-import Java from '../../../assets/images/java.png'
-import XML from '../../../assets/images/xml.png'
-import AndroidStudio from '../../../assets/images/android_Studio.png'
 import Mano from '../../../assets/images/mano.png'
 </script>
 
@@ -37,12 +34,19 @@ import Mano from '../../../assets/images/mano.png'
 
             <h4>tecnologías utilizadas</h4>
             <div class="flappy-div-tecnologias">
-                <img :src="AndroidStudio" alt="Logo de Android Studio">
-                <img :src="Java" alt="Logo de Java">
-                <img :src="XML" alt="Logo de XML">
+                <div>
+                    <p class="flappy-tecnologia-p">Android Studio</p>
+                    <p class="flappy-tecnologia-p">Java</p>
+                    <p class="flappy-tecnologia-p">XLM</p>
+                    <p class="flappy-tecnologia-p">Git</p>
+                </div>
+                <div>
+                    <p class="flappy-tecnologia-p">GitHub</p>
+                    <p class="flappy-tecnologia-p">Adobe Photoshop</p>
+                </div>
             </div>
 
-            <h4>enlace a github</h4>
+            <h4>enlaces</h4>
             <div class="flappy-div-link-github">                
                 <img :src="Mano" alt="Imagen de mano" class="flappy-mano">
                 <a href="https://github.com/alfonsaco/Flappy-Parfums" target="_blank">
@@ -152,12 +156,24 @@ import Mano from '../../../assets/images/mano.png'
     /* DIV DE TECNOLOGÍAS */
     .flappy-div-tecnologias {
         display: flex;
-        gap: 10px;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
     }
-    .flappy-div-tecnologias img {
-        width: 50px;
-        filter: drop-shadow(0px 2px 0px #000000f8);
+    .flappy-div-tecnologias > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    .flappy-tecnologia-p {
+        color: #474747;
+        padding: 4px 18px;
+        font-weight: 500;
+        border-radius: 50px;
+        background-color: #c5572f69;
+        border: 1px solid #C5562F;
     }
 
     /* SECCIÓN DE LINK GITHUB */
