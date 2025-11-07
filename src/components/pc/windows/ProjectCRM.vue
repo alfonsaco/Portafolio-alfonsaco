@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import CapturaCRM from '../../../assets/images/crm_cap.webp';
-import Links from './items/ProjectLinks.vue';
 </script>
 
 

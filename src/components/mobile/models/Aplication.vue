@@ -34,6 +34,8 @@ const abrirAplicacion = () => {
         flex-direction: column;
         gap: 4px;
         cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .icono-app {
         width: 55px;
