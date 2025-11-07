@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Logo from '../../assets/alfonOS.webp';
-import { ref } from 'vue';
+import Logo from '../assets/alfonOS.webp';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const ocultarPantalla = ref(false);
 const displayNone = ref(false);
@@ -18,6 +18,20 @@ const divs = Array.from({ length: 12 }, (_, i) => ({
   transform: `rotate(${i * 30}deg) translateY(25px)`,
   animationDelay: `${i * (-60)}ms`
 }));
+
+// Estilos para la vista móvil
+const versionMovil = ref(window.innerWidth < 768);
+
+const actualizarEstilo = () => {
+    versionMovil.value = window.innerWidth < 768;
+}
+
+onMounted(() => {
+    window.addEventListener('resize', actualizarEstilo);
+})
+onUnmounted(() => {
+    window.removeEventListener('resize', actualizarEstilo);
+})
 </script>
 
 
@@ -26,14 +40,16 @@ const divs = Array.from({ length: 12 }, (_, i) => ({
     :class="[ocultarPantalla ? 'ocultar-loading' : '', 
     displayNone ? 'display-loading' : '']">
         <div>
-            <img :src="Logo" alt="Logo AlfonOS">
-            <h2>AlfonOS</h2>
-            <p>Bienvenido al portafolio de Alfonso Rincón. Pulsa F11 para una mejor experiencia<br>
+            <img :class="versionMovil ? 'loading-movil-logo' : ''" :src="Logo" alt="Logo AlfonOS">
+            <h2 :class="versionMovil ? 'loading-movil-alfonos' : ''">AlfonOS</h2>
+            <p :class="versionMovil ? 'loading-movil-p' : ''">
+                Bienvenido al portafolio de Alfonso Rincón. Pulsa F11 para una mejor experiencia
                 con pantalla completa.</p>
 
             <div class="animacion-carga">
                 <div v-for="(div, i) in divs" :key="i"
                 :style="div" 
+                :class="versionMovil ? 'loading-movil-bola' : ''"
                 class="bolas-animacion"></div>
             </div>
         </div>
@@ -52,6 +68,7 @@ const divs = Array.from({ length: 12 }, (_, i) => ({
         justify-content: center;
         align-items: center;
         user-select: none;
+        padding: 50px;
     }
     .pc-loading-screen * {
         margin: 0;
@@ -76,6 +93,7 @@ const divs = Array.from({ length: 12 }, (_, i) => ({
     .pc-loading-screen p {
         color: #c2c2c2;
         font-size: 1.05em;
+        max-width: 600px;
     }
 
 
@@ -111,5 +129,22 @@ const divs = Array.from({ length: 12 }, (_, i) => ({
         70%, to {
             opacity: 0;
         }
+    }
+
+    /* ESTILOS VERSION MOVIL */
+    .loading-movil-p {
+        font-size: .9em !important; 
+        max-width: 450px !important;
+    }
+    .loading-movil-alfonos {
+        font-size: 1.7em !important;
+    }
+    .loading-movil-bola {
+        width: 5px !important;
+        height: 5px !important; 
+    }
+    .loading-movil-logo {
+        width: 60px !important;
+        height: 60px !important;
     }
 </style>

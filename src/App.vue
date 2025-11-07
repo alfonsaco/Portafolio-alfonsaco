@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted, computed, provide } from 'vue'
 
 import PC from './views/PC.vue';
 import Mobile from './views/Mobile.vue';
+import LoadingScreen from './views/PCLoadingScreen.vue';
 
 // Dimensión para dispositivos móviles
 const esMovil = ref(window.innerWidth < 768) ;
@@ -46,8 +47,11 @@ const fondoPantalla = computed(() => {
 </script>
 
 <template>
-  <!--Dimensiones PC y móvil-->
+  <!-- Dimensiones PC y móvil -->
   <div class="contenedor" :style="fondoPantalla">
+    <!-- Pantalla de carga, tanto para móvil como para PC -->
+    <LoadingScreen></LoadingScreen>
+
     <component :is="esMovil ? Mobile : PC"></component>
   </div>
 </template>

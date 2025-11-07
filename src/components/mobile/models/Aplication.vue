@@ -33,8 +33,12 @@ const abrirAplicacion = () => {
     .icono-app {
         width: 55px;
         height: 55px;
+        transition: .1s ease;
     }
     .texto-app {
         margin: 0;
+    }
+    .icono-app:active {
+        scale: 1.1;
     }
 </style>

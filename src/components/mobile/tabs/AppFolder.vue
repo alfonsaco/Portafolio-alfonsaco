@@ -19,7 +19,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
         <div class="carpeta-movil-contenedor">
             <h4>Proyectos</h4>
             <!--LISTA DE APLICACIONES-->
-            <div class="div-aplicaciones">
+            <div class="div-aplicaciones-movil">
                 <App v-for="(aplicacion, i) in iconosProyectos" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
             </div>
         </div>
@@ -62,15 +62,16 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
         left: 50%;
         transform: translateX(-50%);
         top: -40px;
+        user-select: none;
     }
 
     /* LISTA DE APLICACIONES */ 
-    .div-aplicaciones {
+    .div-aplicaciones-movil {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
         row-gap: 35px;
-        column-gap: 50px;
+        column-gap: 30px;
         width: 100%;
-        padding: 40px;
+        padding: 25px;
     }
 </style>
