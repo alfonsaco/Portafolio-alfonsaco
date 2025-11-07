@@ -31,7 +31,7 @@ const cerrar = () => {
         border: 1px solid #222;
         color: #222;
         border-radius: 10px;
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);

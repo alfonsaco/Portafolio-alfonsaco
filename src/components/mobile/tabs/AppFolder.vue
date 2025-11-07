@@ -37,13 +37,14 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
         top: 0;
         backdrop-filter: blur(5px);
         z-index: 400;
+        display: none;
     }
 
     .carpeta-movil-contenedor {
         width: calc(100vw - 45px);
         height: auto;
         aspect-ratio: 1/1;
-        position: absolute;
+        position: fixed;
         background-color: rgba(128, 128, 128, 0.329);
         top: 50%;
         left: 50%;

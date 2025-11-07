@@ -38,7 +38,7 @@ provide('cambiarFondo', cambiarFondo);
 
 const fondoPantalla = computed(() => {
   if (esMovil.value) {
-    return { backgroundImage: 'url(/movil_fondo.webp)' };
+    return { backgroundImage: 'url(/fondo_movil.webp)' };
   } else {
     return { backgroundImage: `url(${fondoActual.value})` };
   }

@@ -81,6 +81,7 @@ const textoBateria = computed(() => {
         justify-content: space-between;
         padding: 10px;
         font-size: .9em;
+        user-select: none;
     }
 
     /* PARTE BATERÍA Y WIFI */

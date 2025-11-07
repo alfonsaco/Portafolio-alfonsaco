@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import App from './models/Aplication.vue';
 import Carpeta from './tabs/AppFolder.vue';
+import WidgetHora from './tabs/WidgetTime.vue';
 
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
@@ -16,6 +17,8 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
 
 
 <template>
+    <WidgetHora></WidgetHora>
+
     <div class="movil-contenedor-aplicaciones">
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
@@ -37,8 +40,9 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
     .div-aplicaciones {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        align-items: start;
         row-gap: 35px;
-        column-gap: 50px;
+        column-gap: 40px;
         width: 100%;
         padding: 40px;
     }

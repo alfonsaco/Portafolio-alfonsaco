@@ -28,6 +28,11 @@ const abrirAplicacion = () => {
         user-select: none;
         font-size: .8em;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 4px;
         cursor: pointer;
     }
     .icono-app {
