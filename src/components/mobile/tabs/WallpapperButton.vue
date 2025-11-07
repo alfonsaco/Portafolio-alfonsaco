@@ -33,7 +33,7 @@ import Fondo4 from '/band.webp';
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 250px;
+        bottom: 260px;
         border-radius: 100px;
         display: flex;
         justify-content: center;
