@@ -54,7 +54,7 @@ import Fondo4 from '/band.webp';
         border: 1px solid #999;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(500px);
         bottom: 310px;
         border-radius: 10px;
         display: flex;
@@ -88,7 +88,7 @@ import Fondo4 from '/band.webp';
     .div-cambio-wallpapper div img {
         height: 100px;
         width: 60px;
-        border-radius: 3px;
+        border-radius: 4px;
         border: 1px solid #999;
     }
 </style>

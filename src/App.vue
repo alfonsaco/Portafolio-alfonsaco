@@ -5,6 +5,9 @@ import PC from './views/PC.vue';
 import Mobile from './views/Mobile.vue';
 import LoadingScreen from './views/PCLoadingScreen.vue';
 
+// Vercel
+import { SpeedInsights } from "@vercel/speed-insights/vue"
+
 // Dimensión para dispositivos móviles
 const esMovil = ref(window.innerWidth < 768) ;
 
@@ -54,6 +57,8 @@ const fondoPantalla = computed(() => {
 
     <component :is="esMovil ? Mobile : PC"></component>
   </div>
+
+  <SpeedInsights/>
 </template>
 
 <style scoped>
