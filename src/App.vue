@@ -31,23 +31,25 @@ onUnmounted(() => {
 });
 
 // Fondo personalizado
-const fondoActual = ref('/pc_fondo.webp');
+const fondoPC = ref('/pc_fondo.webp');
+const fondoMovil = ref('/fondo_movil.webp');
 
-if(esMovil) {
-  fondoActual.value = '/fondo_movil.webp';
-}
+const cambiarFondoMovil = (nuevoFondo: string) => {
+  fondoMovil.value = nuevoFondo;
+};
+const cambiarFondoPC = (nuevoFondo: string) => {
+  fondoPC.value = nuevoFondo;
+};
 
-const cambiarFondo = (nuevoFondo: string) => {
-  fondoActual.value = nuevoFondo;
-}
 
-provide('cambiarFondo', cambiarFondo);
+provide('cambiarFondoMovil', cambiarFondoMovil);
+provide('cambiarFondoPC', cambiarFondoPC);
 
 const fondoPantalla = computed(() => {
   if (esMovil.value) {
-    return { backgroundImage: `url(${fondoActual.value})` };
+    return { backgroundImage: `url(${fondoMovil.value})` };
   } else {
-    return { backgroundImage: `url(${fondoActual.value})` };
+    return { backgroundImage: `url(${fondoPC.value})` };
   }
 });
 
@@ -68,8 +70,7 @@ const fondoPantalla = computed(() => {
 <style scoped>
   .contenedor {
     position: fixed;
-    left: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     background-size: cover;

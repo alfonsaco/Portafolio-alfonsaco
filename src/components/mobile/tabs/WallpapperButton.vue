@@ -26,11 +26,11 @@ onClickOutside(ventanaRef ,() => {
 });
 
 // Funcion para cambiar la imagen
-const cambiarFondo = inject('cambiarFondo') as (fondo: string) => void;
+const cambiarFondoMovil = inject('cambiarFondoMovil') as (fondo: string) => void;
 
 const cambiarFondoPantalla = (ruta: string) => {
-    if (cambiarFondo) {
-        cambiarFondo(ruta);
+    if (cambiarFondoMovil) {
+        cambiarFondoMovil(ruta);
     }
 }
 </script>

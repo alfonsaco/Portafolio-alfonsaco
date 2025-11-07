@@ -2,15 +2,15 @@
 import { inject } from 'vue';
 
 const emit = defineEmits(['cerrar']);
-const cambiarFondo = inject('cambiarFondo') as (fondo: string) => void;
+const cambiarFondoPC = inject('cambiarFondoPC') as (fondo: string) => void;
 
 const cerrar = () => {
     emit('cerrar');
 }
 
 const cambiarFondoPantalla = (ruta: string) => {
-    if (cambiarFondo) {
-        cambiarFondo(ruta);
+    if (cambiarFondoPC) {
+        cambiarFondoPC(ruta);
     }
     cerrar();
 }
