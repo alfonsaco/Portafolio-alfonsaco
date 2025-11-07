@@ -2,6 +2,7 @@
 import App from './models/Aplication.vue';
 import Carpeta from './tabs/AppFolder.vue';
 import WidgetHora from './tabs/WidgetTime.vue';
+import WallpapperButton from './tabs/WallpapperButton.vue';
 
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
@@ -13,20 +14,26 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
 
     }
 }
+
+// Eventos para mostrar el botón de cambio de fondo de pantalla
+
 </script>
 
 
 <template>
     <WidgetHora></WidgetHora>
 
-    <div class="movil-contenedor-aplicaciones">
+    <div class="movil-contenedor-aplicaciones" 
+        @dblclick="" @touchstart="" @touchend="">
+
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
             <App v-for="(aplicacion, i) in iconosDerecha" :key="i" :texto="aplicacion.texto" :imagen="aplicacion.imagen" @click="abrirApp(aplicacion)" />
+            <Carpeta></Carpeta>
         </div>
     </div>
 
-    <Carpeta></Carpeta>
+    <WallpapperButton></WallpapperButton>
 </template>
 
 
@@ -42,8 +49,10 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
         grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
         align-items: start;
         row-gap: 35px;
-        column-gap: 40px;
+        column-gap: 30px;
         width: 100%;
         padding: 40px;
+        position: absolute;
+        bottom: 100px;
     }
 </style>

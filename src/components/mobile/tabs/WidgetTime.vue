@@ -33,6 +33,7 @@ onMounted(() => {
     .contenedor-widget-hora {
         width: 100%;
         padding: 25px 0px;
+        user-select: none;
     }
     .contenedor-widget-hora * {
         margin: 0;
