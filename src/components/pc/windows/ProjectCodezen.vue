@@ -56,10 +56,11 @@ const github = "https://github.com/alfonsaco/CodeZen";
         height: 100%;
         width: 700px;
         background-color: #eeeeee;
-        padding: 25px 30px 55px 30px;
+        padding: 150px 30px 55px 30px;
         overflow: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        position: relative;
     }
     
 
@@ -84,7 +85,19 @@ const github = "https://github.com/alfonsaco/CodeZen";
 
 
     /* PARTE SUPERIOR */
-    
+    .codezen-fondo {
+        width: 700px;
+        transform: scaleY(-1);
+        position: absolute;
+        left: 0;
+        top: -350px;
+    }
+    .codezen-logo {
+        position: absolute;
+        width: 400px;
+        top: 100px;
+        transform: translateX(-50%);
+    }
 
      /* DIV DE TECNOLOGÍAS */
     .codezen-div-tecnologias {
