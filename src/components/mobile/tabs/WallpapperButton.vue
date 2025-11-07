@@ -1,19 +1,41 @@
 <script setup lang="ts">
 import { Image } from 'lucide-vue-next';
+import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core';
 
 import Fondo1 from '/fondo_movil.webp';
 import Fondo2 from '/saul.webp';
 import Fondo3 from '/twin.webp';
 import Fondo4 from '/band.webp';
+
+// Función para mostrar o no el menú
+const ventanaVisible = ref(false);
+
+const mostrarWallpaper = () => {
+    ventanaVisible.value = !ventanaVisible.value;
+}
+
+const ventanaRef = ref(null);
+// Para que no afecte al botón
+const botonRef = ref(null);
+
+onClickOutside(ventanaRef ,() => {
+    ventanaVisible.value = false;
+}, {
+    ignore: [botonRef],
+});
 </script>
 
 
 <template>
-    <div class="div-boton-wallpapper">
+    <div class="div-boton-wallpapper" ref="botonRef"
+    @click="mostrarWallpaper">
         <Image style="width: 23px; height: 23px; color: #ccc;"></Image>
     </div>
 
-    <div class="div-cambio-wallpapper">
+    <div class="div-cambio-wallpapper" 
+    :class="ventanaVisible ? 'ventana-visible-wallpaper' : ''"
+    ref="ventanaRef">
         <div>
             <img :src="Fondo1" alt="">
             <img :src="Fondo2" alt="">
@@ -33,7 +55,7 @@ import Fondo4 from '/band.webp';
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 260px;
+        bottom: 250px;
         border-radius: 100px;
         display: flex;
         justify-content: center;
@@ -54,12 +76,13 @@ import Fondo4 from '/band.webp';
         border: 1px solid #999;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) translateY(500px);
+        transform: translateX(-50%) translateY(550px);
         bottom: 310px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: .3s ease;
     }
     .div-cambio-wallpapper > div {
         display: flex;
@@ -90,5 +113,13 @@ import Fondo4 from '/band.webp';
         width: 60px;
         border-radius: 4px;
         border: 1px solid #999;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    /* OCULTAR Y MOSTRAR */
+    .ventana-visible-wallpaper {
+        transform: translateX(-50%) translateY(0px);
+        transition: .6s ease;
     }
 </style>

@@ -14,9 +14,6 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string }) => {
 
     }
 }
-
-// Eventos para mostrar el botón de cambio de fondo de pantalla
-
 </script>
 
 

@@ -1,4 +1,3 @@
-        gap: 3px;
 <script setup lang="ts">
 import { defineEmits } from 'vue';
 
