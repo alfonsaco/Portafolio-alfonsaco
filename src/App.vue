@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, provide } from 'vue'
 
+// Analytics
+import { inject } from "@vercel/analytics"
+inject()
+
 import PC from './views/PC.vue';
 import Mobile from './views/Mobile.vue';
 import LoadingScreen from './views/PCLoadingScreen.vue';
