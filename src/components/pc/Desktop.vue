@@ -326,6 +326,7 @@ defineExpose({
         position: absolute;
         left: 30px;
         top: 30px;
+        width: 190px;
         align-items: start;
     }
 

@@ -57,10 +57,20 @@ const github = "https://github.com/alfonsaco/CodeZen";
         width: 700px;
         background-color: #eeeeee;
         padding: 150px 30px 55px 30px;
-        overflow: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
         position: relative;
+    }
+    .div-codezen::-webkit-scrollbar {
+        width: 5px;
+    }
+    .div-codezen::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .div-codezen::-webkit-scrollbar-thumb {
+        background-color: #acacac; 
+        border-radius: 0px;  
+        cursor: pointer; 
     }
     
 

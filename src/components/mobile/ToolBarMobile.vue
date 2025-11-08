@@ -82,6 +82,7 @@ const textoBateria = computed(() => {
         padding: 10px;
         font-size: .9em;
         user-select: none;
+        color: #FFF;
     }
 
     /* PARTE BATERÍA Y WIFI */
@@ -104,5 +105,6 @@ const textoBateria = computed(() => {
     .icono-toolbar {
         width: 20px;
         height: 20px;
+        color: #FFF;
     }
 </style>

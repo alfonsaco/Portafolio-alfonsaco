@@ -70,6 +70,8 @@ const cambiarFondoPantalla = (ruta: string) => {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .div-boton-wallpapper:active {
         background-color: #3f3f3f;
@@ -124,6 +126,8 @@ const cambiarFondoPantalla = (ruta: string) => {
         border: 1px solid #999;
         user-select: none;
         cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     /* OCULTAR Y MOSTRAR */

@@ -86,9 +86,20 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
         width: 700px;
         background-color: #eeeeee;
         padding: 25px 10px 55px 10px;
-        overflow: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
+    }
+    .proyecto-flappy-div-principal::-webkit-scrollbar {
+        width: 5px;
+    }
+    .proyecto-flappy-div-principal::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .proyecto-flappy-div-principal::-webkit-scrollbar-thumb {
+        background-color: #acacac; 
+        border-radius: 0px;  
+        cursor: pointer; 
     }
 
     /* LOGO GRANDE */

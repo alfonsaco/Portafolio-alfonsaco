@@ -45,6 +45,8 @@ import iconoCodepen from '/codepen.webp'
         border-radius: 20px;
         transition: .1s ease;
         user-select: none;
+    }
+    .div-taskbar a {
         outline: none;
         -webkit-tap-highlight-color: transparent;
     }

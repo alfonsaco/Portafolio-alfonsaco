@@ -6,7 +6,7 @@
 <template>
     <div class="ventana-sobre-mi">
         <h1>SOBRE MÍ</h1>
-        <p>Desarrollador Full-Stack y de aplicaciones Multiplataforma</p>
+        <p class="texto-about">Desarrollador Full-Stack y de aplicaciones Multiplataforma</p>
         <hr>
 
         <h4>CONOCIMIENTOS Y HABILIDADES</h4>
@@ -83,6 +83,9 @@
         color: #9FB2BF;
         font-size: 2.4em;
         margin-bottom: 6px;
+    }
+    .texto-about {
+        text-align: center;
     }
     .ventana-sobre-mi h4 {
         color: #D18D4E;

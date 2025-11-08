@@ -43,8 +43,9 @@ onUnmounted(() => {
             <img :class="versionMovil ? 'loading-movil-logo' : ''" :src="Logo" alt="Logo AlfonOS">
             <h2 :class="versionMovil ? 'loading-movil-alfonos' : ''">AlfonOS</h2>
             <p :class="versionMovil ? 'loading-movil-p' : ''">
-                Bienvenido al portafolio de Alfonso Rincón. Pulsa F11 para una mejor experiencia
-                con pantalla completa.</p>
+                Bienvenido al portafolio de Alfonso Rincón. <span 
+                    :class="versionMovil ? 'loading-movil-span' : ''">
+                Pulsa F11 para una mejor experiencia con pantalla completa.</span></p>
 
             <div class="animacion-carga">
                 <div v-for="(div, i) in divs" :key="i"
@@ -80,7 +81,6 @@ onUnmounted(() => {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 5px;
     }
     .pc-loading-screen img {
         width: 70px;
@@ -140,11 +140,13 @@ onUnmounted(() => {
         font-size: 1.7em !important;
     }
     .loading-movil-bola {
-        width: 5px !important;
-        height: 5px !important; 
+        scale: 0.7; 
     }
     .loading-movil-logo {
         width: 60px !important;
         height: 60px !important;
+    }
+    .loading-movil-span {
+        display: none;
     }
 </style>

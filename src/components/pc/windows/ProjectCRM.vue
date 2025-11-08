@@ -63,10 +63,20 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
         width: 700px;
         background-color: #ffffff;
         padding: 160px 30px 55px 30px;
-        overflow: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
         position: relative;
+    }
+    .div-crm::-webkit-scrollbar {
+        width: 5px;
+    }
+    .div-crm::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .div-crm::-webkit-scrollbar-thumb {
+        background-color: #acacac; 
+        border-radius: 0px;  
+        cursor: pointer; 
     }
 
     /* ESTILOS GENERALES */

@@ -34,6 +34,7 @@ onMounted(() => {
         width: 100%;
         padding: 25px 0px;
         user-select: none;
+        color: #FFF;
     }
     .contenedor-widget-hora * {
         margin: 0;

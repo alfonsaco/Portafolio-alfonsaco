@@ -121,6 +121,7 @@ const enviarConEnter = (event: KeyboardEvent) => {
         margin: 0;
         margin-top: -15px;
         user-select: none;
+        color: #fff;
     }
     .div-ventana-ia-logo img {
         width: 25px;
