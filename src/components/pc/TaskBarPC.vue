@@ -98,7 +98,7 @@ onClickOutside(buscarRef, () => {
                 <a href="https://www.github.com/alfonsaco" target="_blank" data-programa="Perfil de GitHub">
                     <img :src="iconoGitHub" alt="Icono GitHub" />
                 </a>
-                <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank" data-programa="Perfil de LinkedIn">
+                <a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank" data-programa="Perfil de LinkedIn">
                     <img :src="iconoLinkedIn" alt="Icono inkedIn" />
                 </a>
                 <a href="https://codepen.io/alfonsaco" target="_blank" data-programa="Perfil de CodePen">

@@ -17,7 +17,7 @@ import iconoCodepen from '/codepen.webp'
             <a href="https://www.github.com/alfonsaco" target="_blank">
                 <img :src="iconoGitHub" alt="Icono GitHub" />
             </a>
-            <a href="https://www.linkedin.com/in/alfonso-rinc%C3%B3n-cuerva-02a0a42b6/" target="_blank">
+            <a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank">
                 <img :src="iconoLinkedIn" alt="Icono inkedIn" />
             </a>
             <a href="https://codepen.io/alfonsaco" target="_blank">
@@ -45,6 +45,8 @@ import iconoCodepen from '/codepen.webp'
         border-radius: 20px;
         transition: .1s ease;
         user-select: none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .div-taskbar img:active {
         scale: 1.1;
