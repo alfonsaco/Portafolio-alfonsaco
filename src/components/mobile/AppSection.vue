@@ -7,11 +7,15 @@ import WallpapperButton from './tabs/WallpapperButton.vue';
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
 
-const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: string }) => {
+const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: string, action?: string }) => {
     if(app.url) {
         window.open(app.url, '_blank');
     } else if(app.email) {
         window.location.href = app.email;
+    } else {
+        if(app.action === 'sobremi') {
+            
+        }
     }
 }
 </script>

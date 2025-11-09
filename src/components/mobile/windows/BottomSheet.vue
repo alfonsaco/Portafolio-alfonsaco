@@ -26,9 +26,7 @@ const props = defineProps<{
         height: 100%;
         z-index: 500;
         padding-top: 40px;
-
-
-        display: block;
+        transform: translateY(100%);
     }
 
     .bottomsheet-icono {

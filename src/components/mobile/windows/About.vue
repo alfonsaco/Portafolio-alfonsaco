@@ -99,9 +99,6 @@
     .ventana-sobre-mi span {
         color: #69bbab;
     }
-    .ventana-sobre-mi p {
-
-    }
     .ventana-p-borrador {
         color: #a1a1a1;
     }
