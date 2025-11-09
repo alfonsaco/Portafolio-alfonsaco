@@ -110,7 +110,7 @@ onUnmounted(() => {
     /* ANIMACIÓN DE CARGA */
     .animacion-carga {
         position: relative;
-        margin-top: 40px;
+        margin-top: 60px;
         transform: scaleX(-1);
     }
     .bolas-animacion {

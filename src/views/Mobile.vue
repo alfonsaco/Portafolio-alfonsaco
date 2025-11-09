@@ -3,6 +3,9 @@ import TaskBar from '../components/mobile/TaskBarMobile.vue';
 import AppSection from '../components/mobile/AppSection.vue';
 import { ref } from 'vue';
 import ToolBarMobile from '../components/mobile/ToolBarMobile.vue';
+import BottomSheet from '../components/mobile/windows/BottomSheet.vue';
+
+import About from '../components/mobile/windows/About.vue';
 
 const mantenimientoActivo = ref(true);
 const cerrar = () => {
@@ -16,6 +19,8 @@ const cerrar = () => {
         Algunas funciones podrían no estar disponibles por el momento.
         <div class="cerrar-mantenimiento" @click="cerrar">CERRAR</div>
     </div>
+
+    <BottomSheet :componente="About"></BottomSheet>
 
     <ToolBarMobile></ToolBarMobile>
     <AppSection></AppSection>
