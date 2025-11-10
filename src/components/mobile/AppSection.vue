@@ -3,9 +3,12 @@ import App from './models/Aplication.vue';
 import Carpeta from './tabs/AppFolder.vue';
 import WidgetHora from './tabs/WidgetTime.vue';
 import WallpapperButton from './tabs/WallpapperButton.vue';
+import About from './windows/About.vue';
 
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
+
+const emit = defineEmits(['abrir-ventana']);
 
 const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: string, action?: string }) => {
     if(app.url) {
@@ -14,7 +17,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
         window.location.href = app.email;
     } else {
         if(app.action === 'sobremi') {
-            
+            emit('abrir-ventana', About);
         }
     }
 }

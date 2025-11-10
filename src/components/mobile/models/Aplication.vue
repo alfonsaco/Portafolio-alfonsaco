@@ -16,8 +16,8 @@ const abrirAplicacion = () => {
 
 
 <template>
-    <div class="div-aplicacion-movil">
-        <img :src="imagen" alt="Icono aplicación" class="icono-app" @click="abrirAplicacion" />
+    <div class="div-aplicacion-movil" @click="abrirAplicacion" >
+        <img :src="imagen" alt="Icono aplicación" class="icono-app"/>
         <p class="texto-app" >{{ props.texto }}</p>
     </div>
 </template>
@@ -46,7 +46,7 @@ const abrirAplicacion = () => {
     .texto-app {
         margin: 0;
     }
-    .icono-app:active {
+    .div-aplicacion-movil:active .icono-app {
         scale: 1.2;
     }
 </style>

@@ -5,11 +5,24 @@ import { ref } from 'vue';
 import ToolBarMobile from '../components/mobile/ToolBarMobile.vue';
 import BottomSheet from '../components/mobile/windows/BottomSheet.vue';
 
-import About from '../components/mobile/windows/About.vue';
-
 const mantenimientoActivo = ref(true);
 const cerrar = () => {
     mantenimientoActivo.value = false;
+}
+
+// Componente
+const componenteActual = ref(null);
+
+// Cerrar al pulsar X
+const ventanaVisible = ref(false);
+
+const abrirVentana = (componente: any) => {
+    componenteActual.value = componente;
+    ventanaVisible.value = true;
+}   
+
+const cerrarVentana = () => {
+    ventanaVisible.value = false;
 }
 </script>
 
@@ -20,10 +33,13 @@ const cerrar = () => {
         <div class="cerrar-mantenimiento" @click="cerrar">CERRAR</div>
     </div>
 
-    <BottomSheet :componente="About"></BottomSheet>
+    <BottomSheet 
+        :componente="componenteActual"
+        @cerrar="cerrarVentana"
+        :visible="ventanaVisible"></BottomSheet>
 
     <ToolBarMobile></ToolBarMobile>
-    <AppSection></AppSection>
+    <AppSection @abrir-ventana="abrirVentana"></AppSection>
     <TaskBar></TaskBar>
 </template>
 
