@@ -38,6 +38,7 @@ import iconoCodepen from '/codepen.webp'
         align-items: center;
         position: absolute;
         bottom: 0;
+        z-index: 200;
     }
     .div-taskbar img {
         height: 55px;

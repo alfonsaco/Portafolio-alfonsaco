@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { X } from 'lucide-vue-next';
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps<{
     componente?: any
@@ -20,11 +20,19 @@ const cerrarVentana = () => {
     ventanaAbierta.value = false;
     emit('cerrar');
 }
+
+onMounted(() => {
+    window.addEventListener('popstate', cerrarVentana);
+});
+onUnmounted(() => {
+    window.removeEventListener('popstate', cerrarVentana);
+});
 </script>
 
 
 <template>
-    <div class="bottomsheet-contenedor" :class="ventanaAbierta ? 'ventana-movil-visible' : ''">
+    <div class="bottomsheet-contenedor" 
+    :class="ventanaAbierta ? 'ventana-movil-visible' : ''">
         <X class="bottomsheet-icono" @click="cerrarVentana"></X>
 
         <component 

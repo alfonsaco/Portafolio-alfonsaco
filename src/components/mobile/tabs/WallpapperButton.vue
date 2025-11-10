@@ -77,6 +77,7 @@ const cambiarFondoPantalla = (ruta: string) => {
         background-color: #3f3f3f;
     }
 
+
     /* SECCIÓN DE IMÁGENES */
     .div-cambio-wallpapper {
         width: min(310px, 90%);
@@ -88,12 +89,13 @@ const cambiarFondoPantalla = (ruta: string) => {
         position: absolute;
         left: 50%;
         transform: translateX(-50%) translateY(550px);
-        bottom: 310px;
+        bottom: 100px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: .3s ease;
+        z-index: 300;
     }
     .div-cambio-wallpapper > div {
         display: flex;

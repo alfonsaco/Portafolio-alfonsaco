@@ -37,6 +37,11 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
             :imagen="aplicacion.imagen" 
             @click="abrirApp(aplicacion)" />
 
+            <App v-for="(aplicacion, i) in iconosDerecha" :key="i" 
+            :texto="aplicacion.texto" 
+            :imagen="aplicacion.imagen" 
+            @click="abrirApp(aplicacion)" />
+
             <Carpeta></Carpeta>
         </div>
     </div>
