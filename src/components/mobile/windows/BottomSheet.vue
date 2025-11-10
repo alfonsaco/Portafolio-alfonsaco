@@ -20,13 +20,6 @@ const cerrarVentana = () => {
     ventanaAbierta.value = false;
     emit('cerrar');
 }
-
-onMounted(() => {
-    window.addEventListener('popstate', cerrarVentana);
-});
-onUnmounted(() => {
-    window.removeEventListener('popstate', cerrarVentana);
-});
 </script>
 
 

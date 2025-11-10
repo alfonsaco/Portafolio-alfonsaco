@@ -4,6 +4,7 @@ import Carpeta from './tabs/AppFolder.vue';
 import WidgetHora from './tabs/WidgetTime.vue';
 import WallpapperButton from './tabs/WallpapperButton.vue';
 import About from './windows/About.vue';
+import Certificate from './windows/Certificate.vue';
 
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
@@ -18,6 +19,8 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
     } else {
         if(app.action === 'sobremi') {
             emit('abrir-ventana', About);
+        } else if(app.action === 'certificaciones') {
+            emit('abrir-ventana', Certificate);
         }
     }
 }
@@ -32,11 +35,6 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
 
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
-            <App v-for="(aplicacion, i) in iconosDerecha" :key="i" 
-            :texto="aplicacion.texto" 
-            :imagen="aplicacion.imagen" 
-            @click="abrirApp(aplicacion)" />
-
             <App v-for="(aplicacion, i) in iconosDerecha" :key="i" 
             :texto="aplicacion.texto" 
             :imagen="aplicacion.imagen" 
