@@ -37,6 +37,7 @@ const abrirAplicacion = () => {
         outline: none;
         -webkit-tap-highlight-color: transparent;
         color: #FFF;
+        white-space: nowrap;
     }
     .icono-app {
         width: 55px;

@@ -59,7 +59,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
         row-gap: 35px;
         column-gap: 30px;
         width: 100%;
-        padding: 40px;
+        padding: 35px 25px;
         position: absolute;
         bottom: 100px;
     }

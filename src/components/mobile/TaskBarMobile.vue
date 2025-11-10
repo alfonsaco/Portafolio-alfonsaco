@@ -31,7 +31,7 @@ import iconoCodepen from '/codepen.webp'
 <style>
     .div-taskbar {
         width: 100%;
-        padding: 15px 0px;
+        padding: 10px 0px;
         display: flex;
         flex-direction: column;
         gap: 20px;

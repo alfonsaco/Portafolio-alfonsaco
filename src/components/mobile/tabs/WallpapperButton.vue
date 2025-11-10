@@ -39,7 +39,7 @@ const cambiarFondoPantalla = (ruta: string) => {
 <template>
     <div class="div-boton-wallpapper" ref="botonRef"
     @click="mostrarWallpaper">
-        <Image style="width: 23px; height: 23px; color: #ccc;"></Image>
+        <Image style="width: 20px; height: 20px; color: #ccc;"></Image>
     </div>
 
     <div class="div-cambio-wallpapper" 
@@ -59,12 +59,12 @@ const cambiarFondoPantalla = (ruta: string) => {
     .div-boton-wallpapper {
         width: 70px;
         height: 45px;
+        padding-right: 20px;
         background-color: #222;
         border: 1px solid #999;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 250px;
+        right: -26px;
+        bottom: 235px;
         border-radius: 100px;
         display: flex;
         justify-content: center;
