@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import Links from './items/ProjectLinks.vue';
 import Fondo from '../../../assets/images/auth_fondo.webp';
 import Logo from '../../../assets/images/codezen-logo.webp';
 
-const descarga = "https://github.com/alfonsaco/CodeZen/releases/tag/1.0.1";
-const github = "https://github.com/alfonsaco/CodeZen";
 </script>
 
 
@@ -38,7 +35,7 @@ const github = "https://github.com/alfonsaco/CodeZen";
             </div>
 
             <h4>ENLACES</h4>
-            <Links :url-descarga="descarga" :url-github="github"/>
+            
         </div>
     </div>
 </template>

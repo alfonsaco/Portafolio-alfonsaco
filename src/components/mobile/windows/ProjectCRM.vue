@@ -42,11 +42,11 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
 <style>
     @font-face {
         font-family: 'Poppins';
-        src: url('../../../assets/fonts/poppins.woff2') format('woff2');
+        src: url('../../assets/fonts/poppins.woff2') format('woff2');
     }
     @font-face {
        font-family: 'Poppins Bold';
-        src: url('../../../assets/fonts/poppins_bold.woff2') format('woff2');
+        src: url('../../assets/fonts/poppins_bold.woff2') format('woff2');
     }
 
 

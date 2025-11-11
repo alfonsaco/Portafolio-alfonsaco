@@ -4,7 +4,7 @@
 
 
 <template>
-    <div class="ventana-sobre-mi">
+    <div class="ventana-sobre-mi pc">
         <h1>SOBRE MÍ</h1>
         <p class="texto-about">Desarrollador Full-Stack y de aplicaciones Multiplataforma</p>
         <hr>
@@ -58,10 +58,21 @@
         text-align: left;
         user-select: text;
         color: #d1d0d0;
-        overflow: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
         padding-bottom: 25px;
+    }
+    .ventana-sobre-mi::-webkit-scrollbar {
+        width: 5px;
+    }
+    .ventana-sobre-mi::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .ventana-sobre-mi::-webkit-scrollbar-thumb {
+        background-color: #3e5074; 
+        border-radius: 0px;  
+        cursor: pointer; 
     }
     .ventana-sobre-mi * {
         margin: 0;

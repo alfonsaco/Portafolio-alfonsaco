@@ -4,10 +4,7 @@ import GIFJuego from '../../../assets/images/gif juego.gif'
 import Strong from '../../../assets/images/gif_strong.gif'
 import Azzaro from '../../../assets/images/git_azzaro.gif'
 import Phatnom from '../../../assets/images/gif_phantom.gif'
-import Links from './items/ProjectLinks.vue';
 
-const github = "https://github.com/alfonsaco/Flappy-Parfums";
-const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0";
 </script>
 
 
@@ -50,7 +47,6 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
             </div>
 
             <h4>enlaces</h4>
-            <Links :url-descarga="descarga" :url-github="github"/>
         </div>
     </div>
 </template>

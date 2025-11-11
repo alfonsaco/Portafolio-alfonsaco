@@ -30,8 +30,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
 <template>
     <WidgetHora></WidgetHora>
 
-    <div class="movil-contenedor-aplicaciones" 
-        @dblclick="" @touchstart="" @touchend="">
+    <div class="movil-contenedor-aplicaciones" >
 
         <!--LISTA DE APLICACIONES-->
         <div class="div-aplicaciones">
