@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ParfumsLogo from '../../../assets/images/parfums_logo.png'
-import GIFJuego from '../../../assets/images/gif juego.gif'
 import Strong from '../../../assets/images/gif_strong.gif'
 import Azzaro from '../../../assets/images/git_azzaro.gif'
 import Phatnom from '../../../assets/images/gif_phantom.gif'
