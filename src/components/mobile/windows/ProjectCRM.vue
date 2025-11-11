@@ -29,12 +29,12 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
             </div>
 
             <h4>ENLACES</h4>
-            <div class="crm-enlace">
-                <div>
-                    <a href="https://github.com/alfonsaco/ConsultoriaCRM" target="_blank">
-                        GITHUB
-                    </a>            
-                </div>
+            <div class="crm-enlace crm-enlace-movil">
+                <a href="https://github.com/alfonsaco/ConsultoriaCRM" target="_blank">
+                    <div>                    
+                        GITHUB                    
+                    </div>
+                </a>            
             </div>
         </div>
     </div>
@@ -42,5 +42,8 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
 
 
 <style>
-
+    .crm-enlace-movil a div {
+        max-width: 330px;
+        width: calc(100vw - 70px);
+    }
 </style>

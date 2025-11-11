@@ -38,6 +38,22 @@ const comunicarDesktopFlappy = () => {
         console.log('ERROR al mostrar Flappy')
     }
 }
+
+const comunicarDesktopCodezen = () => {
+  if (desktopRef.value) {
+        desktopRef.value.mostrarCodezen();
+    } else {
+        console.log('ERROR al mostrar CodeZen')
+    }
+}
+
+const comunicarDesktopCRM = () => {
+  if (desktopRef.value) {
+        desktopRef.value.mostrarCRM();
+    } else {
+        console.log('ERROR al mostrar CRM')
+    }
+}
 </script>
 
 
@@ -49,6 +65,8 @@ const comunicarDesktopFlappy = () => {
         @mostrar-sobre-mi="comunicacionDesktopSobreMi"
         @mostrar-terminal="comunicarDesktopTerminal"
         @mostrar-flappy="comunicarDesktopFlappy"
+        @mostrar-codezen="comunicarDesktopCodezen"
+        @mostrar-crm="comunicarDesktopCRM"
         ></TaskBar>
 </template>
 

@@ -261,7 +261,9 @@ defineExpose({
     manejarMostrarEmail,
     mostrarSobreMi,
     mostrarTerminal,
-    mostrarFlappy
+    mostrarFlappy,
+    mostrarCodezen,
+    mostrarCRM
 });
 </script> 
 

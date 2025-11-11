@@ -28,11 +28,11 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
 
             <h4>ENLACES</h4>
             <div class="crm-enlace">
-                <div>
-                    <a href="https://github.com/alfonsaco/ConsultoriaCRM" target="_blank">
-                        GITHUB
-                    </a>            
-                </div>
+                <a href="https://github.com/alfonsaco/ConsultoriaCRM" target="_blank">
+                    <div>                    
+                        GITHUB                               
+                    </div>
+                </a> 
             </div>
         </div>
     </div>
@@ -164,7 +164,7 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
         justify-content: center;
         align-items: center;
     }
-    .crm-enlace > div {
+    .crm-enlace > a div {
         background-color: #000000b6;
         border: 4px solid #000000af;
         border-radius: 100px;
@@ -174,14 +174,15 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        transition: .2s ease;
     }
-    .crm-enlace > div a {
+    .crm-enlace > a div {
         color: #FFF;
     }
-    .crm-enlace > div:hover {
+    .crm-enlace > a:hover div {
         background-color: #383838b6;
     }
-    .crm-enlace > div:active {
+    .crm-enlace > a:active div {
         background-color: #000000e0;
     }
 </style>

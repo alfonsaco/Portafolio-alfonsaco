@@ -51,6 +51,8 @@ ordenes.value.push('_');
 
 const nuevaOrden = (e: KeyboardEvent) => {
     if(e.key === 'Enter' && textoInput.value.trim() !== '') {
+        e.preventDefault();
+
         ordenes.value.push(`C:\\Usuarios\\Usuario> ${textoInput.value}`);
         const textoFormateado = textoInput.value.toLowerCase();
         

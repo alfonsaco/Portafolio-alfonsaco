@@ -3,7 +3,7 @@ import { usarIconos } from '../../../data/UseIcons';
 import Icono from '../models/SearchIcon.vue'
 import { computed } from 'vue';
 
-const { todosLosIconos } = usarIconos();
+const { iconosSinCarpeta } = usarIconos();
 
 const props = defineProps<{
     buscadorVisible: boolean, textoBuscado: string
@@ -16,6 +16,8 @@ const emit = defineEmits<{
     (e: 'mostrar-sobre-mi'): void
     (e: 'mostrar-terminal'): void
     (e: 'mostrar-flappy'): void
+    (e: 'mostrar-codezen'): void
+    (e: 'mostrar-crm'): void
 }>();
 
 const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: string, action?: string }) => {
@@ -30,6 +32,10 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
             emit('mostrar-terminal');
         } else if(aplicacion.action === 'flappy') {
             emit('mostrar-flappy');
+        } else if(aplicacion.action === 'codezen') {
+            emit('mostrar-codezen');
+        } else if(aplicacion.action === 'crm') {
+            emit('mostrar-crm');
         }
     }
 
@@ -39,9 +45,9 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
 // Mostrar la búsqueda
 const iconosFiltrados = computed(() => {
   const texto = props.textoBuscado.trim().toLowerCase();
-  if (!texto) return todosLosIconos.value;
+  if (!texto) return iconosSinCarpeta.value;
 
-  return [...todosLosIconos.value]
+  return [...iconosSinCarpeta.value]
     .filter((app: any) => app.texto.toLowerCase().includes(texto))
     .sort((a: any, b: any) => {
       const aEmpieza = a.texto.toLowerCase().startsWith(texto);
@@ -83,6 +89,9 @@ const iconosFiltrados = computed(() => {
                 <li>Hora y fecha en tiempo real</li>
                 <li>Porcentaje y estado de la batería</li>
                 <li>IA funcional con información de la web</li>
+                <li>Ventanas con información personal</li>
+                <li>Carpeta con proyectos</li>
+                <li>Versión móvil</li>
             </ul>
         </div>
     </div>

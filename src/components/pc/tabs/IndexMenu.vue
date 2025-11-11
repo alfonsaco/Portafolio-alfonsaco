@@ -3,7 +3,7 @@ import IndexMenuIcon from '../models/IndexMenuIcon.vue';
 
 // Importamos los iconos desde el JSON
 import { usarIconos } from '../../../data/UseIcons';
-const { todosLosIconos } = usarIconos();
+const { iconosSinCarpeta } = usarIconos();
 import { computed } from 'vue';
 
 // Para poner el delay a la animación
@@ -11,7 +11,7 @@ const delayBase = 60;
 const delaySuma = 20;
 
 const aplicacionesDelay = computed(() => 
-    todosLosIconos.value.map((app, i) => ({
+    iconosSinCarpeta.value.map((app, i) => ({
         ...app,
         estilo: `animation-delay: ${delayBase + i * delaySuma}ms`
     }))
@@ -28,6 +28,10 @@ const abrirAplicacionIndex = (aplicacion: {texto: string, imagen: string, url?: 
             emit('mostrar-terminal');
         } else if(aplicacion.action === 'flappy') {
             emit('mostrar-flappy');
+        } else if(aplicacion.action === 'codezen') {
+            emit('mostrar-codezen');
+        } else if(aplicacion.action === 'crm') {
+            emit('mostrar-crm');
         }
     }
 
@@ -42,6 +46,8 @@ const emit = defineEmits<{
     (e: 'mostrar-sobre-mi'): void
     (e: 'mostrar-terminal'): void
     (e: 'mostrar-flappy'): void
+    (e: 'mostrar-codezen'): void
+    (e: 'mostrar-crm'): void
 }>();
 </script>
 

@@ -16,10 +16,15 @@ export function usarIconos() {
         todosLosIconos.value.filter(icono => icono.escritorio === 'proyectos')
     );
 
+    const iconosSinCarpeta = computed(() => 
+        todosLosIconos.value.filter(icono => icono.action !== 'proyectos' && icono.action !== 'certificaciones')
+    );
+
     return {
         todosLosIconos,
         iconosDerecha,
         iconosIzquierda,
-        iconosProyectos
+        iconosProyectos,
+        iconosSinCarpeta
     };
 }

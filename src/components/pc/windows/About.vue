@@ -34,7 +34,7 @@
         <p class="ventana-corchete">&#123;</p>
         <ul>
             <li><span class="ventana-tag">"GitHub"</span> : <span class="ventana-valor"><a href="https://www.github.com/alfonsaco" target="_blank">"alfonsaco"</a></span>,</li>
-            <li><span class="ventana-tag">"LinkedIn"</span> : <span class="ventana-valor"><a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank">"https://www.linkedin.com/in/alfonsorinconc/"</a></span>,</li>
+            <li><span class="ventana-tag">"LinkedIn"</span> : <span class="ventana-valor"><a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank">"www.linkedin.com/in/alfonsorinconc/"</a></span>,</li>
             <li><span class="ventana-tag">"Email"</span> : <span class="ventana-valor"><a href="mailto:alfonso.rincondev@gmail.com" target="_blank">"alfonso.rincondev@gmail.com"</a></span>,</li>
         </ul>
         <p class="ventana-corchete">&#125;</p>

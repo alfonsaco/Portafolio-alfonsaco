@@ -8,16 +8,16 @@ const props = defineProps<{
 
 <template>
     <div class="links-proyecto-div">
-        <div>
-            <a :href="props.urlGithub" target="_blank">
-                GITHUB
-            </a>            
-        </div>
-        <div>
-            <a :href="props.urlDescarga" target="_blank">
-                DESCARGAR
-            </a>            
-        </div>
+        <a :href="props.urlGithub" target="_blank">
+            <div>            
+                GITHUB            
+            </div>
+        </a>            
+        <a :href="props.urlDescarga" target="_blank">
+            <div>            
+                DESCARGAR            
+            </div>
+        </a>            
     </div>
 </template>
 
@@ -29,7 +29,7 @@ const props = defineProps<{
         align-items: center;
         gap: 15px;
     }
-    .links-proyecto-div > div {
+    .links-proyecto-div > a div {
         cursor: pointer;
         height: 50px;
         width: 150px;
@@ -37,32 +37,30 @@ const props = defineProps<{
         justify-content: center;
         align-items: center;
         transition: .2s ease;
-    }
-    .links-proyecto-div a {
         color: #FFF;
     }
-    .links-proyecto-div > div:first-child {
+    .links-proyecto-div > a:first-child div {
         background-color: #000000b6;
         border: 4px solid #000000af;
         border-top-left-radius: 100px;
         border-bottom-left-radius: 100px;
     }
-    .links-proyecto-div > div:last-child {
+    .links-proyecto-div > a:last-child div {
         background-color: rgba(47, 128, 0, 0.664);
         border: 4px solid rgba(62, 128, 0, 0.712);
         border-top-right-radius: 100px;
         border-bottom-right-radius: 100px;
     }
-    .links-proyecto-div > div:first-child:hover {
+    .links-proyecto-div > a:first-child:hover div {
         background-color: #383838b6;
     }
-    .links-proyecto-div > div:last-child:hover {
+    .links-proyecto-div > a:last-child:hover div {
         background-color: rgba(74, 189, 7, 0.664);
     }
-    .links-proyecto-div > div:first-child:active {
+    .links-proyecto-div > a:first-child:active div {
         background-color: #000000e0;
     }
-    .links-proyecto-div > div:last-child:active {
+    .links-proyecto-div > a:last-child:active div {
         background-color: rgba(27, 70, 2, 0.877);
         border-color: rgba(27, 70, 2, 0.877);
     }

@@ -136,7 +136,7 @@ const textoBateria = computed(() => {
     }
     .fecha-hora:hover::after {
         opacity: 1;
-        transition-delay: .5s;
+        transition-delay: .3s;
     }
     
     /* BATERÍA */
@@ -180,7 +180,7 @@ const textoBateria = computed(() => {
     }
     .div-bateria:hover::after {
         opacity: 1;
-        transition-delay: .5s;
+        transition-delay: .3s;
     }
     .iconos-utilidades {
         width: 18px;

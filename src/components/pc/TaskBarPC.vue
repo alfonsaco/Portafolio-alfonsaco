@@ -37,7 +37,8 @@ onClickOutside(menuIndexRef, () => {
 
 
 // Manejar el mostrar emial, conectamos con Desktop.vue y IndexMenu.vue
-const emit = defineEmits(['mostrar-email', 'mostrar-sobre-mi', 'mostrar-terminal', 'mostrar-flappy']);
+const emit = defineEmits(['mostrar-email', 'mostrar-sobre-mi', 'mostrar-terminal', 
+'mostrar-flappy', 'mostrar-codezen', 'mostrar-crm']);
 
 // Manejar el mostrar el buscador
 const buscadorVisible = ref(false);
@@ -67,14 +68,18 @@ onClickOutside(buscarRef, () => {
         @mostrar-email="$emit('mostrar-email')"
         @mostrar-sobre-mi="$emit('mostrar-sobre-mi')"
         @mostrar-flappy="$emit('mostrar-flappy')"
-        @mostrar-terminal="$emit('mostrar-terminal')"></IndexMenu>
+        @mostrar-terminal="$emit('mostrar-terminal')"
+        @mostrar-codezen="$emit('mostrar-codezen')"
+        @mostrar-crm="$emit('mostrar-crm')"></IndexMenu>
 
     <SearchWindow :buscador-visible="buscadorVisible"
         :texto-buscado="textoBuscado"
         @mostrar-email="$emit('mostrar-email')"
         @mostrar-sobre-mi="$emit('mostrar-sobre-mi')"
         @mostrar-flappy="$emit('mostrar-flappy')"
-        @mostrar-terminal="$emit('mostrar-terminal')"></SearchWindow>
+        @mostrar-terminal="$emit('mostrar-terminal')"
+        @mostrar-codezen="$emit('mostrar-codezen')"
+        @mostrar-crm="$emit('mostrar-crm')"></SearchWindow>
 
     <div class="barra-de-tareas">
         <!-- IA -->
@@ -179,7 +184,7 @@ onClickOutside(buscarRef, () => {
     }
     .div-logo-alfonOS:hover::after {
         opacity: 1;
-        transition-delay: .6s;
+        transition-delay: .3s;
     }
 
     /* BUSCADOR */
@@ -264,7 +269,7 @@ onClickOutside(buscarRef, () => {
     }
     .div-programas-taskbar a:hover::after {
         opacity: 1;
-        transition-delay: .6s;
+        transition-delay: .3s;
     }
 
      /* CONTENEDOR LOGO IA */
@@ -314,6 +319,6 @@ onClickOutside(buscarRef, () => {
     }
     .logo-ia-container:hover::after {
         opacity: 1;
-        transition-delay: .6s;
+        transition-delay: .3s;
     }
 </style>
