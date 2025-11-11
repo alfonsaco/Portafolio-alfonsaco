@@ -39,7 +39,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
             :imagen="aplicacion.imagen" 
             @click="abrirApp(aplicacion)" />
 
-            <Carpeta></Carpeta>
+            <Carpeta @abrir-ventana="emit('abrir-ventana', $event)"></Carpeta>
         </div>
     </div>
 

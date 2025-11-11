@@ -90,7 +90,8 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
                     <Archivo v-for="(archivo, i) in archivos" :key="i" 
                     :imagen="archivo.imagen" 
                     :texto="archivo.texto"
-                    @dblclick="abrirIcono(archivo)"/>
+                    @dblclick="abrirIcono(archivo)"
+                    @touchstart="abrirIcono(archivo)"/>
                 </div>
             </div>
         </div>

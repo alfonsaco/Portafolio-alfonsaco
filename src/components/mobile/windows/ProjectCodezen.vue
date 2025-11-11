@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import Fondo from '../../../assets/images/auth_fondo.webp';
 import Logo from '../../../assets/images/codezen-logo.webp';
+import LinksMobile from './items/LinksMobile.vue';
 
+const descarga = "https://github.com/alfonsaco/CodeZen/releases/tag/1.0.1";
+const github = "https://github.com/alfonsaco/CodeZen";
 </script>
 
 
@@ -35,7 +38,7 @@ import Logo from '../../../assets/images/codezen-logo.webp';
             </div>
 
             <h4>ENLACES</h4>
-            
+            <LinksMobile :url-github="github" :url-descarga="descarga"></LinksMobile>
         </div>
     </div>
 </template>

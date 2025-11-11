@@ -4,7 +4,10 @@ import GIFJuego from '../../../assets/images/gif juego.gif'
 import Strong from '../../../assets/images/gif_strong.gif'
 import Azzaro from '../../../assets/images/git_azzaro.gif'
 import Phatnom from '../../../assets/images/gif_phantom.gif'
+import LinksMobile from './items/LinksMobile.vue'
 
+const github = "https://github.com/alfonsaco/Flappy-Parfums";
+const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0";
 </script>
 
 
@@ -47,6 +50,7 @@ import Phatnom from '../../../assets/images/gif_phantom.gif'
             </div>
 
             <h4>enlaces</h4>
+            <LinksMobile :url-descarga="descarga" :url-github="github"></LinksMobile>
         </div>
     </div>
 </template>
