@@ -20,11 +20,11 @@ export function usarGroq() {
 
   // Datos
   const datosCreador = ref({
-    nombre: 'Alfonso Rincón',
-    profesion: 'Desarrollador Full Stack y de Aplicaciones Multiplataforma',
-    intereses: ['programación', 'gimnasio', 'programar aplicaciones', 'ver series'],
-    habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL'],
-    proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%'],
+    nombre: 'Alfonso Rincón Cuerva',
+    profesion: 'Desarrollador Full-Stack y de Aplicaciones Multiplataforma',
+    intereses: ['programación', 'gimnasio y deporte', 'programar aplicaciones'],
+    habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL', 'NoSQL', 'Git y GitHub'],
+    proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%', 'CodeZen', 'CRM', 'Flappy Parfums'],
     datos: ['Inglés nivel B1']
   })
 
@@ -52,6 +52,22 @@ export function usarGroq() {
       - "¿Te interesa conocer más sobre mi creador ${datosCreador.value.nombre}?"
       - "Por cierto, ¿quieres saber más detalles sobre quién desarrolló esto?"
       - "¿Quieres saber más sobre este curioso Sistema Operativo, AlfonOS?
+
+      EL SISTEMA OPERATIVO ALFONOS CONTIENE LAS SIGUIENTES FUNCIONALIDADES:
+      - Menú de escritorio
+      - Área de selección en el escritorio
+      - Información de contacto
+      - Cambiar wallpapper
+      - Terminal con comandos e Easter Eggs
+      - Cambio del tamaño de los iconos del escritorio
+      - Tooltips en iconos
+      - Búsqueda de aplicaciones
+      - Hora y fecha en tiempo real
+      - Porcentaje y estado de la batería
+      - IA funcional con información de la web
+      - Ventanas con información personal
+      - Carpeta con proyectos
+      - Versión móvil
       
       EXPLICACIÓN DEL SISTEMA OPERATIVO (ALFONOS)
       Basicamente consiste en un Sistema Operativo ficticio creado como portafolio para mostrar mis proyectos. Tiene distintas funciones, que lo hacen bastante intuitivo y realista, parecido a uno real, como Windows 10`
@@ -159,11 +175,11 @@ export function usarGroq() {
 
   const establecerInformacion = () => {
     actualizarInformacion({
-      nombre: 'Alfonso Rincón',
-      profesion: 'Desarrollador Full Stack y de Aplicaciones Multiplataforma',
-      intereses: ['programación', 'gimnasio', 'programar aplicaciones'],
-      habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL'],
-      proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%'],
+      nombre: 'Alfonso Rincón Cuerva',
+      profesion: 'Desarrollador Full-Stack y de Aplicaciones Multiplataforma',
+      intereses: ['programación', 'gimnasio y deporte', 'programar aplicaciones'],
+      habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL', 'NoSQL', 'Git y GitHub'],
+      proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%', 'CodeZen', 'CRM', 'Flappy Parfums'],
       datos: ['Inglés nivel B1']
     })
   }
