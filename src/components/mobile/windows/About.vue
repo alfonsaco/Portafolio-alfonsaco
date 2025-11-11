@@ -26,7 +26,7 @@
         <p>Todos los proyectos los podrás encontrar dentro de la carpeta situada en la parte izquierda del escritorio.</p>
         <h4>EXPERIENCIA</h4>
         <p>Marzo 2025 - Junio 2025</p>
-        <p class="ventana-p-borrador">&gt;&gt; Creación de CRM completo con JavaFX durante 3 meses</p>
+        <p class="ventana-p-borrador">&gt;&gt; Creación de CRM completo con JavaFX durante 3 meses.</p>
 
         <hr>
 
@@ -34,7 +34,7 @@
         <p class="ventana-corchete">&#123;</p>
         <ul>
             <li><span class="ventana-tag">"GitHub"</span> : <span class="ventana-valor"><a href="https://www.github.com/alfonsaco" target="_blank">"alfonsaco"</a></span>,</li>
-            <li><span class="ventana-tag">"LinkedIn"</span> : <span class="ventana-valor"><a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank">"linkedin.com/in/alfonsorinconc/"</a></span>,</li>
+            <li><span class="ventana-tag">"LinkedIn"</span> : <span class="ventana-valor"><a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank">"in/alfonsorinconc/"</a></span>,</li>
             <li><span class="ventana-tag">"Email"</span> : <span class="ventana-valor"><a href="mailto:alfonso.rincondev@gmail.com" target="_blank">"alfonso.rincondev@gmail.com"</a></span>,</li>
         </ul>
         <p class="ventana-corchete">&#125;</p>

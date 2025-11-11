@@ -150,6 +150,8 @@ import CapturaCRM from '../../../assets/images/crm_cap.webp';
         cursor: pointer;
         transition: .2s ease;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .crm-tecnologia-p:hover {
         background-color: #6270084b;

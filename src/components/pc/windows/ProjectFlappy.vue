@@ -182,6 +182,8 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
         border: 1px solid #C5562F;
         transition: .2s ease;
         cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .flappy-tecnologia-p:hover {
         background-color: #bd3e1073;

@@ -6,7 +6,7 @@ import ProjectFlappy from '../windows/ProjectFlappy.vue';
 
 import { usarIconos } from '../../../data/UseIcons';
 const { iconosProyectos } = usarIconos();
-import { ref } from 'vue';
+import { ref, markRaw } from 'vue';
 
 const emit = defineEmits(['abrir-ventana']);
 const abierta = ref(false);
@@ -16,11 +16,11 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, action?: s
         window.open(app.url, '_blank');
     } else {
         if(app.action === 'flappy') {
-            emit('abrir-ventana', ProjectFlappy)
+            emit('abrir-ventana', markRaw(ProjectFlappy))
         } else if(app.action === 'crm') {
-            emit('abrir-ventana', ProjectCRM)
+            emit('abrir-ventana', markRaw(ProjectCRM))
         } else if(app.action === 'codezen') {
-            emit('abrir-ventana', ProjectCodezen)
+            emit('abrir-ventana', markRaw(ProjectCodezen))
         }
     }
 
@@ -113,6 +113,7 @@ const cerrarCarpeta = () => {
         font-size: .8em;
         margin-top: 5px;
         color: #fff;
+        text-shadow: 0px 1px 0px #000;
         font-family: Arial, sans-serif;
     }
 

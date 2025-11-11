@@ -8,6 +8,7 @@ import Certificate from './windows/Certificate.vue';
 
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
+import { markRaw } from 'vue';
 
 const emit = defineEmits(['abrir-ventana']);
 
@@ -18,9 +19,9 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
         window.location.href = app.email;
     } else {
         if(app.action === 'sobremi') {
-            emit('abrir-ventana', About);
+            emit('abrir-ventana', markRaw(About));
         } else if(app.action === 'certificaciones') {
-            emit('abrir-ventana', Certificate);
+            emit('abrir-ventana', markRaw(Certificate));
         }
     }
 }

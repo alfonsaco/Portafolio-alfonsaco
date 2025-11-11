@@ -6,7 +6,7 @@
 <template>
     <div class="ventana-certificado-movil">
         <h1>CERTIFICADOS</h1>
-        <p class="texto-about">Proximamente...</p>
+        <p class="texto-about" style="opacity: .8;">Proximamente...</p>
     </div>
 </template>
 

@@ -12,7 +12,7 @@ const github = "https://github.com/alfonsaco/CodeZen";
     <div class="proyecto-codezen-contenedor">
         <div class="div-codezen">
             <img :src="Fondo" alt="Imagen fondo" class="codezen-fondo codezen-fondo-movil">
-            <img :src="Logo" alt="Logo CodeZen" class="codezen-logo">
+            <img :src="Logo" alt="Logo CodeZen" class="codezen-logo codezen-logo-movil">
 
             <h4>DESCRIPCIÓN</h4>
             <p><em>CodeZen</em> es una aplicación móvil diseñada para programadores que busca mejorar su 
@@ -26,11 +26,13 @@ const github = "https://github.com/alfonsaco/CodeZen";
                     <p class="codezen-tecnologia-p">Android Studio</p>
                     <p class="codezen-tecnologia-p">Java</p>
                     <p class="codezen-tecnologia-p">XLM</p>
-                    <p class="codezen-tecnologia-p">Git</p>
-                    <p class="codezen-tecnologia-p">GitHub</p>
                 </div>
                 <div>
+                    <p class="codezen-tecnologia-p">Git</p>
+                    <p class="codezen-tecnologia-p">GitHub</p>
                     <p class="codezen-tecnologia-p">Adobe Photoshop</p>
+                </div>
+                <div>                    
                     <p class="codezen-tecnologia-p">Firebase</p>
                     <p class="codezen-tecnologia-p">Firestore</p>
                     <p class="codezen-tecnologia-p">JSON</p>
@@ -45,6 +47,11 @@ const github = "https://github.com/alfonsaco/CodeZen";
 
 
 <style>
+    .codezen-logo-movil {
+        max-width: 330px;
+        width: calc(100vw - 70px);
+        filter: drop-shadow(0px 0px 3px #bfeef1);
+    }
     .codezen-fondo-movil {
         top: -390px;
     }

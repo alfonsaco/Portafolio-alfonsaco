@@ -133,6 +133,8 @@ const github = "https://github.com/alfonsaco/CodeZen";
         cursor: pointer;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         transition: .2s ease;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
     .codezen-tecnologia-p:hover {
         background-color: #063a3fa2;
