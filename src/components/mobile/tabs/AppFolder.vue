@@ -6,8 +6,10 @@ import ProjectFlappy from '../windows/ProjectFlappy.vue';
 
 import { usarIconos } from '../../../data/UseIcons';
 const { iconosProyectos } = usarIconos();
+import { ref } from 'vue';
 
 const emit = defineEmits(['abrir-ventana']);
+const abierta = ref(false);
 
 const abrirApp = (app: { texto: string, imagen: string, url?: string, action?: string }) => {
     if(app.url) {
@@ -21,20 +23,43 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, action?: s
             emit('abrir-ventana', ProjectCodezen)
         }
     }
+
+    abierta.value = false;
+}
+
+const abrirCarpeta = () => {
+    abierta.value = true;
+}
+const cerrarCarpeta = () => {
+    abierta.value = false;
 }
 </script>
 
 
 <template>
-    <div class="carpeta-movil-contenedor">
-        <h4>Proyectos</h4>
-        <!--LISTA DE APLICACIONES-->
-        <div class="div-aplicaciones-movil">
-            <App v-for="(aplicacion, i) in iconosProyectos" :key="i" 
-                :texto="aplicacion.texto" 
-                :imagen="aplicacion.imagen" 
-                @click="abrirApp(aplicacion)" />
-        </div>
+    <!-- Icono visible en el escritorio -->
+    <div class="icono-carpeta-movil" @click="abrirCarpeta">
+        <img src="../../../assets/images/carpeta.png" alt="Carpeta" />
+        <p>Proyectos</p>
+    </div>
+
+    <!-- Fondo oscuro fijo -->
+    <div v-if="abierta" class="overlay-movil" @click.self="cerrarCarpeta">
+
+        <!-- Aplica fade SOLO a la carpeta -->
+        <transition name="fade">
+            <div v-show="abierta" class="carpeta-movil-contenedor">
+                <div class="div-aplicaciones-movil">
+                <App
+                    v-for="(aplicacion, i) in iconosProyectos"
+                    :key="i"
+                    :texto="aplicacion.texto"
+                    :imagen="aplicacion.imagen"
+                    @click="abrirApp(aplicacion)"
+                />
+                </div>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -52,20 +77,12 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, action?: s
         transform: translate(-50%, -50%);
         z-index: 500;
         border-radius: 20px;
+        transform-origin: center center;
+        animation: mostrarCarpeta .2s ease;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
-
-    .carpeta-movil-contenedor h4 {
-        font-size: 1.5em;
-        margin: 0;
-        font-weight: normal;
-        font-family: Arial, Helvetica, sans-serif;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -40px;
-        user-select: none;
-    }
 
     /* LISTA DE APLICACIONES */ 
     .div-aplicaciones-movil {
@@ -75,5 +92,49 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, action?: s
         column-gap: 30px;
         width: 100%;
         padding: 25px;
+    }
+
+
+    /* INACTIVA */
+    .icono-carpeta-movil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .icono-carpeta-movil img {
+        width: 55px;
+        height: 55px;
+    }
+    .icono-carpeta-movil p {
+        font-size: .8em;
+        margin-top: 5px;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    /* ACTIVA */
+    .overlay-movil {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 500;
+    }
+
+    /* ANIMACIONES */
+    @keyframes mostrarCarpeta {
+        from {
+            transform: scale(0.1) translate(-100%, 100%);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
     }
 </style>

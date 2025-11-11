@@ -45,6 +45,7 @@ const cerrarVentana = () => {
         padding-top: 40px;
         transform: translateY(100%);
         transition: .4s ease;
+        user-select: none;
     }
 
     .bottomsheet-icono {
