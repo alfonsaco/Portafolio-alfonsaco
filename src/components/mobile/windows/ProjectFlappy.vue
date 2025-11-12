@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import ParfumsLogo from '../../../assets/images/parfums_logo.png'
-import Strong from '../../../assets/images/gif_strong.gif'
-import Azzaro from '../../../assets/images/git_azzaro.gif'
-import Phatnom from '../../../assets/images/gif_phantom.gif'
+import Strong from '../../../assets/images/stronger.webm'
+import Azzaro from '../../../assets/images/azzaro.webm'
+import Phatnom from '../../../assets/images/phantom.webm'
 import LinksMobile from './items/LinksMobile.vue'
 
 const github = "https://github.com/alfonsaco/Flappy-Parfums";
@@ -28,9 +28,9 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
 
             <h4>skins</h4>
             <div class="flappy-div-colonias">
-                <img :src="Phatnom" alt="Colonia Phantom">
-                <img :src="Azzaro" alt="Colonia Azzaro">
-                <img :src="Strong" alt="Colonia Stronger">
+                <video :src="Phatnom" autoplay loop muted playsinline />
+                <video :src="Azzaro" autoplay loop muted playsinline />
+                <video :src="Strong" autoplay loop muted playsinline />
             </div>
 
             <h4>tecnologías utilizadas</h4>

@@ -39,7 +39,7 @@ const cerrarCarpeta = () => {
 <template>
     <!-- Icono visible en el escritorio -->
     <div class="icono-carpeta-movil" @click="abrirCarpeta">
-        <img src="../../../assets/images/carpeta.png" alt="Carpeta" />
+        <img src="../../../assets/images/carpeta.webp" alt="Carpeta" />
         <p>Proyectos</p>
     </div>
 

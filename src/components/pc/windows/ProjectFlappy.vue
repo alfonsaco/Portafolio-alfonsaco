@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import ParfumsLogo from '../../../assets/images/parfums_logo.png'
-import GIFJuego from '../../../assets/images/gif juego.gif'
-import Strong from '../../../assets/images/gif_strong.gif'
-import Azzaro from '../../../assets/images/git_azzaro.gif'
-import Phatnom from '../../../assets/images/gif_phantom.gif'
+import GIFJuego from '../../../assets/images/gif juego.webm'
+import Strong from '../../../assets/images/stronger.webm'
+import Azzaro from '../../../assets/images/azzaro.webm'
+import Phatnom from '../../../assets/images/phantom.webm'
 import Links from './items/ProjectLinks.vue';
 
 const github = "https://github.com/alfonsaco/Flappy-Parfums";
@@ -16,7 +16,7 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
         <div class="proyecto-flappy-div-principal">
             <img :src="ParfumsLogo" alt="Logo Flappy Parfums" class="logo-flappy">
             <div class="flappy-juego">
-                <img :src="GIFJuego" alt="Gameplay de Flappy Parfums">
+                <video :src="GIFJuego" muted autoplay loop />
                 <div>
                     <p><strong>Flappy Parfums</strong> es un juego para Android inspirado en el clásico Flappy Bird, 
                     donde los personajes tradicionales son reemplazados por perfumes icónicos. 
@@ -30,9 +30,9 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
 
             <h4>skins</h4>
             <div class="flappy-div-colonias">
-                <img :src="Phatnom" alt="Colonia Phantom">
-                <img :src="Azzaro" alt="Colonia Azzaro">
-                <img :src="Strong" alt="Colonia Stronger">
+                <video :src="Phatnom" autoplay loop muted playsinline />
+                <video :src="Azzaro" autoplay loop muted playsinline />
+                <video :src="Strong" autoplay loop muted playsinline />
             </div>
 
             <h4>tecnologías utilizadas</h4>
@@ -116,7 +116,7 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
         align-items: center;
         gap: 25px;
     }
-    .flappy-juego img {
+    .flappy-juego video {
         width: 180px;
         border-radius: 5px;
     }
@@ -137,14 +137,14 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
     }
 
     /* DIV DE SKINS */  
-    .flappy-div-colonias img {
+    .flappy-div-colonias video {
         width: 100px;
         animation: volar .7s ease-in-out infinite alternate-reverse;
     }
-    .flappy-div-colonias img:nth-child(2) {
+    .flappy-div-colonias video:nth-child(2) {
         animation-delay: -.2s;
     }
-    .flappy-div-colonias img:last-child {
+    .flappy-div-colonias video:last-child {
         animation-delay: -.4s;
     }
     @keyframes volar {
