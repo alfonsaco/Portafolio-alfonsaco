@@ -47,16 +47,11 @@ const iconoBateria = computed(() => {
     else return BatteryFull;
 });
 
-// Establecer texto batería
 const textoBateria = computed(() => {
-    if(textoBateria) {
-        return nivelBateria.value+'%';
-    } else {
-        return '';
-    }
-    
+  return nivelBateria.value !== null
+    ? `${Math.round(nivelBateria.value)}%`
+    : '';
 });
-
 </script>
 
 
