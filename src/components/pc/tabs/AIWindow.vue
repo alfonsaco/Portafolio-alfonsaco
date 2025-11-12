@@ -35,9 +35,9 @@ const enviarConEnter = (event: KeyboardEvent) => {
                 <h2>AI-Fon</h2>
             </div>
             
-            <p>Hola, soy AI-fon, y estoy aquí para resolver tus problemas. No hago
-                nada en especial, pero como ahora a todo le metéis IA, 
-                pues le meto una IA que te da información sobre mí.
+            <p>Hola, soy AI-fon, y estoy aquí para resolver tus problemas. Si tienes alguna 
+                duda sobre el creador de esta web, o sobre las funcionalidades de este SO,
+                no dudes en preguntarme.
             </p>
 
             <!-- Estado y respuestas -->
