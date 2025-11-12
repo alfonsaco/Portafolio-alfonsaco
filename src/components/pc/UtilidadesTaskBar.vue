@@ -59,10 +59,16 @@ const iconoBateria = computed(() => {
 
 // Establecer texto batería
 const textoBateria = computed(() => {
-    if(cargando.value) return "Cargando, "+nivelBateria.value+'%';
-    else return nivelBateria.value+'%';
-});
+  if (nivelBateria.value === null) {
+    return 'Batería no disponible';
+  }
 
+  if (cargando.value) {
+    return `Cargando, ${Math.round(nivelBateria.value)}%`;
+  }
+
+  return `${Math.round(nivelBateria.value)}%`;
+});
 </script>
 
 

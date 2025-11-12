@@ -132,7 +132,7 @@ const cerrarCarpeta = () => {
     /* ANIMACIONES */
     @keyframes mostrarCarpeta {
         from {
-            transform: scale(0.1) translate(-100%, 100%);
+            transform: scale(0.1) translate(-50%, -50%);
             opacity: 0;
         }
         to {
