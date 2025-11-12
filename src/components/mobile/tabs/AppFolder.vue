@@ -108,6 +108,8 @@ const cerrarCarpeta = () => {
     .icono-carpeta-movil img {
         width: 55px;
         height: 55px;
+        backdrop-filter: blur(2px);
+        border-radius: 5px;
     }
     .icono-carpeta-movil p {
         font-size: .8em;
