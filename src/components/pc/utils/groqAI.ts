@@ -54,7 +54,6 @@ export function usarGroq() {
       console.log('📥 Response status:', fetchResponse.status)
       
       const responseText = await fetchResponse.text()
-      console.log('📥 Response text:', responseText)
       
       if (!fetchResponse.ok) {
         let errorMessage = `HTTP ${fetchResponse.status}`
@@ -68,7 +67,6 @@ export function usarGroq() {
       }
       
       const data = JSON.parse(responseText)
-      console.log('✅ Success:', data)
       
       estado.value = `Éxito! - Modelo: ${modeloSeleccionado.value}`
       respuesta.value = JSON.stringify(data, null, 2)
