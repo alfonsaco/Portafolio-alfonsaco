@@ -10,14 +10,14 @@ export default async function handler(req, res) {
 
   try {
     // Datos
-    const datosCreador = ref({
+    const datosCreador = {
       nombre: 'Alfonso Rincón Cuerva',
       profesion: 'Desarrollador Full-Stack y de Aplicaciones Multiplataforma',
       intereses: ['programación', 'gimnasio y deporte', 'programar aplicaciones'],
       habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL', 'NoSQL', 'Git y GitHub'],
       proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%', 'CodeZen', 'CRM', 'Flappy Parfums'],
       datos: ['Inglés nivel B1']
-    })
+    };
   
     const systemPrompt = `
       Eres un asistente útil que responde preguntas. Hablarás de forma formal.
