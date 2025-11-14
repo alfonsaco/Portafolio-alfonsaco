@@ -43,12 +43,7 @@ export function usarGroq() {
 
       const requestBody = {
         mensaje: mensajeUsuario.value
-      }
-      
-      console.log('📤 Enviando petición a Groq...', {
-        message: mensajeUsuario.value,
-        hasSystemPrompt: true 
-      })
+      }    
       
       const fetchResponse = await fetch('api/groq', {
         method: 'POST',
