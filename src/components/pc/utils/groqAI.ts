@@ -13,16 +13,6 @@ export function usarGroq() {
   const mensajeUsuario = ref('')
   const modeloSeleccionado = ref('llama-3.1-8b-instant')
 
-  // Datos
-  const datosCreador = ref({
-    nombre: 'Alfonso Rincón Cuerva',
-    profesion: 'Desarrollador Full-Stack y de Aplicaciones Multiplataforma',
-    intereses: ['programación', 'gimnasio y deporte', 'programar aplicaciones'],
-    habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL', 'NoSQL', 'Git y GitHub'],
-    proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%', 'CodeZen', 'CRM', 'Flappy Parfums'],
-    datos: ['Inglés nivel B1']
-  })
-
 
   // Modelos disponibles
   const modelosDisponibles = ref<modeloGroq[]>([
@@ -39,9 +29,6 @@ export function usarGroq() {
     }
   })
 
-  const actualizarInformacion = (newInfo: Partial<typeof datosCreador.value>) => {
-    Object.assign(datosCreador.value, newInfo)
-  }
 
   const testGroq = async () => {
     cargando.value = true
@@ -59,7 +46,6 @@ export function usarGroq() {
       }
       
       console.log('📤 Enviando petición a Groq...', {
-        model: modeloSeleccionado.value,
         message: mensajeUsuario.value,
         hasSystemPrompt: true 
       })
@@ -109,22 +95,11 @@ export function usarGroq() {
       }
     } finally {
       cargando.value = false
+      // Vacíamos input
+      mensajeUsuario.value = "";
     }
-
-    // Vacíamos input
-    mensajeUsuario.value = "";
   }
 
-  const establecerInformacion = () => {
-    actualizarInformacion({
-      nombre: 'Alfonso Rincón Cuerva',
-      profesion: 'Desarrollador Full-Stack y de Aplicaciones Multiplataforma',
-      intereses: ['programación', 'gimnasio y deporte', 'programar aplicaciones'],
-      habilidades: ['JavaScript', 'Vue.js', 'React Native', 'Java', 'HTML y CSS', 'SQL', 'NoSQL', 'Git y GitHub'],
-      proyectos: ['Portafolio personal', 'Oversize Ecommerce', '100DayCSS al 100%', 'CodeZen', 'CRM', 'Flappy Parfums'],
-      datos: ['Inglés nivel B1']
-    })
-  }
 
   return {
     estado,
@@ -135,9 +110,6 @@ export function usarGroq() {
     modeloSeleccionado,
     modelosDisponibles,
     formattedResponse,
-    datosCreador,
-    testGroq,
-    actualizarInformacion,
-    establecerInformacion
+    testGroq
   }
 }
