@@ -103,17 +103,8 @@ export function usarGroq() {
         throw new Error('El mensaje no puede estar vacío')
       }
 
-      const messages: Mensaje[] = [
-        { role: 'system', content: systemPrompt.value },
-        { role: 'user', content: mensajeUsuario.value }
-      ]
-
       const requestBody = {
-        model: modeloSeleccionado.value,
-        messages: messages,
-        max_tokens: 600, 
-        temperature: 0.7,
-        stream: false
+        mensaje: mensajeUsuario.value
       }
       
       console.log('📤 Enviando petición a Groq...', {
