@@ -9,10 +9,10 @@ import Es from '../../assets/images/es.webp';
 import En from '../../assets/images/en.webp';
 import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
+const { t } = useI18n();
 
 // Obtener batería
 import { Battery, BatteryFull, BatteryCharging, BatteryLow, BatteryMedium, Wifi } from 'lucide-vue-next';
-import { i18n } from '../../i18n';
 
 const nivelBateria = ref<number | null>(null);
 const cargando = ref(false);
@@ -111,7 +111,7 @@ const cambiarIdioma = (idioma: string) => {
     <div class="div-utilidades">
 
         <!-- Cambio de idioma -->
-        <div class="div-utilidades-idiomas" data-idioma="Cambiar idioma">
+        <div class="div-utilidades-idiomas" :data-idioma="t('cambiar-idioma')">
             <img :src="Es" alt="Iidoma español" 
                 :class="idiomaSeleccionado === 'es' ? 'idioma-seleccionado-pc' : ''"
                 @click="cambiarIdioma('es')">
@@ -177,8 +177,8 @@ const cambiarIdioma = (idioma: string) => {
         border-radius: 5px;
         border: 1px solid #1a1a1a;
         bottom: 54px;
-        left: 50%;
-        transform: translateX(-32%);
+        right: -50%;
+        transform: translateX(-105px);
         opacity: 0;
         transition: opacity .3s ease .1s;
         pointer-events: none;

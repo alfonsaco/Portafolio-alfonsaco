@@ -91,7 +91,9 @@ onClickOutside(buscarRef, () => {
         </div>
         
         <div class="div-central-taskbar">
-            <div class="div-logo-alfonOS" @click="alternarVisibilidadIndex" ref="menuIndexRef">
+            <div class="div-logo-alfonOS" 
+            @click="alternarVisibilidadIndex" ref="menuIndexRef"
+            :data-inicio="t('tooltip-inicio')">
                 <img :src="iconoAlfonOS" alt="Logo SO" class="logo-alfonOS"/>       
             </div>
 
@@ -167,7 +169,7 @@ onClickOutside(buscarRef, () => {
         border-color: #ffffff15;
     }
     .div-logo-alfonOS::after {
-        content: 'Inicio';
+        content: attr(data-inicio);
         color: #FFF;
         font-size: .75em;
         padding: 4px 8px;

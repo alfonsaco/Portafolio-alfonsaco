@@ -9,10 +9,26 @@
     "busqueda-h1": "Información del Sistema Operativo",
     "busqueda-p1": "AlfonOS es un sistema operativo funcional, que une las principales funcionalidades de un sistema operativo común, y muestra información sobre su creador \"Alfonso Rincón\". A lo largo de su exploración podrás encontrar los misterios que este alberga.",
     "busqueda-h2": "Funcionalidades",
+    "f-1": "Menú de escritorio",
+    "f-2": "Área de selección en el escritorio",
+    "f-3": "Información de contacto",
+    "f-4": "Cambiar wallpapper",
+    "f-5": "Terminal con comandos e Easter Eggs",
+    "f-6": "Cambio del tamaño de los iconos del escritorio",
+    "f-7": "Tooltips en iconos",
+    "f-8": "Búsqueda de aplicaciones",
+    "f-9": "Hora y fecha en tiempo real",
+    "f-10": "Porcentaje y estado de la batería",
+    "f-11": "IA funcional con información de la web",
+    "f-12": "Ventanas con información personal",
+    "f-13": "Carpeta con proyectos",
+    "f-14": "Versión móvil",
 
     "tooltip-git": "Perfil de GitHub",
     "tooltip-linkedin": "Perfil de LinkedIn",
     "tooltip-codepen": "Perfil de CodePen",
+    "cambiar-idioma": "Cambiar idioma",
+    "tooltip-inicio": "Inicio",
 
     "ia-p": "Hola, soy AI-fon, y estoy aquí para resolver tus problemas. Si tienes alguna  duda sobre el creador de esta web, o sobre las funcionalidades de este SO, no dudes en preguntarme.",
     "ia-estado-p": "Estado",
@@ -54,5 +70,18 @@
     "experiencia": "EXPERIENCIA",
     "experiencia-1": "Marzo 2025 - Junio 2025",
     "experiencia-1-1": ">> Creación de CRM completo con JavaFX durante 3 meses",
-    "contacto": "CONTACTO"
+    "contacto": "CONTACTO",
+
+    "link-descarga": "DESCARGAR",
+    
+    "descripcion-h4": "DESCRIPCIÓN",
+    "tecnologias-h4": "TECNOLOGÍAS UTILIZADAS",
+    "enlaces-h4": "ENLACES",
+
+    "codezen-descripcion": "es una aplicación móvil diseñada para programadores que busca mejorar su productividad, bienestar y hábitos diarios. Integra herramientas de seguimiento de hábitos, gestión de proyectos, meditación y un sistema de logros que motiva el crecimiento personal y profesional de los desarrolladores.",
+    "crm-descripcion": "CRM desarrollado en Java con JavaFX y MySQL, realizado junto con un compañero durante las prácticas de DAM. Permite gestionar usuarios, clientes y tareas con una interfaz sencilla y funcional. El proyecto es educativo y demostrativo, sin referencias a empresas reales, y muestra las habilidades adquiridas en programación y bases de datos.",
+    "flappy-descripcion": "<p><strong>Flappy Parfums</strong> es un juego para Android inspirado en el clásico Flappy Bird, donde los personajes tradicionales son reemplazados por perfumes icónicos. Fue desarrollado en equipo utilizando <strong>Android Studio</strong> con <strong>Java</strong>.</p><p>El jugador debe pulsar la pantalla para mantener en el aire a su perfume y esquivar obstáculos en forma de tuberías. A medida que aumenta la puntuación, se pueden desbloquear nuevos personajes como <strong>Phantom</strong>, <strong>Azzaro</strong> o <strong>Stronger</strong>, cada uno con su propia animación.</p>",
+
+    "ventana-carpeta": "Carpeta",
+    "ventana-sobre": "Sobre mí"
 }
