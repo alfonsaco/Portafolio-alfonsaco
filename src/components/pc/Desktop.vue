@@ -14,10 +14,6 @@ import Carpeta from './windows/Folder.vue';
 
 import { ref, onMounted, onUnmounted, computed, markRaw } from 'vue';
 
-// idiomas
-import { useI18n } from 'vue-i18n'; 
-const { t } = useI18n();
-
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
 const { iconosDerecha, iconosIzquierda } = usarIconos();
