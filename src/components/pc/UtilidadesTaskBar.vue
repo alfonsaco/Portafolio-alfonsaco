@@ -3,6 +3,10 @@ import { onMounted, ref, computed } from 'vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
 
+// Idiomas
+import Es from '../../assets/images/es.webp';
+import En from '../../assets/images/en.webp';
+
 // Obtener batería
 import { Battery, BatteryFull, BatteryCharging, BatteryLow, BatteryMedium, Wifi } from 'lucide-vue-next';
 
@@ -76,6 +80,12 @@ const textoBateria = computed(() => {
     
     <!-- Sección hora, wifi... -->
     <div class="div-utilidades">
+
+        <!-- Cambio de idioma -->
+        <div class="div-utilidades-idiomas">
+            <img :src="Es" alt="Iidoma español">
+            <img :src="En" alt="Idioma inglés">
+        </div>
         
         <!-- Seción WiFi y batería -->
         <div class="div-bateria-wifi">
@@ -192,5 +202,30 @@ const textoBateria = computed(() => {
         width: 18px;
         height: 18px;
         color: #FFF;
+    }
+
+
+    /* SECCIÓN IDIOMAS */
+    .div-utilidades-idiomas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: 38px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 0px 7px;
+        transition: .1s ease;
+    }
+    .div-utilidades-idiomas:hover {
+        background-color: #ffffff11;
+        border-color: #ffffff15;
+    }
+    .div-utilidades-idiomas img {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        border: 2px solid #999;
+        cursor: pointer;
     }
 </style>
