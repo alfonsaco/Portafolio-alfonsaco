@@ -2,13 +2,17 @@
 import { onMounted, ref, computed } from 'vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
+import 'dayjs/locale/en';
 
 // Idiomas
 import Es from '../../assets/images/es.webp';
 import En from '../../assets/images/en.webp';
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
 
 // Obtener batería
 import { Battery, BatteryFull, BatteryCharging, BatteryLow, BatteryMedium, Wifi } from 'lucide-vue-next';
+import { i18n } from '../../i18n';
 
 const nivelBateria = ref<number | null>(null);
 const cargando = ref(false);
@@ -64,11 +68,19 @@ const iconoBateria = computed(() => {
 // Establecer texto batería
 const textoBateria = computed(() => {
   if (nivelBateria.value === null) {
-    return 'Batería no disponible';
+    if(idiomaSeleccionado.value === 'es') {
+        return 'Batería no disponible';
+    } else {
+        return 'Battery not available';
+    }
   }
 
   if (cargando.value) {
-    return `Cargando, ${Math.round(nivelBateria.value)}%`;
+    if(idiomaSeleccionado.value === 'es') {
+        return `Cargando, ${Math.round(nivelBateria.value)}%`;
+    } else {
+        return `Charging, ${Math.round(nivelBateria.value)}%`;
+    }
   }
 
   return `${Math.round(nivelBateria.value)}%`;
@@ -79,6 +91,16 @@ const idiomaSeleccionado = ref('es');
 
 const cambiarIdioma = (idioma: string) => {
     idiomaSeleccionado.value = idioma;
+    locale.value = idioma;
+
+    dayjs.locale(idioma);
+
+    // Cambiar idioma fecha
+    if(idioma === 'es') {
+        fechaTooltip.value = dayjs().format('DD [de] MMMM [de] YYYY');
+    } else {
+        fechaTooltip.value = dayjs().format('MMMM DD, YYYY');
+    }
 }
 </script>
 
