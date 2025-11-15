@@ -73,6 +73,13 @@ const textoBateria = computed(() => {
 
   return `${Math.round(nivelBateria.value)}%`;
 });
+
+// Selección de idioma
+const idiomaSeleccionado = ref('es');
+
+const cambiarIdioma = (idioma: string) => {
+    idiomaSeleccionado.value = idioma;
+}
 </script>
 
 
@@ -82,9 +89,13 @@ const textoBateria = computed(() => {
     <div class="div-utilidades">
 
         <!-- Cambio de idioma -->
-        <div class="div-utilidades-idiomas">
-            <img :src="Es" alt="Iidoma español">
-            <img :src="En" alt="Idioma inglés">
+        <div class="div-utilidades-idiomas" data-idioma="Cambiar idioma">
+            <img :src="Es" alt="Iidoma español" 
+                :class="idiomaSeleccionado === 'es' ? 'idioma-seleccionado-pc' : ''"
+                @click="cambiarIdioma('es')">
+            <img :src="En" alt="Idioma inglés" 
+                :class="idiomaSeleccionado === 'en' ? 'idioma-seleccionado-pc' : ''"
+                @click="cambiarIdioma('en')">
         </div>
         
         <!-- Seción WiFi y batería -->
@@ -145,7 +156,7 @@ const textoBateria = computed(() => {
         border: 1px solid #1a1a1a;
         bottom: 54px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-32%);
         opacity: 0;
         transition: opacity .3s ease .1s;
         pointer-events: none;
@@ -216,6 +227,30 @@ const textoBateria = computed(() => {
         border-radius: 5px;
         padding: 0px 7px;
         transition: .1s ease;
+        position: relative;
+    }
+    .div-utilidades-idiomas::after {
+        content: attr(data-idioma);
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 54px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+        pointer-events: none;
+    }
+    .div-utilidades-idiomas:hover::after {
+        opacity: 1;
+        transition-delay: .3s;
     }
     .div-utilidades-idiomas:hover {
         background-color: #ffffff11;
@@ -225,7 +260,10 @@ const textoBateria = computed(() => {
         width: 20px;
         height: 20px;
         border-radius: 100%;
-        border: 2px solid #999;
+        border: 2px solid #dfdfdf;
         cursor: pointer;
+    }
+    .idioma-seleccionado-pc {
+        border-color: #31dd8d !important;
     }
 </style>
