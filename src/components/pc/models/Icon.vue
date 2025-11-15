@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { computed, defineEmits } from 'vue';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const props = defineProps<{
   texto: string
   tamano: string
@@ -26,7 +30,7 @@ const estilo = computed(() => {
 <template>
     <div class="div-icono" @dblclick="manejarClick">
         <img :src="imagen" alt="Icono" class="imagen-icono" :style="estilo" />
-        <p class="texto-icono">{{ props.texto }}</p>
+        <p class="texto-icono">{{ t(props.texto) }}</p>
     </div>
 </template>
 

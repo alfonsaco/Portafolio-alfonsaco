@@ -14,6 +14,10 @@ import Carpeta from './windows/Folder.vue';
 
 import { ref, onMounted, onUnmounted, computed, markRaw } from 'vue';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 // Obtenemos los iconos del JSON
 import { usarIconos } from '../../data/UseIcons'
 const { iconosDerecha, iconosIzquierda } = usarIconos();
@@ -226,7 +230,7 @@ const mostrarTerminal = () => {
 
 // Sobre mi
 const mostrarSobreMi = () => {
-    abrirVentana('Sobre Mi', About);
+    abrirVentana('ventana-sobre', About);
 }
 
 // Proyecto flappy
@@ -246,7 +250,7 @@ const mostrarCodezen = () => {
 
 // Carpetas
 const mostrarCarpeta = (tipo: string = 'proyectos') => {
-    abrirVentana('Carpeta', Carpeta, { 
+    abrirVentana('ventana-carpeta', Carpeta, { 
         tipoArchivo: tipo ,
         onMostrarFlappy: mostrarFlappy,
         onMostrarCRM: mostrarCRM,

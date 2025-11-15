@@ -3,6 +3,10 @@ import Links from './items/ProjectLinks.vue';
 import Fondo from '../../../assets/images/auth_fondo.webp';
 import Logo from '../../../assets/images/codezen-logo.webp';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const descarga = "https://github.com/alfonsaco/CodeZen/releases/tag/1.0.1";
 const github = "https://github.com/alfonsaco/CodeZen";
 </script>
@@ -14,13 +18,10 @@ const github = "https://github.com/alfonsaco/CodeZen";
             <img :src="Fondo" alt="Imagen fondo" class="codezen-fondo">
             <img :src="Logo" alt="Logo CodeZen" class="codezen-logo">
 
-            <h4>DESCRIPCIÓN</h4>
-            <p><em>CodeZen</em> es una aplicación móvil diseñada para programadores que busca mejorar su 
-            productividad, bienestar y hábitos diarios. Integra herramientas de seguimiento
-            de hábitos, gestión de proyectos, meditación y un sistema de logros que motiva 
-            el crecimiento personal y profesional de los desarrolladores.</p>
+            <h4>{{ t('descripcion-h4') }}</h4>
+            <p><em>CodeZen</em> {{ t('codezen-descripcion') }}</p>
 
-            <h4>TECNOLOGÍAS UTILIZADAS</h4>
+            <h4>{{ t('tecnologias-h4') }}</h4>
             <div class="codezen-div-tecnologias">
                 <div>
                     <p class="codezen-tecnologia-p">Android Studio</p>
@@ -37,7 +38,7 @@ const github = "https://github.com/alfonsaco/CodeZen";
                 </div>
             </div>
 
-            <h4>ENLACES</h4>
+            <h4>{{ t('enlaces-h4') }}</h4>
             <Links :url-descarga="descarga" :url-github="github"/>
         </div>
     </div>

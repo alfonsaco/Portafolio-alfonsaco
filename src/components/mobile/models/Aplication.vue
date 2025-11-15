@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const props = defineProps<{
     texto: string
     imagen: string
@@ -18,7 +22,7 @@ const abrirAplicacion = () => {
 <template>
     <div class="div-aplicacion-movil" @click="abrirAplicacion" >
         <img :src="imagen" alt="Icono aplicación" class="icono-app"/>
-        <p class="texto-app" >{{ props.texto }}</p>
+        <p class="texto-app" >{{ t(props.texto) }}</p>
     </div>
 </template>
 

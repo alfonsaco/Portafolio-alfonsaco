@@ -3,6 +3,10 @@ const props = defineProps<{
     urlGithub: string
     urlDescarga: string
 }>();
+
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
 </script>
 
 
@@ -15,7 +19,7 @@ const props = defineProps<{
         </a>            
         <a :href="props.urlDescarga" target="_blank">
             <div>            
-                DESCARGAR            
+                {{ t('link-descarga') }}            
             </div>
         </a>            
     </div>

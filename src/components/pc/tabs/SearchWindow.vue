@@ -3,6 +3,11 @@ import { usarIconos } from '../../../data/UseIcons';
 import Icono from '../models/SearchIcon.vue'
 import { computed } from 'vue';
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
+
 const { iconosSinCarpeta } = usarIconos();
 
 const props = defineProps<{
@@ -71,27 +76,24 @@ const iconosFiltrados = computed(() => {
                 @click="abrirAplicacionIndex(aplicacion)"></Icono>
         </div>
         <div class="div-informacion-buscador">
-            <h3>Información del Sistema Operativo</h3>
-            <p>AlfonOS es un sistema operativo funcional, que une las principales funcionalidades
-                de un sistema operativo común, y muestra información sobre su creador "Alfonso Rincón".
-                A lo largo de su exploración podrás encontrar los misterios que este alberga.
-            </p>
-            <h5>Funcionalidades</h5>
+            <h3>{{ t('busqueda-h1') }}</h3>
+            <p>{{ t('busqueda-p1') }}</p>
+            <h5>{{ t('busqueda-h2') }}</h5>
             <ul>
-                <li>Menú de escritorio</li>
-                <li>Área de selección en el escritorio</li>
-                <li>Información de contacto</li>
-                <li>Cambiar wallpapper</li>
-                <li>Terminal con comandos e Easter Eggs</li>
-                <li>Cambio del tamaño de los iconos del escritorio</li>
-                <li>Tooltips en iconos</li>
-                <li>Búsqueda de aplicaciones</li>
-                <li>Hora y fecha en tiempo real</li>
-                <li>Porcentaje y estado de la batería</li>
-                <li>IA funcional con información de la web</li>
-                <li>Ventanas con información personal</li>
-                <li>Carpeta con proyectos</li>
-                <li>Versión móvil</li>
+                <li>{{ t('f-1') }}</li>
+                <li>{{ t('f-2') }}</li>
+                <li>{{ t('f-3') }}</li>
+                <li>{{ t('f-4') }}</li>
+                <li>{{ t('f-5') }}</li>
+                <li>{{ t('f-6') }}</li>
+                <li>{{ t('f-7') }}</li>
+                <li>{{ t('f-8') }}</li>
+                <li>{{ t('f-9') }}</li>
+                <li>{{ t('f-10') }}</li>
+                <li>{{ t('f-11') }}</li>
+                <li>{{ t('f-12') }}</li>
+                <li>{{ t('f-13') }}</li>
+                <li>{{ t('f-14') }}</li>
             </ul>
         </div>
     </div>

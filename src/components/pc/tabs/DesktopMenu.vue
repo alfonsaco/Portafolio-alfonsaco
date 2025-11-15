@@ -2,6 +2,10 @@
 import { Table, ChevronRight, Wallpaper, RefreshCcw, Terminal, User, Contact } from 'lucide-vue-next';
 import { ref } from 'vue';
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const props = defineProps<{
     x: number
     y: number
@@ -55,13 +59,13 @@ const opcionesInvisible = () => {
             @mouseleave="opcionesInvisible"
             :class="mostrarOpciones ? 'clase-opciones-borde-izquierdo' : ''">
                 <Table class="iconos-menu"></Table>
-                Ver
+                {{ t('ver') }}
                 <ChevronRight class="iconos-menu flechas-menu"></ChevronRight>
             </div>
             <!-- Actualizar web -->
             <div @click="actualizarWeb">
                 <RefreshCcw class="iconos-menu"></RefreshCcw>
-                Actualizar
+                {{ t('actualizar') }}
             </div>
             <!-- Terminal -->
             <div @click="mostrarTerminal">
@@ -71,17 +75,17 @@ const opcionesInvisible = () => {
             <!-- Sobre mi -->
             <div @click="mostrarSobreMi">
                 <User class="iconos-menu"></User>
-                Sobre mí
+                {{ t('menu-sobremi') }}
             </div>
             <!-- Contacto -->
             <div @click="mostrarEmail">
                 <Contact class="iconos-menu"></Contact>
-                Contacto
+                {{ t('menu-contacto') }}
             </div>
             <!-- Cambiar Wallpapper -->
             <div @click="abrirWallpapper" >
                 <Wallpaper class="iconos-menu" ></Wallpaper>
-                Personalizar
+                {{ t('personalizar') }}
             </div>
         </div>
 
@@ -90,9 +94,9 @@ const opcionesInvisible = () => {
         :class="mostrarOpciones ? 'clase-mostrar-opciones-ver' : ''"
         @mouseenter="opcionesVisible"
         @mouseleave="opcionesInvisible"> 
-            <div @click="cambiarTamanoIcono('pequeno')">Iconos pequeños</div>
-            <div @click="cambiarTamanoIcono('mediano')">Iconos medianos</div>
-            <div @click="cambiarTamanoIcono('grande')">Iconos grandes</div>
+            <div @click="cambiarTamanoIcono('pequeno')">{{ t('i-pequeno') }}</div>
+            <div @click="cambiarTamanoIcono('mediano')">{{ t('i-medio') }}</div>
+            <div @click="cambiarTamanoIcono('grande')">{{ t('i-grande') }}</div>
         </div>
     </div>
 </template>

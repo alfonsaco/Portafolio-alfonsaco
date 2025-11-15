@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import TaskBar from '../components/mobile/TaskBarMobile.vue';
 import AppSection from '../components/mobile/AppSection.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import ToolBarMobile from '../components/mobile/ToolBarMobile.vue';
 import BottomSheet from '../components/mobile/windows/BottomSheet.vue';
 
 // Componente
 const componenteActual = ref(null);
+
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { locale } = useI18n();
+
+onMounted(() => {
+    locale.value = 'es';
+})
 
 // Cerrar al pulsar X
 const ventanaVisible = ref(false);

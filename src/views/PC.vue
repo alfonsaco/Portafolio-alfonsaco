@@ -2,7 +2,7 @@
 import TaskBar from '../components/pc/TaskBarPC.vue';
 import Desktop from '../components/pc/Desktop.vue';
 
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // Para usar las funciones de ventanas en el TaskBar
 const desktopRef = ref();
@@ -54,6 +54,15 @@ const comunicarDesktopCRM = () => {
         console.log('ERROR al mostrar CRM')
     }
 }
+
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { locale } = useI18n();
+
+onMounted(() => {
+    locale.value = 'es';
+})
+
 </script>
 
 

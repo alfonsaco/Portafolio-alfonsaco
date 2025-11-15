@@ -2,6 +2,14 @@
 import { onMounted, ref, computed } from 'vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
+import 'dayjs/locale/en';
+
+// Idiomas
+import Es from '../../assets/images/es.webp';
+import En from '../../assets/images/en.webp';
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
+const { t } = useI18n();
 
 // Obtener batería
 import { Battery, BatteryFull, BatteryCharging, BatteryLow, BatteryMedium, Wifi } from 'lucide-vue-next';
@@ -60,15 +68,40 @@ const iconoBateria = computed(() => {
 // Establecer texto batería
 const textoBateria = computed(() => {
   if (nivelBateria.value === null) {
-    return 'Batería no disponible';
+    if(idiomaSeleccionado.value === 'es') {
+        return 'Batería no disponible';
+    } else {
+        return 'Battery not available';
+    }
   }
 
   if (cargando.value) {
-    return `Cargando, ${Math.round(nivelBateria.value)}%`;
+    if(idiomaSeleccionado.value === 'es') {
+        return `Cargando, ${Math.round(nivelBateria.value)}%`;
+    } else {
+        return `Charging, ${Math.round(nivelBateria.value)}%`;
+    }
   }
 
   return `${Math.round(nivelBateria.value)}%`;
 });
+
+// Selección de idioma
+const idiomaSeleccionado = ref('es');
+
+const cambiarIdioma = (idioma: string) => {
+    idiomaSeleccionado.value = idioma;
+    locale.value = idioma;
+
+    dayjs.locale(idioma);
+
+    // Cambiar idioma fecha
+    if(idioma === 'es') {
+        fechaTooltip.value = dayjs().format('DD [de] MMMM [de] YYYY');
+    } else {
+        fechaTooltip.value = dayjs().format('MMMM DD, YYYY');
+    }
+}
 </script>
 
 
@@ -76,6 +109,16 @@ const textoBateria = computed(() => {
     
     <!-- Sección hora, wifi... -->
     <div class="div-utilidades">
+
+        <!-- Cambio de idioma -->
+        <div class="div-utilidades-idiomas" :data-idioma="t('cambiar-idioma')">
+            <img :src="Es" alt="Iidoma español" 
+                :class="idiomaSeleccionado === 'es' ? 'idioma-seleccionado-pc' : ''"
+                @click="cambiarIdioma('es')">
+            <img :src="En" alt="Idioma inglés" 
+                :class="idiomaSeleccionado === 'en' ? 'idioma-seleccionado-pc' : ''"
+                @click="cambiarIdioma('en')">
+        </div>
         
         <!-- Seción WiFi y batería -->
         <div class="div-bateria-wifi">
@@ -134,8 +177,8 @@ const textoBateria = computed(() => {
         border-radius: 5px;
         border: 1px solid #1a1a1a;
         bottom: 54px;
-        left: 50%;
-        transform: translateX(-50%);
+        right: -50%;
+        transform: translateX(-105px);
         opacity: 0;
         transition: opacity .3s ease .1s;
         pointer-events: none;
@@ -192,5 +235,57 @@ const textoBateria = computed(() => {
         width: 18px;
         height: 18px;
         color: #FFF;
+    }
+
+
+    /* SECCIÓN IDIOMAS */
+    .div-utilidades-idiomas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: 38px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 0px 7px;
+        transition: .1s ease;
+        position: relative;
+    }
+    .div-utilidades-idiomas::after {
+        content: attr(data-idioma);
+        color: #FFF;
+        font-size: .75em;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+        width: auto;
+        height: auto;
+        background-color: #313131;
+        border-radius: 5px;
+        border: 1px solid #1a1a1a;
+        bottom: 54px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s ease .1s;
+        pointer-events: none;
+    }
+    .div-utilidades-idiomas:hover::after {
+        opacity: 1;
+        transition-delay: .3s;
+    }
+    .div-utilidades-idiomas:hover {
+        background-color: #ffffff11;
+        border-color: #ffffff15;
+    }
+    .div-utilidades-idiomas img {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        border: 2px solid #dfdfdf;
+        cursor: pointer;
+    }
+    .idioma-seleccionado-pc {
+        border-color: #31dd8d !important;
     }
 </style>

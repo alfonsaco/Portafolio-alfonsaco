@@ -5,6 +5,10 @@ import Azzaro from '../../../assets/images/azzaro.webm'
 import Phatnom from '../../../assets/images/phantom.webm'
 import LinksMobile from './items/LinksMobile.vue'
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const github = "https://github.com/alfonsaco/Flappy-Parfums";
 const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0";
 </script>
@@ -15,15 +19,7 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
         <div class="proyecto-flappy-div-principal">
             <img :src="ParfumsLogo" alt="Logo Flappy Parfums" class="logo-flappy logo-flappy-movil">
             <div class="flappy-juego flappy-juego-movil">
-                <div>
-                    <p><strong>Flappy Parfums</strong> es un juego para Android inspirado en el clásico Flappy Bird, 
-                    donde los personajes tradicionales son reemplazados por perfumes icónicos. 
-                    Fue desarrollado en equipo utilizando <strong>Android Studio</strong> con <strong>Java</strong>.</p>
-
-                    <p>El jugador debe pulsar la pantalla para mantener en el aire a su perfume y esquivar obstáculos 
-                    en forma de tuberías. A medida que aumenta la puntuación, se pueden desbloquear nuevos personajes 
-                    como <strong>Phantom</strong>, <strong>Azzaro</strong> o <strong>Stronger</strong>, cada uno con su propia animación.</p>
-                </div>
+                <div v-html="t('flappy-descripcion')"></div>
             </div>
 
             <h4>skins</h4>
@@ -33,7 +29,7 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
                 <video :src="Strong" autoplay loop muted playsinline />
             </div>
 
-            <h4>tecnologías utilizadas</h4>
+            <h4>{{ t('tecnologias-h4').toLowerCase() }}</h4>
             <div class="flappy-div-tecnologias">
                 <div>
                     <p class="flappy-tecnologia-p">Android Studio</p>
@@ -49,7 +45,7 @@ const descarga = "https://github.com/alfonsaco/Flappy-Parfums/releases/tag/1.0.0
                 </div>
             </div>
 
-            <h4>enlaces</h4>
+            <h4>{{ t('enlaces-h4').toLowerCase() }}</h4>
             <LinksMobile :url-descarga="descarga" :url-github="github"></LinksMobile>
         </div>
     </div>

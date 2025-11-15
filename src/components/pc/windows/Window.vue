@@ -11,6 +11,10 @@ const props = defineProps<{
 
 const ventanaAbierta = ref(false);
 
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
+
 // Manejar pantalla completa y normal
 const pantallaCompleta = ref(false);
 
@@ -90,7 +94,7 @@ const cerrarVentana = () => {
         <div class="div-ventana-acciones" 
         @mousedown="apretarRaton">
             <!-- Nombre de la ventana -->
-            {{ props.texto }}
+            {{ t(props.texto) }}
             <div>
                 <div @click="cambiarAPantallaCompleta"> 
                     <Maximize class="div-ventana-icono"></Maximize>

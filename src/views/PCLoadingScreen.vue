@@ -70,6 +70,7 @@ onUnmounted(() => {
         align-items: center;
         user-select: none;
         padding: 50px;
+        display: none;
     }
     .pc-loading-screen * {
         margin: 0;

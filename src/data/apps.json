@@ -30,20 +30,20 @@
         "escritorio": "proyectos"
     },
     {
-        "texto": "Contacto",
+        "texto": "aplicacion.contacto",
         "imagen": "/contacto.webp",
         "action": "contacto",
         "escritorio": "dcha",
         "email": "mailto:alfonso.rincondev@gmail.com"
     },
     {
-        "texto": "Sobre mí",
+        "texto": "aplicacion.sobremi",
         "imagen": "/about.webp",
         "action": "sobremi",
         "escritorio": "dcha"
     },
     {
-        "texto": "Certificaciones",
+        "texto": "aplicacion.certificaciones",
         "imagen": "/certificados.webp",
         "action": "certificaciones",
         "escritorio": "dcha"
@@ -69,7 +69,7 @@
         "action" : "terminal"
     },
     {
-        "texto": "Proyectos",
+        "texto": "aplicacion.proyectos",
         "imagen": "/carpeta.webp",
         "action" : "proyectos",
         "escritorio": "izq"

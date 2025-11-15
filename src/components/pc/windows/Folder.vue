@@ -4,6 +4,10 @@ import { usarIconos } from '../../../data/UseIcons';
 import { computed } from 'vue';
 import Archivo from '../../pc/models/FolderFile1.vue';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const props = defineProps<{
     tipoArchivo: string
     onMostrarFlappy?: () => void
@@ -53,36 +57,36 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
             <div>
                 <div>
                     <Home class="icono-seccion-izquierda" style="color: brown;"></Home>
-                    <p>Inicio</p>
+                    <p>{{ t('inicio') }}</p>
                 </div>
                 <div>
                     <Images class="icono-seccion-izquierda" style="color: #191f91;"></Images>
-                    <p>Galería</p>
+                    <p>{{ t('galeria') }}</p>
                 </div>
                 <hr>
                 <div>
                     <Monitor class="icono-seccion-izquierda" style="color: #222;"></Monitor>
-                    <p>Escritorio</p>
+                    <p>{{ t('escritorio') }}</p>
                 </div>
                 <div>
                     <File class="icono-seccion-izquierda" style="color: #737373;"></File>
-                    <p>Documentos</p>
+                    <p>{{ t('documentos') }}</p>
                 </div>
                 <div>
                     <Download class="icono-seccion-izquierda" style="color: green;"></Download>
-                    <p>Descargas</p>
+                    <p>{{ t('descargas') }}</p>
                 </div>
                 <div>
                     <Music class="icono-seccion-izquierda" style="color: #2b4fb3;"></Music>
-                    <p>Música</p>
+                    <p>{{ t('musica') }}</p>
                 </div>
                 <div>
                     <Film class="icono-seccion-izquierda" style="color: #773cd6;"></Film>
-                    <p>Videos</p>
+                    <p>{{ t('videos') }}</p>
                 </div>
                 <div>
                     <Folder class="icono-seccion-izquierda" style="color: #e0a52f;"></Folder>
-                    <p>Proyectos</p>
+                    <p>{{ t('proyectos') }}</p>
                 </div>
             </div>
             <div>
@@ -95,7 +99,7 @@ const abrirIcono = (icono: {texto: string, imagen: string, url?: string, action?
                 </div>
             </div>
         </div>
-        <div class="ventana-carpeta-elementos">{{ archivos.length }} elementos</div>
+        <div class="ventana-carpeta-elementos">{{ archivos.length }} {{ t('elementos') }}</div>
     </div>
 </template>
 

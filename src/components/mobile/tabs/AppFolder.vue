@@ -8,6 +8,10 @@ import { usarIconos } from '../../../data/UseIcons';
 const { iconosProyectos } = usarIconos();
 import { ref, markRaw } from 'vue';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const emit = defineEmits(['abrir-ventana']);
 const abierta = ref(false);
 
@@ -40,7 +44,7 @@ const cerrarCarpeta = () => {
     <!-- Icono visible en el escritorio -->
     <div class="icono-carpeta-movil" @click="abrirCarpeta">
         <img src="../../../assets/images/carpeta.webp" alt="Carpeta" />
-        <p>Proyectos</p>
+        <p>{{ t('aplicacion.proyectos') }}</p>
     </div>
 
     <!-- Fondo oscuro fijo -->
