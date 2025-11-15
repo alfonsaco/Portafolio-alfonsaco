@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { defineEmits } from 'vue';
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const props = defineProps<{
   texto: string
   imagen: string
@@ -19,7 +23,7 @@ const manejarClick = () => {
 <template>
     <div class="div-icono-archivo" @dblclick="manejarClick">
         <img :src="imagen" alt="Icono" class="imagen-icono-archivo" />
-        <p class="texto-icono-archivo">{{ props.texto }}</p>
+        <p class="texto-icono-archivo">{{ t(props.texto) }}</p>
     </div>
 </template>
 

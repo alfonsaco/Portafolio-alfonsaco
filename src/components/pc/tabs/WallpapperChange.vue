@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const emit = defineEmits(['cerrar']);
 const cambiarFondoPC = inject('cambiarFondoPC') as (fondo: string) => void;
 
@@ -20,7 +24,7 @@ const cambiarFondoPantalla = (ruta: string) => {
 <template>
     <div class="capa-cerrar-wallpapper" @click="cerrar">
         <div class="div-cambio-walpapper"  @click.stop >
-            <h4>Cambia el fondo de pantalla</h4>
+            <h4>{{ t('wallpaper') }}</h4>
             <div class="div-walpapper-imagenes">
                 <div @click="cambiarFondoPantalla('/pc_fondo.webp')"></div>
                 <div @click="cambiarFondoPantalla('/got.webp')"></div>

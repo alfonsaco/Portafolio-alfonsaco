@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 const props = defineProps<{
   texto: string
   imagen: string
@@ -19,7 +23,7 @@ const manejarClickIndex = () => {
     @click="manejarClickIndex" 
     :class="{'activar-animacion-menu-index': activarAnimacion}">
         <img :src="props.imagen" alt="Imagen de menú del indice">
-        <p>{{ props.texto }}</p>
+        <p>{{ t(props.texto) }}</p>
     </div>
 </template>
 

@@ -15,6 +15,9 @@ import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import SearchWindow from './tabs/SearchWindow.vue'
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
 
 // Si está inactiva, se activa la IA y viceversa
 const IAactiva = ref(false);
@@ -94,19 +97,19 @@ onClickOutside(buscarRef, () => {
 
             <div class="div-buscador" @input="activarBuscador" ref="buscarRef">
                 <input type="text" v-model="textoBuscado" spellcheck="false"
-                class="buscador" placeholder="Búsqueda"></input>
+                class="buscador" :placeholder="t('busqueda')"></input>
                 <Search class="icono-buscar"/>
             </div>
 
             <!-- Programas de la barra de tareas -->
             <div class="div-programas-taskbar">
-                <a href="https://www.github.com/alfonsaco" target="_blank" data-programa="Perfil de GitHub">
+                <a href="https://www.github.com/alfonsaco" target="_blank" :data-programa="t('tooltip-git')">
                     <img :src="iconoGitHub" alt="Icono GitHub" />
                 </a>
-                <a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank" data-programa="Perfil de LinkedIn">
+                <a href="https://www.linkedin.com/in/alfonsorinconc/" target="_blank" :data-programa="t('tooltip-linkedin')">
                     <img :src="iconoLinkedIn" alt="Icono inkedIn" />
                 </a>
-                <a href="https://codepen.io/alfonsaco" target="_blank" data-programa="Perfil de CodePen">
+                <a href="https://codepen.io/alfonsaco" target="_blank" :data-programa="t('tooltip-codepen')">
                     <img :src="iconoCodepen" alt="Icono CodePen" />
                 </a>
             </div>
@@ -299,7 +302,7 @@ onClickOutside(buscarRef, () => {
         transition: .3s ease;
     }
     .logo-ia-container::after {
-        content: 'AIfonOS';
+        content: 'AI-fonOS';
         color: #FFF;
         font-size: .75em;
         padding: 4px 8px;

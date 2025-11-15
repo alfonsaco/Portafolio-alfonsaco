@@ -1,36 +1,38 @@
 <script setup lang="ts">
-
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
 </script>
 
 
 <template>
     <div class="ventana-sobre-mi pc">
-        <h1>SOBRE MÍ</h1>
-        <p class="texto-about">Desarrollador Full-Stack y de aplicaciones Multiplataforma</p>
+        <h1>{{ t('sobremi') }}</h1>
+        <p class="texto-about">{{ t('descripcion-sobremi') }}</p>
         <hr>
 
-        <h4>CONOCIMIENTOS Y HABILIDADES</h4>
-        <h5>LENGUAJES</h5>
+        <h4>{{ t('conocimientos') }}</h4>
+        <h5>{{ t('lenguajes') }}</h5>
         <p>Java • HTML • CSS • JavaScript • TypeScript • SQL • NoSQL</p>
-        <h5>FRAMEWORKS</h5>
+        <h5>{{ t('frameworks') }}</h5>
         <p>Vue • React Native • JavaFX • NodeJS</p>
-        <h5>ENTORNOS Y HERRAMIENTAS</h5>
+        <h5>{{ t('entornos') }}</h5>
         <p>Visual Studio • Android Studio • IntelliJ IDEA • GitHub • Firebase</p>
 
-        <h4>IDIOMAS</h4>
-        <p>Español <span>(Nativo)</span> — Inglés <span>(B1)</span></p>
+        <h4>{{ t('idiomas') }}</h4>
+        <p>{{ t('idioma-1') }} <span>({{ t('idioma-1-1') }})</span> — {{ t('idioma-2') }} <span>(B1)</span></p>
 
         <hr>
 
-        <h4>PROYECTOS</h4>
-        <p>Todos los proyectos los podrás encontrar dentro de la carpeta situada en la parte izquierda del escritorio.</p>
-        <h4>EXPERIENCIA</h4>
-        <p>Marzo 2025 - Junio 2025</p>
-        <p class="ventana-p-borrador">&gt;&gt; Creación de CRM completo con JavaFX durante 3 meses</p>
+        <h4>{{ t('proyectos-sobremi') }}</h4>
+        <p>{{ t('proyectos-p') }}</p>
+        <h4>{{ t('experiencia') }}</h4>
+        <p>{{ t('experiencia-1') }}</p>
+        <p class="ventana-p-borrador">{{ t('experiencia-1-1') }}</p>
 
         <hr>
 
-        <h4>CONTACTO</h4>
+        <h4>{{ t('contacto') }}</h4>
         <p class="ventana-corchete">&#123;</p>
         <ul>
             <li><span class="ventana-tag">"GitHub"</span> : <span class="ventana-valor"><a href="https://www.github.com/alfonsaco" target="_blank">"alfonsaco"</a></span>,</li>

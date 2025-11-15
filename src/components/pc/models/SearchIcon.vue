@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+// Idiomas
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const props = defineProps<{
   texto: string
   imagen: string
@@ -17,7 +21,7 @@ const manejarClickIndex = () => {
     <div class="div-icono-search" 
     @click="manejarClickIndex" >
         <img :src="props.imagen" alt="Imagen de menú del búsquedas">
-        <p>{{ props.texto }}</p>
+        <p>{{ t(props.texto) }}</p>
     </div>
 </template>
 

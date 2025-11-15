@@ -4,6 +4,10 @@ import { usarGroq } from '../utils/groqAI'
 
 import { X } from 'lucide-vue-next';
 
+// idiomas
+import { useI18n } from 'vue-i18n'; 
+const { t } = useI18n();
+
 defineProps<{activo: boolean}>()
 
 // Cerrar ventana al pulsar la X
@@ -35,14 +39,11 @@ const enviarConEnter = (event: KeyboardEvent) => {
                 <h2>AI-Fon</h2>
             </div>
             
-            <p>Hola, soy AI-fon, y estoy aquí para resolver tus problemas. Si tienes alguna 
-                duda sobre el creador de esta web, o sobre las funcionalidades de este SO,
-                no dudes en preguntarme.
-            </p>
+            <p>{{ t('ia-p') }}</p>
 
             <!-- Estado y respuestas -->
             <div class="estado-container">
-                <p class="estado">Estado: {{ estado }}</p>
+                <p class="estado">{{ t('ia-estado-p') }}: {{ estado }}</p>
                 <div v-if="error" class="error">{{ error }}</div>
                 
                 <div v-if="formattedResponse" class="response-container">
@@ -57,7 +58,7 @@ const enviarConEnter = (event: KeyboardEvent) => {
             <input 
                 v-model="mensajeUsuario" 
                 type="text" 
-                placeholder="Pregúntame algo"
+                :placeholder="t('ia-pregunta')"
                 :disabled="cargando"
                 @keypress="enviarConEnter" >
             <button 
