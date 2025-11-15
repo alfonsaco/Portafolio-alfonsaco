@@ -9,6 +9,7 @@ import Certificate from './windows/Certificate.vue';
 import { usarIconos } from '../../data/UseIcons';
 const { iconosDerecha } = usarIconos();
 import { markRaw } from 'vue';
+import Languages from './Languages.vue';
 
 const emit = defineEmits(['abrir-ventana']);
 
@@ -30,6 +31,7 @@ const abrirApp = (app: { texto: string, imagen: string, url?: string, email?: st
 
 <template>
     <WidgetHora></WidgetHora>
+    <Languages></Languages>
 
     <div class="movil-contenedor-aplicaciones" >
 

@@ -5,7 +5,6 @@ import Strong from '../../../assets/images/stronger.webm'
 import Azzaro from '../../../assets/images/azzaro.webm'
 import Phatnom from '../../../assets/images/phantom.webm'
 import Links from './items/ProjectLinks.vue';
-import { ref } from 'vue';
 
 // idiomas
 import { useI18n } from 'vue-i18n'; 
