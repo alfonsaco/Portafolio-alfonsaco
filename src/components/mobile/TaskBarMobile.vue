@@ -63,6 +63,7 @@ import iconoCodepen from '/codepen.webp'
     /* PUNTOS DECORATIVOS DEL TASKBAR */
     .taskbar-decoracion-superior {
         background-color: #222222c4;
+        border: 1px solid #999;
         backdrop-filter: blur(4px);
         padding: 8px 12px;
         gap: 8px;

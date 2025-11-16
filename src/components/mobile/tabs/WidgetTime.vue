@@ -1,22 +1,34 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
-import { ref, onMounted } from 'vue';
+import 'dayjs/locale/en';
 
-dayjs.locale('es');
+import { ref, onMounted, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
 const hora = ref(dayjs().format('HH:mm'));
 const fechaFinal = ref(dayjs().locale('es').format('ddd DD MMM'));
 
 const actualizarHora = () => {
     hora.value = dayjs().format('HH:mm');
-
 }
+
+
+const actualizarFecha = () => {
+    fechaFinal.value = dayjs().format('ddd DD MMM');
+}
+
+watch(locale, (nuevoIdioma) => {
+    dayjs.locale(nuevoIdioma);
+    actualizarFecha();
+});
 
 onMounted(() => {
     setInterval(() => {
         actualizarHora();    
     }, 1000);
-    
 });
 </script>
 
